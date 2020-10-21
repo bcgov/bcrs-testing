@@ -1,0 +1,12 @@
+pandas
+pytest
+pydantic[dotenv]
+pyleniumio==1.9.4
+lovely-pytest-docker
+pytest-custom_exit_code
+zxing
+pyotp
+junitparser
+pandas
+playwright
+pytest-playwright
