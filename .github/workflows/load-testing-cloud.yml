@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       TEST_TYPE:
-        description: "Test Type (smoke/load/spike/soak)"
+        description: "Test Type (smoke/load)"
         required: true
         default: "smoke"
 
