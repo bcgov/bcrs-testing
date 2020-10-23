@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Load testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      TEST_TYPE:
+        description: "Test Type (smoke/load/spike/soak)"
+        required: true
+        default: "smoke"
+
+jobs:
+  load_testing:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./load-testing
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Set Environement Variables
+        run: |
+          ../scripts/install_tools.sh
+          op --version
+          k6 version
+          vaults='[{"vault": "shared","application": ["api-urls","load-testing"]}]'
+          ../scripts/1pass.sh ${{ secrets.op_parameters }} -m "env" -e "dev" -v "${vaults}"
+
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+
+      - name: Run local k6 test
+        run: |
+          yarn ${{github.event.inputs.TEST_TYPE}}

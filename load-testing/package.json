@@ -1,0 +1,47 @@
+{
+  "name": "bcrs-load-testing",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "scripts": {
+    "check-types": "tsc",
+    "check-types:watch": "tsc --watch",
+    "monitors": "docker-compose up -d influxdb grafana",
+    "build": "webpack",
+    "smoke": "yarn build && k6 run dist/smokeTest.bundle.js",
+    "load": "yarn build && k6 run dist/loadTest.bundle.js",
+    "spike": "yarn build && k6 run dist/spikeTest.bundle.js",
+    "soak": "yarn build && k6 run dist/soakTest.bundle.js",
+    "smoke-cloud": "yarn build && k6 cloud dist/smokeTest.bundle.js",
+    "load-cloud": "yarn build && k6 cloud dist/loadTest.bundle.js",
+    "go:docker": "yarn build && yarn test"
+  },
+  "dependencies": {
+    "@types/k6": "^0.25.1",
+    "@types/node": "^13.13.27"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "dotenv-webpack": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}

@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: E2E testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      environement:
+        description: "Test Profile"
+        required: true
+        default: ""
+
+jobs:
+  e2e-testing:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./e2e-testing
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: nanasess/setup-chromedriver@master
+        with:
+          chromedriver-version: "79.0.3945.36"
+      - run: |
+          export DISPLAY=:99
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run e2e test
+        run: |
+          npm run local
