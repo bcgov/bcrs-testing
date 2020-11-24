@@ -1,53 +1,39 @@
 {
-  "name": "@testing-library/nightwatch",
-  "version": "1.0.1-semantically-released",
-  "description": "",
-  "main": "dist/index.js",
-  "typings": "typings",
+  "name": "e2e-testing",
+  "version": "1.0.0",
+  "description": "running Cypress ",
+  "main": "index.js",
   "scripts": {
-    "add-contributor": "kcd-scripts contributors add",
-    "build": "kcd-scripts build",
-    "lint": "kcd-scripts lint",
-    "test:unit": "kcd-scripts test --no-watch --config=jest.config.js",
-    "test:nightwatch:serve": "serve --listen 13370 ./test-app",
-    "test:nightwatch:run": "nightwatch",
-    "validate": "kcd-scripts validate build,lint,test",
-    "test:nightwatch": "npm-run-all --silent --parallel --race test:nightwatch:serve test:nightwatch:run",
-    "test": "npm-run-all --parallel test:nightwatch",
-    "semantic-release": "semantic-release"
+    "info": "cypress info"
   },
-  "files": [
-    "dist",
-    "typings"
-  ],
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@babel/runtime": "^7.4.3",
-    "@testing-library/dom": "^7.0.4",
-    "nightwatch": "^1.2.4",
-    "simmerjs": "^0.5.6"
-  },
+  "private": true,
   "devDependencies": {
-    "chromedriver": "^80.0.2",
-    "eslint": "^6.5.1",
-    "kcd-scripts": "^5.0.0",
-    "npm-run-all": "^4.1.5",
-    "semantic-release": "^17.0.2",
-    "serve": "^11.3.2"
+    "cypress": "^5.6.0",
+    "cypress-log-to-output": "^1.1.2",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "image-size": "^0.8.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/testing-library/nightwatch-testing-library.git"
+  "dependencies": {
+    "browserstack-cypress-cli": "^1.5.1",
+    "puppeteer": "^5.5.0"
   },
-  "release": {
-    "branches": [
-      "master",
-      "next"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

@@ -1,126 +1,111 @@
-<div align="center">
-<h1>nightwatch-testing-library</h1>
-<a href="https://www.emojione.com/emoji/bat">
-<img height="100" width="100" alt="ox" src="https://raw.githubusercontent.com/testing-library/nightwatch-testing-library/master/other/bat.png" />
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-</a>
+# BC Registiries E2E Testing
+BC Registiries E2E Testing is an automated SRE-driven end-to-end Testing app for the BC Registries applications in general.
 
-<p>nightwatch selectors and utilities that encourage good testing practices laid down by dom-testing-library.</p>
+## Technology Stack Used
 
-[**Read the docs**](https://testing-library.com/docs/nightwatch-testing-library/intro) | [Edit the docs](https://github.com/alexkrolick/testing-library-docs)
+* [Cypress](https://www.cypress.io/) - is a next generation front end testing tool built for the modern web. We address the key pain points developers and QA engineers face when testing modern applications.
+* [Puppeteer](https://pptr.dev/) - is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol. Puppeteer runs headless by default, but can be configured to run full (non-headless) Chrome or Chromium.
+    * Due to cypress [web security](https://docs.cypress.io/guides/guides/web-security.html#Limitations) issue, we are using Puppeteer as a plugin to handle thirdparty applications (ie. BC Service Card, BCeID, PayBC) during testing.
 
-</div>
-
-<hr />
-
-[![Build Status][build-badge]][build]
-[![version][version-badge]][package]
-[![downloads][downloads-badge]][npmtrends]
-[![MIT License][license-badge]][license]
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=testing-library/nightwatch-testing-library)](https://dependabot.com)
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
-[![PRs Welcome][prs-badge]][prs]
-[![Code of Conduct][coc-badge]][coc]
-[![Discord][discord-badge]][discord]
-
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
-[![Tweet][twitter-badge]][twitter]
-
-<div align="center">
-<a href="https://testingjavascript.com">
-<img width="500" alt="TestingJavaScript.com Learn the smart, efficient way to test any JavaScript application." src="https://raw.githubusercontent.com/kentcdodds/cypress-testing-library/master/other/testingjavascript.jpg" />
-</a>
-</div>
-
-## The problem
-
-You want to use [dom-testing-library](https://github.com/kentcdodds/dom-testing-library) methods in your [nightwatch][nightwatch] tests.
-
-## This solution
-
-This allows you to use all the useful [dom-testing-library](https://github.com/kentcdodds/dom-testing-library) methods in your tests.
-
-## Table of Contents
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Other Solutions](#other-solutions)
-- [Contributors](#contributors)
-- [LICENSE](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Installation
-
-This module is distributed via [npm][npm] which is bundled with [node][node] and
-should be installed as one of your project's `devDependencies`:
+## Files in this repository
 
 ```
-npm install --save-dev @testing-library/nightwatch
+cypress/          - Source folder
+├── fixtures      - holds optional JSON data for mocking
+├── integration   - holds the actual test files
+├── pages         - holds page objects of application
+├── plugins       - allow you to customize how tests are loaded
+├── support       - runs before all tests and load additional custom commands
+├── screenshots   - holds screenshots during running the test
+└── videos        - holds video recording after the test
+browserstack.json - file to configure your test runs on BrowserStack
+cypress.json      - file to configure cypress
+cypress.env.json  - file to configure local environment variable
+```
+## Getting started
+
+1. Install the [cypress](https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements).
+
+2. Setup project by [this guide](https://github.com/bcgov/entity/blob/master/docs/setup-forking-workflow.md).
+
+3. Install dependencies using:
+
+    `npm install`
+
+4. Run the test locally:
+
+    `cypress run`
+
+    `cypress run --spec cypress/intgration/entity/*.spec.js`
+
+    `cypress run --spec cypress/intgration/relationship/*.spec.js`
+
+    `cypress run --browser chrome`
+
+    `cypress run --browser firefox`
+
+## Running in CI/CD Pipelines
+
+ [Tests in GitHub Actions](https://github.com/bcgov/bcrs-testing/actions?query=workflow%3A%22e2e+testing%22)
+
+## Steps to add a test case (suite)
+See [this](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Step-2-Query-for-an-element)
+
+1. Write a page object in '/pages' folder then define the page elements and the actions as function;
+```
+// Decide Business page
+export class DecideBusiness {
+  constructor () {
+    this.manageExistingBusinessButton = 'button:contains("Manage an Existing Business")'
+  }
+
+  visit (url) {
+    cy.visit(url)
+  }
+
+  verifyElements () {
+    cy.get(this.manageExistingBusinessButton).should('be.visible')
+  }
+
+  manageExistingBusiness () {
+    cy.get(this.manageExistingBusinessButton).click()
+  }
+}
+
+export const decideBusiness = new DecideBusiness()
 ```
 
-## Usage
+2. Write a test spec in '/integration' folder;
+```
+import { decideBusiness } from '../../pages/relationship/decideBusiness'
+import { userProfileTerms } from '../../pages/relationship/userProfileTerms'
 
-[Usage Docs](https://testing-library.com/docs/nightwatch-testing-library/intro#usage)
+describe('User Profile Terms of Use test Suite ', function () {
+  // Setup data and login as BC Service Card
+  before(function () {
+    cy.fixture('relationship/bcsc').then(function (data) {
+      this.data = data
+      this.loginUrl = Cypress.env('BCRS_DOMAIN') + '/auth/signin/bcsc'
+      cy.bcscLogin(this.loginUrl, data.username, data.password)
+    })
+  })
 
-## Other Solutions
+  it('Decide Business Page', function () {
+    decideBusiness.visit(Cypress.env('BCRS_DOMAIN') + '/auth/home/decide-business')
+    decideBusiness.verifyElements()
+    decideBusiness.manageExistingBusiness()
+  })
 
-I'm not aware of any, if you are please [make a pull request][prs] and add it
-here!
+  // Mostly Used for TearDown
+  after(function () {
+    cy.authReset(Cypress.env('AUTH_RESET_URL'))
+  })
+})
+```
 
-## Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/benmonro"><img src="https://avatars3.githubusercontent.com/u/399236?v=4" width="100px;" alt="Ben Monro"/><br /><sub><b>Ben Monro</b></sub></a><br /><a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Documentation">📖</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Code">💻</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Tests">⚠️</a> <a href="#infra-benmonro" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-benmonro" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars0.githubusercontent.com/u/1500684?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-kentcdodds" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=kentcdodds" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/appleJax"><img src="https://avatars1.githubusercontent.com/u/13618860?v=4" width="100px;" alt="Kevin Brewer"/><br /><sub><b>Kevin Brewer</b></sub></a><br /><a href="#ideas-appleJax" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=appleJax" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## LICENSE
-
-MIT
-
-[npm]: https://www.npmjs.com/
-[node]: https://nodejs.org
-[build-badge]: https://github.com/testing-library/nightwatch-testing-library/workflows/nightwatch-testing-library/badge.svg
-[build]: https://github.com/testing-library/nightwatch-testing-library/actions?query=branch%3Amaster+workflow%3Anightwatch-testing-library
-[coverage]: https://codecov.io/github/testing-library/nightwatch-testing-library
-[version-badge]: https://img.shields.io/npm/v/@testing-library/nightwatch.svg?style=flat-square
-[package]: https://www.npmjs.com/package/@testing-library/nightwatch
-[downloads-badge]: https://img.shields.io/npm/dm/@testing-library/nightwatch.svg?style=flat-square
-[npmtrends]: http://www.npmtrends.com/@testing-library/nightwatch
-[license-badge]: https://img.shields.io/npm/l/@testing-library/nightwatch.svg?style=flat-square
-[license]: https://github.com/testing-library/nightwatch-testing-library/blob/master/LICENSE
-[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-[prs]: http://makeapullrequest.com
-[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
-[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/testing-library/nightwatch-testing-library/blob/master/other/CODE_OF_CONDUCT.md
-[github-watch-badge]: https://img.shields.io/github/watchers/testing-library/nightwatch-testing-library.svg?style=social
-[github-watch]: https://github.com/testing-library/nightwatch-testing-library/watchers
-[github-star-badge]: https://img.shields.io/github/stars/testing-library/nightwatch-testing-library.svg?style=social
-[github-star]: https://github.com/testing-library/nightwatch-testing-library/stargazers
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20nightwatch-testing-library%20by%20%40benmonro%20https%3A%2F%2Fgithub.com%2Ftesting-library%2Fnightwatch-testing-library%20%F0%9F%91%8D
-[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/testing-library/nightwatch-testing-library.svg?style=social
-[emojis]: https://github.com/benmonro/all-contributors#emoji-key
-[all-contributors]: https://github.com/all-contributors/all-contributors
-[dom-testing-library]: https://github.com/testing-library/dom-testing-library
-[nightwatch]: https://nightwatchjs.org/guide
-[discord-badge]: https://img.shields.io/discord/723559267868737556.svg?color=7389D8&labelColor=6A7EC2&logo=discord&logoColor=ffffff&style=flat-square
-[discord]: https://discord.gg/c6JN9fM
+3. Run the test.
+```
+cypress run
+```
