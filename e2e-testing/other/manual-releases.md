@@ -1,1 +1,0 @@
-Number of manual releases: 2

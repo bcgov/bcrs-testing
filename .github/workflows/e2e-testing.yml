@@ -1,42 +1,59 @@
-# This is a basic workflow to help you get started with Actions
-
-name: E2E testing
+name: E2E Testing
 
 on:
   workflow_dispatch:
     inputs:
-      environement:
-        description: "Test Profile"
-        required: true
+      case:
+        description: "E2E Case (all/entity/relationship)"
+        required: false
         default: ""
 
+env:
+  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CYPRESS_AUTH_RESET_URL: "https://auth-api-dev.pathfinder.gov.bc.ca/test/reset"
+  CYPRESS_DATA_RESET_URL: "https://data-reset-tool-dev.pathfinder.gov.bc.ca"
+  CYPRESS_BCRS_DOMAIN: "https://dev.bcregistry.ca/business"
+
 jobs:
-  e2e-testing:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./e2e-testing
-
+  case:
+    runs-on: ubuntu-20.04
     strategy:
+      # when one test fails, DO NOT cancel the other
+      # containers, because this will kill Cypress processes
+      # leaving the Dashboard hanging ...
+      # https://github.com/cypress-io/github-action/issues/48
+      fail-fast: false
       matrix:
-        node-version: [12.x]
-
+        # run 3 copies of the current job in parallel
+        containers: [1]
     steps:
-      - uses: nanasess/setup-chromedriver@master
-        with:
-          chromedriver-version: "79.0.3945.36"
-      - run: |
-          export DISPLAY=:99
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
-
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
-      - name: Install dependencies
+      - name: Set Case Name
         run: |
-          npm install
+          echo "CASE_NAME=${{ github.event.inputs.case }}" >> $GITHUB_ENV
+          echo ${{env.CASE_NAME}}
 
-      - name: Run e2e test
-        run: |
-          npm run local
+      - name: Run Entity E2E test cases
+        if: env.CASE_NAME == 'all' || env.CASE_NAME == 'entity'
+        uses: cypress-io/github-action@v2
+        continue-on-error: true
+        with:
+          record: true
+          parallel: true
+          spec: cypress/integration/entity/*.spec.js
+          working-directory: ./e2e-testing
+          group: entity
+
+      - name: Run Relationship E2E test cases
+        if: env.CASE_NAME == 'all' || env.CASE_NAME == 'relationship'
+        uses: cypress-io/github-action@v2
+        continue-on-error: true
+        with:
+          record: true
+          parallel: true
+          spec: cypress/integration/relationship/*.spec.js
+          working-directory: ./e2e-testing
+          group: relationship
