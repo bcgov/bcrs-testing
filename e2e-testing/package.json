@@ -18,7 +18,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "image-size": "^0.8.3"
+    "image-size": "^0.8.3",
+    "log": "^6.0.0"
   },
   "dependencies": {
     "browserstack-cypress-cli": "^1.5.1",
