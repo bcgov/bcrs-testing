@@ -1,0 +1,13 @@
+{
+    "DebtorFirstName": "John",
+    "DebtorMiddleName": "Automation",
+    "DebtorLastName": "Test",
+    "DebtorEmailAddress": "email@email.com",
+    "DebtorCountry": "Canada",
+    "DebtorAddressLine1": "100 Billy Bishop Way",
+    "DebtorCity": "Toronto",
+    "DebtorRegion": "Ontario",
+    "DebtorPostalCode": "M3K 2C8",
+    "DebtorDeliveryInstructions": "Deliver to the mentioned Address",
+    "DebtorBusinessName": "123 Construction LTD."
+}

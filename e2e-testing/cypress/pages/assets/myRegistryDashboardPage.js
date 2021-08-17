@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 const log = require("log");
 
-export class myRegistryDashboard {
+export class MyRegistryDashboardPage {
     constructor() {
 
         this.pprDashboardLink = 'span:contains("PPR Dashboard")'
@@ -21,4 +21,4 @@ export class myRegistryDashboard {
 
 
 }
-export const myRegistryDashboard = new myRegistryDashboard()
+export const myRegistryDashboardPage = new MyRegistryDashboardPage()

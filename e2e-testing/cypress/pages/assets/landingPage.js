@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 const log = require("log");
 
-export class landingPage {
+export class LandingPage {
     constructor() {
 
         this.pprLink = 'a[href = "/ppr-marketing"]'
@@ -10,6 +10,9 @@ export class landingPage {
 
     }
 
+    visit(url) {
+        cy.visit(url)
+    }
 
     clickPPRLink() {
         cy.get(this.pprLink).click()
@@ -21,11 +24,10 @@ export class landingPage {
         log.info("Clicked on account dropdown link")
     }
 
-    clickBCServicesCardMenuItem(){
+    clickBCServicesCardMenuItem() {
         cy.get(this.bcServicesCardMenuItem).click()
         log.info("Clicked on BC services card")
     }
 
 
-}
-export const landingPage = new landingPage()
+}  export const landingPage = new LandingPage()

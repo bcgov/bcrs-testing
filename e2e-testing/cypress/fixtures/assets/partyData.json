@@ -1,0 +1,14 @@
+{
+    "LengthInYears": "5",
+    "PartyFirstName": "John",
+    "PartyMiddleName": "Automation",
+    "PartyLastName": "Test",
+    "PartyEmailAddress": "email@email.com",
+    "PartyCountry": "Canada",
+    "PartyAddressLine1": "100 Billy Bishop Way",
+    "PartyCity": "Toronto",
+    "PartyRegion": "Ontario",
+    "PartyPostalCode": "M3K 2C8",
+    "PartyDeliveryInstructions": "Deliver to the mentioned Address",
+    "PartyBusinessName": "123 Construction LTD."
+}
