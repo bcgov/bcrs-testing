@@ -1,7 +1,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-# BC Registiries testing applications
+# BC Registries testing applications
 
 The goal of this project is to automate measurement the response time and stability  of BC Registries web applications and micro services. While testing:
 
