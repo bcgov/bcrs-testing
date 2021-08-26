@@ -16,17 +16,17 @@ export class LandingPage {
 
     clickPPRLink() {
         cy.get(this.pprLink).click()
-        log.info("Clicked on PPR Link")
+        cy.log("Clicked on PPR Link")
     }
 
     clickAccountDropdown() {
         cy.get(this.accountDropdown).click()
-        log.info("Clicked on account dropdown link")
+        cy.log("Clicked on account dropdown link")
     }
 
     clickBCServicesCardMenuItem() {
         cy.get(this.bcServicesCardMenuItem).click()
-        log.info("Clicked on BC services card")
+        cy.log("Clicked on BC services card")
     }
 
 

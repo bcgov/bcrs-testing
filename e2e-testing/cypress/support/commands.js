@@ -1,5 +1,5 @@
 Cypress.Commands.add('bcscLogin', (url, username, password) => {
-  cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 300000 }).then(sessionItems => {
+  cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 30000 }).then(sessionItems => {
     Object.keys(sessionItems).forEach(key => {
       sessionStorage.setItem(key, sessionItems[key])
     })

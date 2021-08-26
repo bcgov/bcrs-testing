@@ -16,17 +16,17 @@ export class PPRDashboardPage {
         cy.get(this.pprSearchCategory).click()  
         cy.wait(3000)
         cy.get(this.category).click()
-        log.info("Search category selected")
+        cy.log("Search category selected")
     }
 
     setPPRSearchTextbox(data) {
         cy.get(this.pprSearchTextbox).type(data)
-        log.info("Entered the text")
+        cy.log("Entered the text")
     }
 
     clickSearchButton() {
         cy.get(this.searchButton).click()
-        log.info("Clicked on search button")
+        cy.log("Clicked on search button")
     }
 
 }

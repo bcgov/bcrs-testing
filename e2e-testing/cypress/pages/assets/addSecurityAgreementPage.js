@@ -1,5 +1,4 @@
 /// <reference types="Cypress" />
-const log = require("log");
 
 export class AddSecurityAgreementPage {
 
@@ -20,45 +19,45 @@ export class AddSecurityAgreementPage {
 
     selectSecurityAgreementDropdown() {
         cy.get(this.securityAgreementDropdown).click()
-        log.info("Security Agreement dropdown got selected")
+        cy.log("Security Agreement dropdown got selected")
     }
     clickSecurityAgreement() {
         cy.get(this.securityAgreement_SA).click()
-        log.info("Clicked on Security Agreement")
+        cy.log("Clicked on Security Agreement")
     }
     clickRepairersLien() {
         cy.get(this.repairersLein_RL).click()
-        log.info("Clicked on Repairers Lien")
+        cy.log("Clicked on Repairers Lien")
     }
     clickMarriageorSeperationAgreement() {
         cy.get(this.marriageSeperationAgreement_FR).click()
-        log.info("Clicked on Marriage/Seperation Agreement")
+        cy.log("Clicked on Marriage/Seperation Agreement")
     }
     clickLandTaxDefermentLien() {
         cy.get(this.landTaxDefermentLien_LT).click()
-        log.info("Clicked on Land Tax Deferment Lien")
+        cy.log("Clicked on Land Tax Deferment Lien")
     }
     clickSaleOfGoodsAct() {
         cy.get(this.saleOfGoodsAct_SG).click()
-        log.info("Clicked on Sale of Goods Act")
+        cy.log("Clicked on Sale of Goods Act")
     }
     clickManufacturedHomeAct() {
         cy.get(this.manufacturedHomeAct_MH).click()
-        log.info("Clicked on Manufactured Home Act")
+        cy.log("Clicked on Manufactured Home Act")
     }
     clickForestryContractorLien() {
         cy.get(this.forestryContractorLien_FL).click()
-        log.info("Clicked on Forestry Contractor Lien")
+        cy.log("Clicked on Forestry Contractor Lien")
     }
     clickForestryContractorCharge() {
         cy.get(this.forestryContractorCharge_FA).click()
-        log.info("Clicked on Forestry Contractor Charge")
+        cy.log("Clicked on Forestry Contractor Charge")
     }
     clickForestrySub_ContactorCharge() {
         cy.get(this.forestrySubContractorCharge_FS).click()
-        log.info("Clicked on Forestry Sub_Contractor Charge")
+        cy.log("Clicked on Forestry Sub_Contractor Charge")
     }
 
 
 }
-export const addsecurityAgreementPage = new AddSecurityAgreementPage()
+export const addSecurityAgreementPage = new AddSecurityAgreementPage()

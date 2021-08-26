@@ -11,12 +11,12 @@ export class MyRegistryDashboardPage {
 
     clickPPRDasboardLink() {
         cy.get(this.pprDashboardLink).click()
-        log.info("Clicked on PPR dashboard")
+        cy.log("Clicked on PPR dashboard")
     }
 
     clickManageBusinessesLink() {
         cy.get(this.manageBusinessesLink).click()
-        log.info("Clicked on manage businesses")
+        cy.log("Clicked on manage businesses")
     }
 
 

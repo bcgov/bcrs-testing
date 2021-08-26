@@ -1,5 +1,8 @@
 /// <reference types="Cypress" />
+
+
 const log = require("log");
+const tab = require('cypress-plugin-tab')
 
 export class SecurityAgreementPage {
 
@@ -9,8 +12,8 @@ export class SecurityAgreementPage {
 
         this.registrationLengthRadioButton = 'input#length-in-years'
         this.lengthInYearsText = 'input#life-years-field'
-        this.lengthInfiniteRadioButton = 'input#length-infinite'
-        this.trustIndentureCheckbox = 'input#trust-indenture-checkbox'
+        this.lengthInfiniteRadioButton = '#length-infinite'
+        this.trustIndentureCheckbox = '#trust-indenture-checkbox'
         this.addSecuredPartiesAndDebtorsButton = 'button#reg-next-btn'
 
         //Add Secured Parties and Debtors
@@ -23,38 +26,44 @@ export class SecurityAgreementPage {
         this.partyIndividualPersonRadioButton = 'input#party-individual'
         this.partyFirstName = 'input#txt-first-party'
         this.partyMiddleName = 'input#txt-middle-party'
-        this.partyLastName = 'input#txt-last-party'
+        this.partyLastName = '#txt-last-party'
 
         //Same for Individual & Business Party
 
         this.partyEmailAddress = 'input#txt-email-party'
         this.partyAddressCountryDropdown = '.v-select__slot'
-        this.partyAddressLine1Text = 'input#street-address-6'
+        this.partyAddressCountry = '[role = "listbox"]'
+        this.partyAddressLine1Text = 'input[id^="street-address"]'
+        this.partyAddress = '[title = "799 McCallum Rd"]'
         this.partyAddressCityText = 'input#input-3932'
         this.partyAddressRegionText = 'input#input-3935'
         this.partyAddressPostalCodeText = 'input#input-3938'
         this.partyDeliveryInstructions = 'textarea#input-3941'
-        this.partyDoneButton = 'button#done-btn-party'
+        this.partyDoneButton = '#done-btn-party'
 
         //Party Business
 
         this.partyBusinessRadioButton = 'input#party-business'
         this.partyBusinessLegalName = 'input#txt-name-party'
+        this.partyBusiness = ':nth-child(1) > .v-list-item__content'
 
         //Debtor Individual
         this.addIndividualDebtor = 'button#btn-add-individual'
         this.debtorFirstName = 'input#txt-first-debtor'
         this.debtorMiddleName = 'input#txt-middle-debtor'
-        this.debtorLastname = 'input#txt-last-debtor'
+        this.debtorLastName = 'input#txt-last-debtor'
         this.debtorBirthdateMonthDropdown = 'input#txt-month'
+        this.debtorBirthMonthText = '.v-list-item__title'
         this.debtorBirthdateDay = 'input#txt-day'
         this.debtorBirthdateYear = 'input#txt-year'
 
         //Common fields for Individual & Business Debtor
 
         this.debtorEmailAddress = 'input#txt-email-debtor'
-        this.debtorAddressCountry = '.v-select__slot'
-        this.debtorAddressLine1Text = 'input#street-address-7'
+        this.debtorAddressCountryDropdown = '.v-form > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
+        this.debtorAddressCountry = '.v-list-item__title'
+        this.debtorAddressLine1Text = 'input[id^="street-address"]'
+        this.debtorAddress = '[title = "3320 Jacombs Rd"]'
         this.debtorAddressCityText = 'input#input-3994'
         this.debtorAddressRegionText = 'input#input-3997'
         this.debtorAddressPostalCodeText = 'input#input-4000'
@@ -65,6 +74,7 @@ export class SecurityAgreementPage {
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
+        this.debtorBusinessText = '.v-item-group > :nth-child(1)'
 
         //Add Collateral Next Button
 
@@ -116,27 +126,27 @@ export class SecurityAgreementPage {
 
     clickRegistrationLengthRadioButton() {
         cy.get(this.registrationLengthRadioButton).click()
-        log.info("Registration Length radio button got clicked")
+        cy.log("Registration Length radio button got clicked")
     }
 
     setLengthInYearsTextField(data) {
         cy.get(this.lengthInYearsText).type(data)
-        log.info("Value is entered in the Length Field")
+        cy.log("Value is entered in the Length Field")
     }
 
     clickRegistrationLengthInfiniteButton() {
         cy.get(this.lengthInfiniteRadioButton).click()
-        log.info("Infinite button got clicked")
+        cy.log("Infinite button got clicked")
     }
 
     clickTrustIndentureCheckbox() {
-        cy.get(this.trustIndentureCheckbox).click()
-        log.info("Trust Indenture Check Box got clicked")
+        cy.get(this.trustIndentureCheckbox).check({ force: true })
+        cy.log("Trust Indenture Check Box got clicked")
     }
 
     clickAddSecuredPartiesAndDebtorsButton() {
         cy.get(this.addSecuredPartiesAndDebtorsButton).click()
-        log.info("Add Secured Parties and Debtors button got clicked")
+        cy.log("Add Secured Parties and Debtors button got clicked")
     }
 
 
@@ -144,94 +154,111 @@ export class SecurityAgreementPage {
 
     setSecuredPartyCodeOrName(data) {
         cy.get(this.securedPartyCodeOrName).type(data)
-        log.info("Secured Party Code or Name got entered")
+        cy.log("Secured Party Code or Name got entered")
     }
 
     clickAddSecuredPartyOrName() {
         cy.get(this.addSecuredPartyCodeOrName).click()
-        log.info("Secured Party or Name got selected")
+        cy.log("Secured Party or Name got selected")
     }
 
     clickRegisteringPartyAsSecuredPartyCheckbox() {
         cy.get(this.addRegisteringPartyAsSecuredPartyCheckbox).click()
-        log.info("Checkbox of Registering Party as Secured Party got clicked")
+        cy.log("Checkbox of Registering Party as Secured Party got clicked")
     }
 
     clickAddSecuredPartyLink() {
         cy.get(this.addSecuredPartyLink).click()
-        log.info("Secured Party Link got clicked")
+        cy.log("Secured Party Link got clicked")
     }
 
     clickPartyIndividualPersonButton() {
-        cy.get(this.partyIndividualPersonRadioButton).click()
-        log.info("Clicked on Party Individual Person")
+        cy.get(this.partyIndividualPersonRadioButton).check({ force: true })
+        cy.log("Clicked on Party Individual Person")
     }
 
     setPartyFirstName(data) {
         cy.get(this.partyFirstName).type(data)
-        log.info("Entered Party First Name")
+        cy.log("Entered Party First Name")
     }
 
     setPartyMiddleName(data) {
         cy.get(this.partyMiddleName).type(data)
-        log.info("Entered Party Middle Name")
+        cy.log("Entered Party Middle Name")
     }
 
     setPartyLastName(data) {
-        cy.get(this.setPartyLastName).type(data)
-        log.info("Entered Party Last Name")
+        cy.get(this.partyLastName).type(data)
+        cy.log("Entered Party Last Name")
     }
 
     setPartyEmailAddress(data) {
         cy.get(this.partyEmailAddress).type(data)
-        log.info("Entered Party Email Address")
+        cy.log("Entered Party Email Address")
     }
 
-    clickPartyAddressCountryDropdown() {
-        cy.get(this.partyAddressCountryDropdown).click()
-        log.info("Country Dropdown got clicked for Party")
+    setPartyAddressCountry(data) {
+        cy.get(this.partyAddressCountryDropdown).type(data)
+        cy.log("Country Dropdown got clicked for Party")
+    }
+
+    clickPartyAddressCountry(){
+        cy.get(this.partyAddressCountry).click()
+        cy.log("Selected Country")
     }
 
     setPartyAddressLine1Text(data) {
         cy.get(this.partyAddressLine1Text).type(data)
-        log.info("Entered Address Line1 for Party")
+        cy.log("Entered Address Line1 for Party")
+    }
+
+    clickPartyAddressText(){
+        cy.wait(2000)
+        cy.get(this.partyAddress).click()
+        cy.log("Entered the Party Address")
     }
 
     setPartyAddressCity(data) {
         cy.get(this.partyAddressCityText).type(data)
-        log.info("Entered the City for Party")
+        cy.log("Entered the City for Party")
     }
 
     setPartyAddressRegion(data) {
         cy.get(this.partyAddressRegionText).type(data)
-        log.info("Entered Region for Party")
+        cy.log("Entered Region for Party")
     }
 
     setPartyAddressPostalCode(data) {
         cy.get(this.partyAddressPostalCodeText).type(data)
-        log.info("Entered Postal Code for Party")
+        cy.log("Entered Postal Code for Party")
     }
 
     setPartyDeliveryInstructions(data) {
         cy.get(this.partyDeliveryInstructions).type(data)
-        log.info("Entered Delivery Instructions for party")
+        cy.log("Entered Delivery Instructions for party")
     }
 
     clickPartyDoneButton() {
+        cy.wait(2000)
         cy.get(this.partyDoneButton).click()
-        log.info("Clicked on Party Done Button")
+        cy.log("Clicked on Party Done Button")
     }
 
     //Business
 
     clickPartyBusinessButton() {
-        cy.get(this.partyBusinessRadioButton).click()
-        log.info("Clicked on Party Business Button")
+        cy.get(this.partyBusinessRadioButton).check({ force: true })
+        cy.log("Clicked on Party Business Button")
     }
 
     setPartyBusinessLegalName(data) {
         cy.get(this.partyBusinessLegalName).type(data)
-        log.info("Entered Party Business Name")
+        cy.log("Entered Party Business Name")
+    }
+
+    clickPartyBusinessText(data){
+        cy.get(this.partyBusiness).click()
+        cy.log("Entered Party Business Name")
     }
 
     //Debtor Methods
@@ -239,163 +266,210 @@ export class SecurityAgreementPage {
 
     clickAddIndividualDebtor() {
         cy.get(this.addIndividualDebtor).click()
-        log.info("Clicked on Add an Individual Debtor")
+        cy.log("Clicked on Add an Individual Debtor")
     }
 
     setDebtorFirstName(data) {
         cy.get(this.debtorFirstName).type(data)
-        log.info("Entered Debtor First Name")
+        cy.log("Entered Debtor First Name")
     }
 
     setDebtorMiddleName(data) {
         cy.get(this.debtorMiddleName).type(data)
-        log.info("Entered Debtor Middle Name")
+        cy.log("Entered Debtor Middle Name")
     }
 
     setDebtorLastName(data) {
         cy.get(this.debtorLastName).type(data)
-        log.info("Entered Debtor Last Name")
+        cy.log("Entered Debtor Last Name")
+    }
+
+    setDebtorBirthdateMonth(data){
+        cy.get(this.debtorBirthdateMonthDropdown).type(data)
+        cy.log("Birthdate Month got selected")
+    }
+
+    clickDebtorBirthMonth(){
+        cy.get(this.debtorBirthMonthText).click()
+        cy.log("Birth Month got entered")
+    }
+
+    setDebtorBirthdateDay(data){
+        cy.get(this.debtorBirthdateDay).type(data)
+        cy.log("Birth Day got entered")
+    }
+
+    setDebtorBirthdateYear(data){
+        cy.get(this.debtorBirthdateYear).type(data)
+        cy.log("Birth Year got entered")
     }
 
     setDebtorEmailAddress(data) {
         cy.get(this.debtorEmailAddress).type(data)
-        log.info("Entered Debtor Email Address")
+        cy.log("Entered Debtor Email Address")
     }
 
-    clickDebtorAddressCountryDropdown() {
+    setDebtorAddressCountry(data){
+        cy.wait(2000)
+        cy.get(this.debtorAddressCountryDropdown).type(data)
+        cy.wait(2000)
+        const element = 'span:contains("'+data+'")'
+        cy.get(element).click()
+        cy.log("Entered Debtor Address")
+    }
+
+    clickDebtorAddressCountry() {
+        cy.wait(2000)
         cy.get(this.debtorAddressCountry).click()
-        log.info("Debtor Country Dropdown got clicked")
+        cy.log("Debtor Country Dropdown got clicked")
     }
 
     setDebtorAddressLine1(data) {
         cy.get(this.debtorAddressLine1Text).type(data)
-        log.info("Entered Debtor Address Line1")
+        cy.log("Entered Debtor Address Line1")
+    }
+
+    clickDebtorAddressText(){
+        cy.wait(2000)
+        cy.get(this.debtorAddress).click()
+        cy.log("Entered the Debtor Address")
     }
 
     setDebtorAddressCity(data) {
         cy.get(this.debtorAddressCityText).type(data)
-        log.info("Entered Debtor Address City")
+        cy.log("Entered Debtor Address City")
     }
 
     setDebtorAddressRegion(data) {
         cy.get(this.debtorAddressRegionText).type(data)
-        log.info("Entered Debtor Address Region")
+        cy.log("Entered Debtor Address Region")
     }
 
     setDebtorAddressPostalCode(data) {
         cy.get(this.debtorAddressPostalCodeText).type(data)
-        log.info("Entered Debtor Address Postal Code")
+        cy.log("Entered Debtor Address Postal Code")
     }
 
     setDebtorDeliveryInstructions(data) {
         cy.get(this.debtorDeliveryInstructions).type(data)
-        log.info("Entered Debtor Delivery Instructions")
+        cy.log("Entered Debtor Delivery Instructions")
     }
 
     clickDebtorDoneButton() {
+        cy.wait(2000)
         cy.get(this.debtorDoneButton).click()
-        log.info("Debtor Done Button got clicked")
+        cy.log("Debtor Done Button got clicked")
     }
 
     //Debtor Business
 
     clickAddBusinessDebtor() {
         cy.get(this.addBusinessDebtor).click()
-        log.info("Clicked on Add Business Debtor")
+        cy.log("Clicked on Add Business Debtor")
     }
 
     setDebtorBusinessLegalName(data) {
         cy.get(this.debtorBusinessLegalName).type(data)
-        log.info("Entered Debtor Business Legal Name")
+        cy.log("Entered Debtor Business Legal Name")
+    }
+
+    clickDebtorBusinessText(){
+        cy.get(this.debtorBusinessText).click()
+        cy.log("Business Name got entered")
     }
 
     //Add Collateral Method
 
     clickAddCollateralButton() {
         cy.get(this.addCollateralButton).click()
-        log.info("Clicked on Add Collateral Button")
+        cy.log("Clicked on Add Collateral Button")
     }
 
     clickAddVehicleCollateral() {
         cy.get(this.addVehicleCollateral).click()
-        log.info("Clicked on Add Vehicle Collateral")
+        cy.log("Clicked on Add Vehicle Collateral")
     }
 
-    clickVehicleTypeDropdown() {
+    setVehicleTypeDropdown(data) {
+        cy.wait(2000)
         cy.get(this.vehicleTypeDropdown).click()
-        log.info("Clicked on Vehicle Type Dropdown")
+        cy.wait(2000)
+        const element = 'span:contains("'+data+'")'
+        cy.get(element).click()
+        cy.log("Clicked on Vehicle Type Dropdown")
     }
 
     setSerialOrVINNumber(data) {
         cy.get(this.serialOrVINNumber).type(data)
-        log.info("Entered Serial or VIN Number")
+        cy.log("Entered Serial or VIN Number")
     }
 
     setManufacturedHomeRegistrationNumber(data) {
         cy.get(this.manufacturedHomeRegistrationNumber).type(data)
-        log.info("Entered Manufacured Home registration Number")
+        cy.log("Entered Manufacured Home registration Number")
     }
 
     setYearText(data) {
         cy.get(this.yearText).type(data)
-        log.info("Entered Vehicle Year")
+        cy.log("Entered Vehicle Year")
     }
 
     setMakeText(data) {
         cy.get(this.makeText).type(data)
-        log.info("Entered Vehicle Make")
+        cy.log("Entered Vehicle Make")
     }
 
     setModelText(data) {
         cy.get(this.modelText).type(data)
-        log.info("Entered Vehicle Model")
+        cy.log("Entered Vehicle Model")
     }
 
     clickCollateralDoneButton() {
+        cy.wait(2000)
         cy.get(this.collateralDoneButton).click()
-        log.info("Clicked on Collateral Done Button")
+        cy.log("Clicked on Collateral Done Button")
     }
 
     setGeneralCollateralText(data) {
         cy.get(this.generalCollateralText).type(data)
-        log.info("Entered General Collateral Text")
+        cy.log("Entered General Collateral Text")
     }
 
     clickReviewAndConfirmButton() {
         cy.get(this.reviewAndConfirmButton).click()
-        log.info("Clciked on Review and Confirm Button")
+        cy.log("Clciked on Review and Confirm Button")
     }
 
     //Review and Confirm Methods
 
     setFolioNumberText(data) {
         cy.get(this.folioNumberText).type(data)
-        log.info("Entered Folio Number")
+        cy.log("Entered Folio Number")
     }
 
     clcikRegisterAndPayButton() {
         cy.get(this.registerAndPayButton).click()
-        log.info("Clicked on Register and Pay Button")
+        cy.log("Clicked on Register and Pay Button")
     }
 
     clickBackButton() {
         cy.get(this.backButton).click()
-        log.info("Clicked on Back Button")
+        cy.log("Clicked on Back Button")
     }
 
     clickSaveAndResumeLaterButton() {
         cy.get(this.saveAndResumeLaterButton).click()
-        log.info("Clicked on Register and Save Later Button")
+        cy.log("Clicked on Register and Save Later Button")
     }
 
     clickSaveButton() {
         cy.get(this.saveButton).click()
-        log.info("Clicked on Save Button")
+        cy.log("Clicked on Save Button")
     }
 
     clickCancelButton() {
         cy.get(this.cancelButton).click()
-        log.info("Clicked on Cancel Button")
+        cy.log("Clicked on Cancel Button")
     }
 
 }
