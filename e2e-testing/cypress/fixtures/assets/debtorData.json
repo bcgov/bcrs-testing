@@ -1,0 +1,16 @@
+{
+    "DebtorFirstName": "John",
+    "DebtorMiddleName": "Automation",
+    "DebtorLastName": "Test",
+    "DebtorBirthMonth": "April",
+    "DebtorBirthDay": "20",
+    "DebtorBirthYear": "1965",
+    "DebtorEmailAddress": "email@email.com",
+    "DebtorCountry": "Canada",
+    "DebtorAddressLine1": "3320 Jacombs Rd Richmond, BC, V6V 1Z6",
+    "DebtorCity": "Richmond",
+    "DebtorRegion": "BC",
+    "DebtorPostalCode": "V6V 1Z6",
+    "DebtorDeliveryInstructions": "Deliver to the mentioned Address",
+    "DebtorBusinessName": "PARTY FAVOUR PARTY SERVICE"
+}
