@@ -13,8 +13,8 @@ export class LoginFAS
 
     enterCreds ()
     {
-        cy.get('input[name="user"]').type('hacharya') //Username
-        cy.get('input[name="password"]').type('QWERTYzxc11!') //Password
+        cy.get('input[name="user"]').type('BRTEST1') //Username
+        cy.get('input[name="password"]').type('RELationships123#') //Password
     }
 
     SubmitButton ()
