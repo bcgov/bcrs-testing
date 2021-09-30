@@ -1,3 +1,4 @@
+
 const PuppeteerPageObject = require('./pageObject')
 
 class BCSCLogin extends PuppeteerPageObject {

@@ -1,5 +1,5 @@
 Cypress.Commands.add('bcscLogin', (url, username, password) => {
-  cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 30000 }).then(sessionItems => {
+  cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 60000 }).then(sessionItems => {
     Object.keys(sessionItems).forEach(key => {
       sessionStorage.setItem(key, sessionItems[key])
     })
@@ -13,7 +13,7 @@ Cypress.Commands.add('authReset', (url) => {
     auth: {
       bearer: window.sessionStorage.getItem('KEYCLOAK_TOKEN')
     },
-    timeout: 120000
+    timeout: 60000
   }).then((response) => {
     expect(response.status).to.eq(204)
     console.log(JSON.stringify(response))

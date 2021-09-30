@@ -1,3 +1,4 @@
+
 module.exports = (on, config) => {
   on('before:browser:launch', (browser, launchOptions) => {
     console.log('before launching browser')

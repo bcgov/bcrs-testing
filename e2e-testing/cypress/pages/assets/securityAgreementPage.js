@@ -34,18 +34,17 @@ export class SecurityAgreementPage {
         this.partyAddressCountryDropdown = '.v-select__slot'
         this.partyAddressCountry = '[role = "listbox"]'
         this.partyAddressLine1Text = 'input[id^="street-address"]'
-        this.partyAddress = '[title = "799 McCallum Rd"]'
         this.partyAddressCityText = 'input#input-3932'
         this.partyAddressRegionText = 'input#input-3935'
         this.partyAddressPostalCodeText = 'input#input-3938'
-        this.partyDeliveryInstructions = 'textarea#input-3941'
+        this.partyDeliveryInstructions = ':nth-child(5) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot'
         this.partyDoneButton = '#done-btn-party'
 
         //Party Business
 
         this.partyBusinessRadioButton = 'input#party-business'
         this.partyBusinessLegalName = 'input#txt-name-party'
-        this.partyBusiness = ':nth-child(1) > .v-list-item__content'
+        this.partyBusiness = '.v-item-group > :nth-child(1)'
 
         //Debtor Individual
         this.addIndividualDebtor = 'button#btn-add-individual'
@@ -67,14 +66,14 @@ export class SecurityAgreementPage {
         this.debtorAddressCityText = 'input#input-3994'
         this.debtorAddressRegionText = 'input#input-3997'
         this.debtorAddressPostalCodeText = 'input#input-4000'
-        this.debtorDeliveryInstructions = 'textarea#input-4003'
+        this.debtorDeliveryInstructions = ':nth-child(5) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot'
         this.debtorDoneButton = 'button#done-btn-debtor'
 
         //Debtor Business
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
-        this.debtorBusinessText = '.v-item-group > :nth-child(1)'
+        this.debtorBusinessText = ':nth-child(1) > .v-list-item__content > .v-list-item__title'
 
         //Add Collateral Next Button
 
@@ -91,6 +90,7 @@ export class SecurityAgreementPage {
         this.modelText = 'input#txt-model'
         this.collateralDoneButton = 'button#done-btn-collateral'
         this.generalCollateralText = 'textarea#generalCollateral'
+        this.generalCollateralDescription = '.px-6 > .col'
 
         //Review and Confirm Next Button
 
@@ -125,7 +125,7 @@ export class SecurityAgreementPage {
     //Registration Length and Trust Indenture Methods
 
     clickRegistrationLengthRadioButton() {
-        cy.get(this.registrationLengthRadioButton).click()
+        cy.get(this.registrationLengthRadioButton).click({ force: true })
         cy.log("Registration Length radio button got clicked")
     }
 
@@ -135,7 +135,7 @@ export class SecurityAgreementPage {
     }
 
     clickRegistrationLengthInfiniteButton() {
-        cy.get(this.lengthInfiniteRadioButton).click()
+        cy.get(this.lengthInfiniteRadioButton).click({ force: true })
         cy.log("Infinite button got clicked")
     }
 
@@ -202,7 +202,7 @@ export class SecurityAgreementPage {
         cy.log("Country Dropdown got clicked for Party")
     }
 
-    clickPartyAddressCountry(){
+    clickPartyAddressCountry() {
         cy.get(this.partyAddressCountry).click()
         cy.log("Selected Country")
     }
@@ -212,7 +212,7 @@ export class SecurityAgreementPage {
         cy.log("Entered Address Line1 for Party")
     }
 
-    clickPartyAddressText(){
+    clickPartyAddressText() {
         cy.wait(2000)
         cy.get(this.partyAddress).click()
         cy.log("Entered the Party Address")
@@ -256,7 +256,8 @@ export class SecurityAgreementPage {
         cy.log("Entered Party Business Name")
     }
 
-    clickPartyBusinessText(data){
+    clickPartyBusinessText() {
+        cy.wait(2000)
         cy.get(this.partyBusiness).click()
         cy.log("Entered Party Business Name")
     }
@@ -284,22 +285,22 @@ export class SecurityAgreementPage {
         cy.log("Entered Debtor Last Name")
     }
 
-    setDebtorBirthdateMonth(data){
+    setDebtorBirthdateMonth(data) {
         cy.get(this.debtorBirthdateMonthDropdown).type(data)
         cy.log("Birthdate Month got selected")
     }
 
-    clickDebtorBirthMonth(){
+    clickDebtorBirthMonth() {
         cy.get(this.debtorBirthMonthText).click()
         cy.log("Birth Month got entered")
     }
 
-    setDebtorBirthdateDay(data){
+    setDebtorBirthdateDay(data) {
         cy.get(this.debtorBirthdateDay).type(data)
         cy.log("Birth Day got entered")
     }
 
-    setDebtorBirthdateYear(data){
+    setDebtorBirthdateYear(data) {
         cy.get(this.debtorBirthdateYear).type(data)
         cy.log("Birth Year got entered")
     }
@@ -309,11 +310,11 @@ export class SecurityAgreementPage {
         cy.log("Entered Debtor Email Address")
     }
 
-    setDebtorAddressCountry(data){
+    setDebtorAddressCountry(data) {
         cy.wait(2000)
         cy.get(this.debtorAddressCountryDropdown).type(data)
         cy.wait(2000)
-        const element = 'span:contains("'+data+'")'
+        const element = 'span:contains("' + data + '")'
         cy.get(element).click()
         cy.log("Entered Debtor Address")
     }
@@ -329,7 +330,7 @@ export class SecurityAgreementPage {
         cy.log("Entered Debtor Address Line1")
     }
 
-    clickDebtorAddressText(){
+    clickDebtorAddressText() {
         cy.wait(2000)
         cy.get(this.debtorAddress).click()
         cy.log("Entered the Debtor Address")
@@ -373,7 +374,7 @@ export class SecurityAgreementPage {
         cy.log("Entered Debtor Business Legal Name")
     }
 
-    clickDebtorBusinessText(){
+    clickDebtorBusinessText() {
         cy.get(this.debtorBusinessText).click()
         cy.log("Business Name got entered")
     }
@@ -394,7 +395,7 @@ export class SecurityAgreementPage {
         cy.wait(2000)
         cy.get(this.vehicleTypeDropdown).click()
         cy.wait(2000)
-        const element = 'span:contains("'+data+'")'
+        const element = 'span:contains("' + data + '")'
         cy.get(element).click()
         cy.log("Clicked on Vehicle Type Dropdown")
     }
@@ -447,7 +448,7 @@ export class SecurityAgreementPage {
         cy.log("Entered Folio Number")
     }
 
-    clcikRegisterAndPayButton() {
+    clickRegisterAndPayButton() {
         cy.get(this.registerAndPayButton).click()
         cy.log("Clicked on Register and Pay Button")
     }
@@ -472,5 +473,138 @@ export class SecurityAgreementPage {
         cy.log("Clicked on Cancel Button")
     }
 
+    verifyFeeSummary(data) {
+        const securityAgreement = '.pt-5 > .FeeSummary_fee-list__item-value_1l2Y6'
+        const serviceFee = '.py-4 > .FeeSummary_fee-list__item-value_1l2Y6'
+        const currencyCAD = '.FeeSummary_fee-total__currency_v1YAJ'
+        const totalFees = '.float-right > b'
+        cy.get(securityAgreement).should('have.text', data.securityAgreement)
+        cy.get(serviceFee).should('have.text', data.serviceFee)
+        cy.get(currencyCAD).should('have.text', data.currency)
+        cy.get(totalFees).should('have.text', data.totalFees)
+
+    }
+
+    setSecuredPartyCodeOrNameLookup(data) {
+        cy.get(this.securedPartyCodeOrName).type(data.partyCode)
+        cy.wait(2000)
+        const element = 'span:contains("' + data.partyCodeResult + '")'
+        cy.get(element).click()
+    }
+
+    setPartyIndividual(data) {
+        cy.get(this.partyIndividualPersonRadioButton).check({ force: true })
+        cy.get(this.partyFirstName).type(data.partyFirstName)
+        cy.get(this.partyMiddleName).type(data.partyMiddleName)
+        cy.get(this.partyLastName).type(data.partyLastName)
+        cy.get(this.partyEmailAddress).type(data.partyEmailAddress)
+        cy.get(this.partyAddressCountryDropdown).type(data.partyCountry)
+        cy.get(this.partyAddressCountry).click()
+        cy.get(this.partyAddressLine1Text).type(data.partyAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.partyDeliveryInstructions).type(data.partyDeliveryInstructions)
+        this.clickPartyDoneButton()
+        cy.log("Entered Party Individual Details")
+    }
+
+    verifyPartyIndividual(data) {
+        const partyIndividualName = '.pt-2 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title > .row > .col-9 > div'
+        const partyIndividualAddress = '.pt-2 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2) > .base-address > .address-block > .address-block__info > :nth-child(1)'
+        const partyIndividualEmail = '.pt-2 > .col > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(3)'
+
+    }
+
+    setPartyBusiness(data) {
+        cy.get(this.partyBusinessRadioButton).check({ force: true })
+        cy.get(this.partyBusinessLegalName).type(data.partyBusinessName)
+        this.clickPartyBusinessText()
+        cy.get(this.partyEmailAddress).type(data.partyEmailAddress)
+        cy.get(this.partyAddressCountryDropdown).type(data.partyCountry)
+        cy.get(this.partyAddressCountry).click()
+        cy.get(this.partyAddressLine1Text).type(data.partyAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.partyDeliveryInstructions).type(data.partyDeliveryInstructions)
+        this.clickPartyDoneButton()
+        cy.log("Party Business Details got Entered")
+    }
+
+    setDebtorIndividual(data) {
+        cy.get(this.addIndividualDebtor).click()
+        cy.get(this.debtorFirstName).type(data.debtorFirstName)
+        cy.get(this.debtorMiddleName).type(data.debtorMiddleName)
+        cy.get(this.debtorLastName).type(data.debtorLastName)
+        cy.get(this.debtorBirthdateMonthDropdown).type(data.debtorBirthMonth)
+        cy.get(this.debtorBirthMonthText).click()
+        cy.get(this.debtorBirthdateDay).type(data.debtorBirthDay)
+        cy.get(this.debtorBirthdateYear).type(data.debtorBirthYear)
+        cy.get(this.debtorEmailAddress).type(data.debtorEmailAddress)
+        this.setDebtorAddressCountry(data.debtorCountry)
+        cy.get(this.debtorAddressLine1Text).type(data.debtorAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.debtorDeliveryInstructions).type(data.debtorDeliveryInstructions)
+        this.clickDebtorDoneButton()
+        cy.log("Debtor Individual Details got Entered")
+    }
+
+    setDebtorBusiness(data) {
+        cy.get(this.addBusinessDebtor).click()
+        cy.get(this.debtorBusinessLegalName).type(data.debtorBusinessName)
+        cy.get(this.debtorBusinessText).click()
+        cy.get(this.debtorEmailAddress).type(data.debtorEmailAddress)
+        this.setDebtorAddressCountry(data.debtorCountry)
+        cy.get(this.debtorAddressLine1Text).type(data.debtorAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.debtorDeliveryInstructions).type(data.debtorDeliveryInstructions)
+        this.clickDebtorDoneButton()
+        cy.log("Debtor Business Details got Entered")
+    }
+
+    setVehicleCollateral(data, setVehicleType) {
+        cy.get(this.addVehicleCollateral).click()
+
+        if (setVehicleType === true) {
+            this.setVehicleTypeDropdown(data.type)
+        }
+
+        cy.get(this.serialOrVINNumber).type(data.seialOrVINNumber)
+
+
+        if (data.type == "Manufactured Home (MH)") {
+            cy.get(this.manufacturedHomeRegistrationNumber).type(data.mhrNumber)
+        }
+
+        cy.get(this.yearText).type(data.year)
+        cy.get(this.makeText).type(data.make)
+        cy.get(this.modelText).type(data.model)
+        this.clickCollateralDoneButton()
+    }
+
+    verifyVehicleCollateral(data) {
+        const vehicleType = '.pl-4'
+        const vehicleYear = '.vehicle-row > :nth-child(2)'
+        const vehicleMake = '.vehicle-row > :nth-child(3)'
+        const vehicleModel = '.vehicle-row > :nth-child(4)'
+        const vehicleSerialNumber = '.Collateral_vehicle-cell_3sYma'
+        cy.get(vehicleType).should('have.text', " " + data.vehicleType + " ")
+        cy.get(vehicleYear).should('have.text', " " + data.year + " ")
+        cy.get(vehicleMake).should('have.text', data.make)
+        cy.get(vehicleModel).should('have.text', data.model)
+        cy.get(vehicleSerialNumber).should('have.text', " " + data.seialOrVINNumber + " ")
+    }
+
+    verifyGeneralCollateral(data) {
+        const generalCollateralText = '.px-6 > .col'
+        cy.get(generalCollateralText).should('have.text', " " + data + " ")
+
+    }
+
 }
+
 export const securityAgreementPage = new SecurityAgreementPage()
+
+
+
