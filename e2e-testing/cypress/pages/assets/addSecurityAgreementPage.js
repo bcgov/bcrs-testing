@@ -40,12 +40,15 @@ export class AddSecurityAgreementPage {
             // cy.get(element1).click()
             // cy.log("Other Registrations dropdown got clicked")
 
-            const element2 = '#list-item-234-18 > .v-list-item__content > .row > .col-auto > .v-btn > .v-btn__content > .v-icon'
+            const element2 = '#list-item-242-18 > .v-list-item__content > .row > .col-auto > .v-btn > .v-btn__content > .v-icon'
             cy.wait(2000)
+            
             //cy.get(element2).scrollIntoView({ offset: { top: 150, left: 0 } })
             cy.get(element2).click()
             cy.wait(2000)
+            
             cy.get(element2).click()
+            cy.get(element2).trigger('mousedown')
             cy.log("Standard Registrations dropdown got clicked")
         }
     }
@@ -57,6 +60,7 @@ export class AddSecurityAgreementPage {
         }
         if (user == 'gov') {
             const element = 'span:contains("' + data + '")'
+            cy.get(element).trigger('mousedown')
             cy.get(element).click()
         }
 

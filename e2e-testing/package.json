@@ -4,8 +4,9 @@
   "description": "running Cypress ",
   "main": "index.js",
   "scripts": {
-    "info": "cypress info"
-  },
+    "info": "cypress info",
+    "assetsRepairersLienTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/repairersLienTest.js --headed"
+},
   "author": "",
   "license": "ISC",
   "private": true,

@@ -1,0 +1,21 @@
+name: RepairersLien TEST Environment
+on: [push]
+  workflow_dispatch: 
+jobs:
+  Regression:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: e2e-testing
+    steps:
+      - uses: actions/checkout@v2
+        with:
+         ref: assets
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: npm install
+
+      - run: npm run assetsRepairersLienTest

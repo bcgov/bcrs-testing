@@ -9,7 +9,7 @@ import feeData from '../../../fixtures/assets/fees.json'
 import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
-import registrationType from '../../../fixtures/assets/registrationTypesData.json' 
+import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
 
 describe('PPR Dashboard test Suite ', function () {
@@ -62,6 +62,8 @@ describe('PPR Dashboard test Suite ', function () {
         securityAgreementPage.setPartyBusiness(partyData.partyBusiness)
 
         securityAgreementPage.setSecuredPartyCodeOrNameLookup(partyData.securedPartyCode)
+
+        securityAgreementPage.clickSaveAndResumeLater()
 
         securityAgreementPage.setDebtorIndividual(debtorData.debtorIndividual)
 

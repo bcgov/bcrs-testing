@@ -53,7 +53,7 @@ describe('PPR Dashboard test Suite ', function () {
 
     securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.bo, true)
 
-    securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
+    //securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral.bo)
 
     securityAgreementPage.clickReviewAndConfirmButton()
 

@@ -602,6 +602,11 @@ export class SecurityAgreementPage {
 
     }
 
+    clickSaveAndResumeLater(){
+        cy.get(this.saveAndResumeLaterButton).click()
+        cy.log("Draft got added to the table")
+    }
+
 }
 
 export const securityAgreementPage = new SecurityAgreementPage()
