@@ -1,6 +1,5 @@
 name: RepairersLien TEST Environment
 on: [push]
-  workflow_dispatch: 
 jobs:
   Regression:
     runs-on: windows-latest
