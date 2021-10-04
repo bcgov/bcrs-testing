@@ -12,10 +12,10 @@ import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
 
-describe('PPR Dashboard test Suite ', function () {
+describe('Standard Registrations Test Suite ', function () {
     // Setup data and login as BC Service Card
     
-    it('Security Agreement Test Case', function () {
+    it('Land Tax Deferment Lien on a Manufactured Home (LT) Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 

@@ -12,7 +12,7 @@ import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
 
-describe('PPR Dashboard test Suite ', function () {
+describe('Standard Registrations Test Suite ', function () {
     // Setup data and login as BC Service Card
     // before(function () {
     //     cy.fixture('relationship/assetsBCSC').then(function (data) {

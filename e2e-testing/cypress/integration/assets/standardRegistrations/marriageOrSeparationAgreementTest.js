@@ -11,10 +11,10 @@ import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
-describe('PPR Dashboard test Suite ', function () {
+describe('Standard Registrations Test Suite ', function () {
     // Setup data and login as BC Service Card
 
-    it('Security Agreement Test Case', function () {
+    it('Marriage/Seperation Agreement affecting Manufactured Home under Family Law Act (FR) Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 

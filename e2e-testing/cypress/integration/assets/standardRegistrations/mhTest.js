@@ -12,10 +12,10 @@ import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
 
-describe('PPR Dashboard test Suite ', function () {
+describe('Standard Registrations Test Suite ', function () {
     // Setup data and login as BC Service Card
 
-    it('Security Agreement Test Case', function () {
+    it('Tax Lien under S. 27/28 of Manufactured Home Act (MH) Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 

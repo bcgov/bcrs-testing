@@ -12,10 +12,10 @@ import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
 
-describe('PPR Dashboard test Suite ', function () {
+describe('Standard Registrations Test Suite ', function () {
     // Setup data and login as BC Service Card
 
-    it('Security Agreement Test Case', function () {
+    it('Forestry - Contractor Lien (FL) Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
