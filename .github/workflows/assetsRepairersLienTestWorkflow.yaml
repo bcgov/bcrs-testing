@@ -1,5 +1,5 @@
 name: RepairersLien TEST Environment
-on: [push]
+on:
 jobs:
   Regression:
     runs-on: windows-latest
