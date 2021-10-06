@@ -1,5 +1,5 @@
 name: RepairersLien TEST Environment
-on:
+on: [push]
 jobs:
   Regression:
     runs-on: windows-latest
@@ -16,5 +16,3 @@ jobs:
         with:
           node-version: "12.x"
       - run: npm install
-
-      - run: npm run assetsRepairersLienTest
