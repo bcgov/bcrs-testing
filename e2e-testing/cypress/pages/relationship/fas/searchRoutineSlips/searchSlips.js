@@ -14,6 +14,11 @@ export class RoutineSlipSearch
         cy.get('#receiptNumber').type('1234{enter}') //Enter Receipt Slip Number
     }
 
+    entityNumber()
+    {
+        cy.get('#entityNumber').type('Hemin{enter}') //Initiator Agent Name
+    }
+
     datePicker()
     {
         cy.get('[data-test=input-date-picker]').click() // Date picker Field
@@ -28,7 +33,7 @@ export class RoutineSlipSearch
     slipStatus()
     {
         cy.get('.v-select__selections').click() // Click on Status Slip Drop down
-        cy.get('#list-item-84-0').click() // Click on Active Status
+        cy.get('#list-item-94-0 > .v-list-item__content > .v-list-item__title').click() // Click on Active Status
         // A Random Status Selection array needs to be set using drop down items as list.
     }
 
@@ -37,9 +42,9 @@ export class RoutineSlipSearch
         cy.get('#folioNumber').type('1234{enter}') //Enter Folio Slip Number
     }
 
-    initiatorAgent()
+    chequeNumber()
     {
-        cy.get('#initiator').type('Jyoti{enter}') //Initiator Agent Name
+        cy.get('#chequeReceiptNumber').type('{enter}') //Enter Cheque Number
     }
 
     totalAmount()
@@ -50,14 +55,6 @@ export class RoutineSlipSearch
     clearFilter()
     {
         cy.get('.clear-filter').click() //Clear Filter
-    }
-
-    multipleFilterSearch()
-    {
-        cy.get('#initiator').type('Jyoti') //Initiator Agent Name
-        //cy.get('.v-select__selections').click() // Click on Status Slip Drop down
-        //cy.get('#list-item-124-0 > .v-list-item__content').click() // Click on Active Status
-        cy.get('#routingSlipNumber').type('Test{enter}') //Enter Routine Slip Number
     }
     
 }

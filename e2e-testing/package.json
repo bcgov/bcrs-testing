@@ -11,7 +11,7 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "cypress": "^8.4.0",
+    "cypress": "^8.6.0",
     "cypress-log-to-output": "^1.1.2",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
@@ -23,8 +23,9 @@
     "log": "^6.0.0"
   },
   "dependencies": {
-    "browserstack-cypress-cli": "^1.5.1",
+    "browserstack-cypress-cli": "^1.0.1",
     "cypress-plugin-tab": "^1.0.5",
+    "moment": "^2.29.1",
     "puppeteer": "^5.5.0"
   },
   "browserslist": {
