@@ -1,6 +1,7 @@
 {
     "feeSummary": {
         "sa": {
+            "setYears": "5",
             "title": " Security Agreement ",
             "titleAmount": " $25.00 ",
             "hint": "5 Years @ $5.00/year",
@@ -21,6 +22,7 @@
             "totalAmount": "$501.50"
         },
         "fl": {
+            "setYears": "3",
             "title": " Forestry - Contractor Lien ",
             "titleAmount": " $15.00 ",
             "hint": "3 Years @ $5.00/year",
@@ -41,6 +43,7 @@
             "totalAmount": "$501.50"
         },
         "fs": {
+            "setYears": "25",
             "title": " Forestry - Sub-contractor Charge ",
             "titleAmount": " $125.00 ",
             "hint": "25 Years @ $5.00/year",
@@ -274,6 +277,15 @@
             "title": " Automation Test ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "totalDischarge": {
+            "title": " Total Discharge ",
+            "titleAmount": " No Fee ",
             "serviceFee": " Service Fee ",
             "serviceFeeAmount": " No Fee ",
             "currency": "CAD",

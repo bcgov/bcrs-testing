@@ -21,13 +21,13 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 
         addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.sg)
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.clickRegistrationLengthInfiniteButton()
 
         feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.sg)
 
@@ -35,7 +35,9 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.clickRegistrationLengthRadioButton()
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.sa.setYears)
+
+        securityAgreementPage.clickRegistrationLengthInfiniteButton()
 
         securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
 
@@ -55,13 +57,13 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.tr, true)
 
-        securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
+       // securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
 
-        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.sg)
+        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.sg.description)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 
-        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.sg)
+        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.sg.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 

@@ -21,7 +21,7 @@ describe('Other Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 

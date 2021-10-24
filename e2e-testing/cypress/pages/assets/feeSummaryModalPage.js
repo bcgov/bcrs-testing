@@ -28,6 +28,17 @@ export class FeeSummaryModalPage {
         cy.get(this.totalAmount).should('have.text', data.totalAmount)
     }
 
+    verifyTotalDischargeFeeModal(data) {
+
+        cy.get(this.title).should('have.text', data.title)
+        cy.get(this.titleAmount).should('have.text', data.titleAmount)
+        cy.get(this.serviceFee).should('have.text', data.serviceFee)
+        cy.get(this.serviceFeeAmount).should('have.text', data.serviceFeeAmount)
+        cy.get(this.currency).should('have.text', data.currency)
+        cy.get(this.totalFees).should('have.text', data.totalFees)
+        cy.get(this.totalAmount).should('have.text', data.totalAmount)
+    }
+
 }
 
 export const feeSummaryModalPage = new FeeSummaryModalPage()

@@ -29,7 +29,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 
@@ -39,7 +39,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         //securityAgreementPage.clickRegistrationLengthRadioButton()
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.sa.setYears)
 
         feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.sa)
 
@@ -47,7 +47,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.clickRegistrationLengthRadioButton()
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.sa.setYears)
 
         securityAgreementPage.clickTrustIndentureCheckbox()
 
@@ -63,7 +63,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setSecuredPartyCodeOrNameLookup(partyData.securedPartyCode)
 
-        securityAgreementPage.clickSaveAndResumeLater()
+        //securityAgreementPage.clickSaveAndResumeLater()
 
         securityAgreementPage.setDebtorIndividual(debtorData.debtorIndividual)
 
@@ -73,13 +73,13 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.mv, true)
 
-        securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
+        //securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral.mv)
 
-        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.sa)
+        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.sa.description)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 
-        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.sa)
+        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.sa.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 

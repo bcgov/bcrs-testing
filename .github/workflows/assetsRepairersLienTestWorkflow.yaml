@@ -16,3 +16,8 @@ jobs:
         with:
           node-version: "12.x"
       - run: npm install
+
+      - run: npm run assetsRepairersLienTest
+        if: ${{ always() }}
+        env:
+          PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}

@@ -28,26 +28,20 @@ export class AddSecurityAgreementPage {
         }
 
         if (user == 'gov') {
-            const element = '.actions > .container > .v-input > .v-input__control > .v-input__slot > .v-select__slot > #registrationTypeAhead'
+            const element = '.actions > .container > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
             cy.get(element).click()
             cy.log("Govt dropdown got clicked")
 
-            // const element1 = '#list-item-234-16 > .v-list-item__content > .row > .col-auto > .v-btn > .v-btn__content > .v-icon'
-            // cy.wait(2000)
-            // cy.get(element1).scrollIntoView({easing: 'swing'})
-            // cy.get(element1).click()
-            // cy.wait(1000)
-            // cy.get(element1).click()
-            // cy.log("Other Registrations dropdown got clicked")
+            const element1 = '#reg-type-drop-2'
+            cy.wait(2000)
+            cy.get(element1).click()
+            cy.get(element1).trigger('mousedown')
+            cy.log("Other Registrations dropdown got clicked")
 
-            const element2 = '#list-item-242-18 > .v-list-item__content > .row > .col-auto > .v-btn > .v-btn__content > .v-icon'
+            const element2 = '#reg-type-drop-3'
             cy.wait(2000)
-            
-            //cy.get(element2).scrollIntoView({ offset: { top: 150, left: 0 } })
             cy.get(element2).click()
             cy.wait(2000)
-            
-            cy.get(element2).click()
             cy.get(element2).trigger('mousedown')
             cy.log("Standard Registrations dropdown got clicked")
         }

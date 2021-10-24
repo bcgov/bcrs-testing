@@ -1,0 +1,20 @@
+{
+    "securedPartiesTitle": " Secured Parties ",
+    "individualPersonName": " James Automation Test ",
+    "individualPartyAddress": "799 McCallum RdVictoria BC V9B 6A2CanadaParty Delivery Instructions ",
+    "individualPartyEmail": "email@email.com",
+    "individualBusinessName": " HYUNDAI MOTOR FINANCE ",
+    "individualBusinessAddress": "B-6437 Cambie StVancouver BC V5Z 3B2CanadaBusiness Delivery Instructions ",
+    "individualBusinessEmail": "email@test.com",
+    "individualPartyBusinessName": " THE BANK OF NOVA SCOTIA ",
+    "individualPartyBusinessAddress": "212 MAIN ST, PO BOX 4310WHITEHORSE YT Y1A3T3Canada",
+    "securedPartyCode": "21121",
+    "debtorTitle": "Debtors",
+    "individualDebtorName": " John Automation Test ",
+    "individualDebtorAddress": "3320 Jacombs RdRichmond BC V6V 1Z6CanadaDebtor Delivery Instructions ",
+    "individualDebtorEmail": "email@email.com",
+    "individualDebtorBirthdate": "April 20, 1965",
+    "businessDebtorName": " PARTY FAVOUR PARTY SERVICE ",
+    "businessDebtorAddress": "Bc-435 North RdCoquitlam BC V3K 3V9CanadaDebtor Business Delivery Instructions ",
+    "businessDebtorEmail": "email@test.com"
+}

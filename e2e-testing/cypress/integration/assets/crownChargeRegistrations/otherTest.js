@@ -22,11 +22,13 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 
         addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.crownCharge.ot)
+
+        securityAgreementPage.setOtherCrownChargeRegistration("Automation Test")
 
         marriageOrSeparationAgreementPage.verifyRegistrationLength(partyData.lengthOfRegistration)
 

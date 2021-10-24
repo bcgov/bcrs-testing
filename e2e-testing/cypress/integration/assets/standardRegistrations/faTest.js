@@ -21,13 +21,13 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 
         addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.fa)
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.clickRegistrationLengthInfiniteButton()
 
         feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.fa)
 

@@ -89,8 +89,8 @@ export class SecurityAgreementPage {
         this.makeText = 'input#txt-make'
         this.modelText = 'input#txt-model'
         this.collateralDoneButton = 'button#done-btn-collateral'
-        this.generalCollateralText = 'textarea#generalCollateral'
-        this.generalCollateralDescription = '.px-6 > .col'
+        this.generalCollateralText = '#general-collateral-new-desc'
+        this.generalCollateralDescription = '.general-collateral-summary > .ma-0'
 
         //Review and Confirm Next Button
 
@@ -119,6 +119,12 @@ export class SecurityAgreementPage {
         //Cancel Button
 
         this.cancelButton = 'button#reg-cancel-btn'
+
+        //Other Registration
+
+        this.statuteName = '#dialog-text-field'
+        this.startRegistrationButton = '#accept-btn'
+        this.cancelRegistrationButton = '#cancel-btn'
 
     }
 
@@ -584,11 +590,11 @@ export class SecurityAgreementPage {
     }
 
     verifyVehicleCollateral(data) {
-        const vehicleType = '.pl-4'
+        const vehicleType = '.pl-4 > div'
         const vehicleYear = '.vehicle-row > :nth-child(2)'
         const vehicleMake = '.vehicle-row > :nth-child(3)'
         const vehicleModel = '.vehicle-row > :nth-child(4)'
-        const vehicleSerialNumber = '.Collateral_vehicle-cell_3sYma'
+        const vehicleSerialNumber = '.VehicleCollateral_vehicle-cell_2yvB9'
         cy.get(vehicleType).should('have.text', " " + data.vehicleType + " ")
         cy.get(vehicleYear).should('have.text', " " + data.year + " ")
         cy.get(vehicleMake).should('have.text', data.make)
@@ -597,7 +603,7 @@ export class SecurityAgreementPage {
     }
 
     verifyGeneralCollateral(data) {
-        const generalCollateralText = '.px-6 > .col'
+        const generalCollateralText = '.general-collateral-summary > .ma-0'
         cy.get(generalCollateralText).should('have.text', " " + data + " ")
 
     }
@@ -605,6 +611,12 @@ export class SecurityAgreementPage {
     clickSaveAndResumeLater(){
         cy.get(this.saveAndResumeLaterButton).click()
         cy.log("Draft got added to the table")
+    }
+
+    setOtherCrownChargeRegistration(data){
+        cy.get(this.statuteName).type(data)
+        cy.get(this.startRegistrationButton).click()
+        cy.log("Entered Other Registration")
     }
 
 }

@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "info": "cypress info",
-    "assetsRepairersLienTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/repairersLienTest.js --headed"
-},
+    "assetsRepairersLienTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/repairersLienTest.js --headed",
+    "assetsStandardRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed"
+  },
   "author": "",
   "license": "ISC",
   "private": true,
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "browserstack-cypress-cli": "^1.5.1",
+    "cypress-downloadfile": "^1.2.1",
     "cypress-plugin-tab": "^1.0.5",
     "puppeteer": "^5.5.0"
   },

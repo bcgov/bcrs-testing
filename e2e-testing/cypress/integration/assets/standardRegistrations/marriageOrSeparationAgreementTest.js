@@ -20,7 +20,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(credentials)
+        landingPage.bcscLogin(Cypress.env('credentials'))
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
 
@@ -48,7 +48,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.mh, false)
 
-        securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
+        //securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 

@@ -1,3 +1,5 @@
+require('cypress-downloadfile/lib/downloadFileCommand')
+
 Cypress.Commands.add('bcscLogin', (url, username, password) => {
   cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 60000 }).then(sessionItems => {
     Object.keys(sessionItems).forEach(key => {
