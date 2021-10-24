@@ -7,10 +7,9 @@ import { securityAgreementPage } from '../../../pages/assets/securityAgreementPa
 import partyData from '../../../fixtures/assets/partyData.json'
 import debtorData from '../../../fixtures/assets/debtorData.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
-import registrationType from '../../../fixtures/assets/registrationTypesData.json'
+
 
 describe('Standard Registrations Test Suite ', function () {
   // Setup data and login as BC Service Card
