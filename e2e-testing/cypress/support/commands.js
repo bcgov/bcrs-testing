@@ -4,7 +4,25 @@ Cypress.Commands.add('bcscLogin', (url, username, password) => {
       sessionStorage.setItem(key, sessionItems[key])
     })
   })
-})
+});
+
+Cypress.Commands.add('forceVisit', url => {
+  cy.window().then(win => {
+    return win.open(url, '_self');
+  });
+});
+
+Cypress.Commands.add("saveLocalStorage", () => {
+  Object.keys(localStorage).forEach(key => {
+    LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+  });
+});
+
+Cypress.Commands.add("restoreLocalStorage", () => {
+  Object.keys(LOCAL_STORAGE_MEMORY).forEach(key => {
+    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+  });
+});
 
 Cypress.Commands.add('authReset', (url) => {
   cy.request({
