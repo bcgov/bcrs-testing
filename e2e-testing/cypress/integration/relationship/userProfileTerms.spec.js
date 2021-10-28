@@ -1,4 +1,4 @@
-import { decideBusiness } from '../../pages/relationship/decideBusiness'
+import { decideBusiness } from '../../pages/entity/decideBusiness'
 import { userProfileTerms } from '../../pages/relationship/userProfileTerms'
 
 describe('User Profile Terms of Use test Suite ', function () {

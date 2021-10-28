@@ -1,4 +1,4 @@
-import {decideBusiness} from '../../pages/relationship/decideBusiness'
+import {decideBusiness} from '../../pages/entity/decideBusiness'
 
 const testData = require('../../fixtures/relationship/nameRequestData.json');
 
