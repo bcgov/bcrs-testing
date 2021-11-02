@@ -2,9 +2,6 @@
 import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
-//import { addSingleTransaction } from "../../../../../pages/relationship/fas/addManualTransaction/singleManualTransaction"
-//import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/requestRefundApproved"
-//import { refundRequestAuthorized } from "../../../../../pages/relationship/fas/refundRequest/refundRequestAuthorized"
 
 // The following test is with a a User that has been assigned to Payment Collection user group
 describe('RS Cheque', function () 
