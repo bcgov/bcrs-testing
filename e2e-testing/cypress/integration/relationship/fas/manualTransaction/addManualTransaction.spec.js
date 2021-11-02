@@ -1,5 +1,5 @@
 import { addSingleTransaction } from "../../../../pages/relationship/fas/addManualTransaction/singleManualTransaction"
-import { loginFAS } from "../../../../pages/relationship/fas/addRouteSlip/loginFAS"
+import { loginFAS } from "../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 import { columnListSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/columnSearchList"
 import { resultSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/searchResult"
 import { routineSlipSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/searchSlips"

@@ -4,9 +4,18 @@ export class AddSingleTransaction
     {
     }
 
-    visit (url)
+    /*visit (url)
     {
         cy.visit(url)
+    }*/
+
+    fasUrl ()
+    {
+        cy.fixture('relationship/fasRelationsLogin.json').then(urlData)
+        {
+            this.urlData = this.urlData
+            this.testFas = Cypress.env('test-fas')
+        }
     }
 
     transactionAdd()
@@ -16,15 +25,17 @@ export class AddSingleTransaction
 
     changeOfDirectorFilling()
     {
-        cy.get('[data-test=input-filing-type]').type('change{enter}')
-        cy.get('#list-item-209-2').click() // Search for Director and click from drop down
+        cy.get('[data-test=input-filing-type]').type('Notice of Change - Benefit Company{enter}')
+        //cy.get('#list-item-288-2').click() // Search for Director and click from drop down
+        //cy.contains('Change of Director - Benefit Company').click()
         cy.get('[data-test=txt-quantity-0]').type('1{enter}') // Add Quantity
         cy.get('[data-test=txt-incorporation-0]').type('13421{enter}') // Add Reference/Incorportation Number
     }
 
     amalgamationFilling()
     {
-        cy.get('[data-test=input-filing-type]').type('ama{enter}').cy.get('#list-item-250-0').click() // Search for Amalgamation and click from drop down
+        cy.get('[data-test=input-filing-type]').type('ama{enter}')
+        cy.get('#list-item-215-0').click() // Search for Amalgamation and click from drop down
         cy.get('[data-test=txt-quantity-0]').type('1{enter}') // Add Quantity
         cy.get('[data-test=txt-incorporation-0]').type('13421{enter}') // Add Reference/Incorportation Number
     }
@@ -51,7 +62,7 @@ export class AddSingleTransaction
 
     addTranscationFilling()
     {
-        cy.get('.d-inline-flex > [data-test=btn-add-transaction] > .v-btn__content > span').click() // Add Transaction Button
+        cy.get('.d-inline-flex > [data-test=btn-add-transaction]').click() // Add Transaction Button
     }
 
     cancelTransaction()
