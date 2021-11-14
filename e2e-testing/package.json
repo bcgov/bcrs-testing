@@ -4,24 +4,32 @@
   "description": "running Cypress ",
   "main": "index.js",
   "scripts": {
-    "info": "cypress info"
+    "cypress": "npx cypress run --spec cypress/integration/entity/benefitNumCompany.spec.js --browser chrome"
   },
   "author": "",
   "license": "ISC",
   "private": true,
   "devDependencies": {
+    "@playwright/test": "^1.16.3",
+    "@types/node": "^11.13.8",
     "cypress": "^5.6.0",
+    "cypress-downloadfile": "^1.2.1",
     "cypress-log-to-output": "^1.1.2",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^1.6.2",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "image-size": "^0.8.3"
+    "image-size": "^0.8.3",
+    "playwright-chromium": "^1.16.3",
+    "typescript": "3.9.7"
   },
   "dependencies": {
     "browserstack-cypress-cli": "^1.5.1",
+    "pdf-parse": "^1.1.1",
     "puppeteer": "^5.5.0"
   },
   "browserslist": {

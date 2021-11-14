@@ -2,11 +2,6 @@
 
 export class DecideBusiness {
     constructor() {
-        this.userName = '#csn';
-        this.passcode = '#passcode';
-        this.continueButton = '#continue';
-        this.submitButton = '#btnSubmit';
-
         this.manageExistingBusinessButton = 'button:contains("Manage an Existing Business")';
         this.requestANameButton = 'button:contains("Request a Name")';
         this.selectAnActionDropdown = 'label:contains("Select an Action")';
@@ -44,13 +39,8 @@ export class DecideBusiness {
         this.listOfItemsInDropdown = 'div[class*="menuable__content__active"] div[role="listbox"]>div>span:nth-Child(1)';
         this.corporationOrRegistrationNumberField = 'label:contains("Incorporation or Registration Number") + input';
         this.continueToPaymentButton = '#confirm-nr-continue-btn';
-        this.cancelAndReturnToPayBC = 'input[name="cancelButton"]';
-        this.goBackFromPayment = 'span:contains("Go Back")';
-        this.cancelNameRequestButton = '#CANCEL-btn';
         this.cancelNameRequestConfirmButton = '#cancel-nr-btn';
         this.backToNameRequestFormButton = '#back-to-search-btn';
-        this.protectedAccountButton = 'a[href="/account/protected/account"]';
-        this.virturalCardOption = '#tile_btn_virtual_device_div_id';
         this.cardNumber = 'input[name="trnCardNumber"]';
         this.cvvNumber = 'input[name="trnCardCvd"]';
         this.submitPaymentDetails = 'input[name="submitButton"]';
@@ -70,11 +60,6 @@ export class DecideBusiness {
     manageExistingBusiness() {
         cy.get(this.manageExistingBusinessButton).click({force: true})
     }
-
-    navigateToRequestANamePage() {
-        cy.get(this.requestANameButton).click({force: true});
-        cy.get(this.selectAnActionDropdown).should('be.visible');
-    };
 
     newRequestDetailsForm(selectionAction, selectJurisdiction, selectBusinessType, designationOrBusinessHomeJurisdictionType, name) {
         cy.get(this.selectAnActionDropdown).click({force: true});

@@ -1,8 +1,8 @@
 {
     "projectId": "5vr1a5",
-    "defaultCommandTimeout": 100000,
+    "defaultCommandTimeout": 200000,
     "pageLoadTimeout": 200000,
-    "video": true,
-    "experimentalNetworkStubbing": true,
-    "chromeWebSecurity": false
+    "video": false,
+    "chromeWebSecurity": false,
+    "experimentalSessionSupport": true
 }

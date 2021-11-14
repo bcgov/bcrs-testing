@@ -46,10 +46,10 @@ class PuppeteerPageObject {
    */
   async init () {
     this.browser = await puppeteer.launch({
-      headless: this.headless,
-      args: this.args,
-      ...this.launchOptions
-    })
+      headless: false,
+      args:['--user-data-dir=C:/Users/brijesh/AppData/Local/Google/Chrome/User Data/Default'],
+      executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+    });
 
     this.page = await this.browser.newPage()
   }
