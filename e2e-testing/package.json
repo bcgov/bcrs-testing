@@ -4,7 +4,7 @@
   "description": "running Cypress ",
   "main": "index.js",
   "scripts": {
-    "cypress": "npx cypress run --spec cypress/integration/entity/benefitNumCompany.spec.js --browser chrome"
+    "cypress": "npx cypress run --spec cypress/integration/entity/directorChange.spec.js --browser chrome"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "browserstack-cypress-cli": "^1.5.1",
-    "pdf-parse": "^1.1.1",
+    "pdf.js-extract": "^0.1.5",
     "puppeteer": "^5.5.0"
   },
   "browserslist": {

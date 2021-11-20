@@ -11,13 +11,13 @@ const selectors = {
     elementAfterLogin: 'a[aria-current="page"]'
 }
 
-export const LoginToApp = async function (): Promise<{ cookies: Cookie[], localStorage: KeyValuePair[] }> {
+export const LoginToApp = async function (url): Promise<{ cookies: Cookie[], localStorage: KeyValuePair[] }> {
     const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext();
     await context.setDefaultTimeout(200000);
     await context.setDefaultNavigationTimeout(200000);
     const page = await context.newPage();
-    await page.goto('https://test.bcregistry.ca/business/auth/signin/bcsc');
+    await page.goto(url);
     await page.waitForSelector(selectors.virturalCardOption);
     await page.click(selectors.virturalCardOption);
     await page.waitForSelector(selectors.userName);

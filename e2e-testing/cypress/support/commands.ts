@@ -1,7 +1,7 @@
 import { Cookie } from "playwright-chromium";
 import { KeyValuePair } from "../models";
 
-Cypress.Commands.add("loginApp", () => {
+Cypress.Commands.add("loginApp", (url) => {
   cy.on('window:load', (win: any) => {
     const checkOverride = () => {
       if (win.prototype && win.prototype.isInIFrame) {
@@ -19,7 +19,7 @@ Cypress.Commands.add("loginApp", () => {
 
     checkOverride();
   });
-  cy.task('LoginToApp').then((data: { cookies: Cookie[], localStorage: KeyValuePair[] }) => {
+  cy.task('LoginToApp',url).then((data: { cookies: Cookie[], localStorage: KeyValuePair[] }) => {
     const getCookieSameSite = (sameSite: "Strict" | "Lax" | "None"): Cypress.SameSiteStatus => {
       switch (sameSite) {
         case 'Strict':

@@ -5,7 +5,7 @@ describe('Validate incorporation of numbered benefit company', function () {
         Cypress.config('taskTimeout', 300000)
         cy.task('deleteDownloadsFolder');
         cy.task('log', 'Test started');
-        cy.loginApp();
+        cy.loginApp(Cypress.env('BCRS_LOGIN_TEST'));
         cy.visit(Cypress.env('BCRS_DOMAIN') + Cypress.env('DECIDE_BUSINESS_ENDPOINT'));
         cy.wait(4000);
 

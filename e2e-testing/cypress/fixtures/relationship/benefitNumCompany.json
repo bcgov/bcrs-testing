@@ -19,16 +19,23 @@
     }
   },
   "addPeopleAndRolesForm": {
-    "party_address": {
+    "party_address_director": {
       "mailing": {
-        "street": "5741 Kathleen Dr",
-        "city": "Chilliwack",
-        "postal_code": "V2R 3Y8"
+        "street": "Bc-3315 Tecumseh Rd E",
+        "city": "Windsor",
+        "postal_code": "N8W 1H4"
       },
       "delivery": {
         "street": "6754 Rue De Honfleur",
         "city": "Trois-Rivières",
         "postal_code": "G9C 1L4"
+      }
+    },
+    "party_address_completing_party": {
+      "mailing": {
+        "street": "5741 Kathleen Dr",
+        "city": "Chilliwack",
+        "postal_code": "V2R 3Y8"
       }
     },
     "corporation_and_firm": {

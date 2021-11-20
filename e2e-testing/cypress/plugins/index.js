@@ -3,11 +3,24 @@ const pdf = require("pdf-parse");
 const path = require('path')
 const fs = require("fs");
 const {Cookie} = require("playwright-chromium");
+let PDFExtract = require('../../node_modules/pdf.js-extract/lib').PDFExtract;
+let pdfExtract = new PDFExtract();
 
-const parsePdf =async (pdfName) =>  {
-    let dataBuffer = fs.readFileSync(pdfName);
-    return await pdf(dataBuffer)
+const parsePdf2 = async (pdfName) => {
+    let data_local = [];
+    return new Promise((resolve, reject) => {
+        pdfExtract.extract(pdfName, {} /* options*/, function (err, data) {
+            if (err) return console.log(err);
+            data.pages.forEach((page)=>{
+                let lines_page1 = PDFExtract.utils.pageToLines(page, 2);
+                let rows = PDFExtract.utils.extractTextRows(lines_page1);
+                data_local.push(rows);
+            });
+            resolve(data_local);
+        });
+    });
 }
+
 
 module.exports = (on, config) => {
     on('before:browser:launch', (browser, launchOptions) => {
@@ -17,7 +30,6 @@ module.exports = (on, config) => {
         if (browser.family === 'chromium' && browser.name !== 'electron') {
             // launchOptions.extensions.push(`${process.cwd()}/cypress/plugins/ignore-x-frame-headers`);
             // console.log(launchOptions.extensions)
-            launchOptions.args.push('--start-fullscreen');
             launchOptions.preferences.default['profile'] = {
                 default_content_setting_values: {
                     automatic_downloads: 1,
@@ -52,7 +64,7 @@ module.exports = (on, config) => {
     on('task', {LoginToApp});
     on('task', {
         getPdfContents(pdfName) {
-            return parsePdf(pdfName);
+            return parsePdf2(pdfName);
         }
     });
     on('task', {

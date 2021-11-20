@@ -1,5 +1,6 @@
 const data = require('../../fixtures/relationship/benefitNumCompany.json');
 const testDataPayment = require('../../fixtures/relationship/nameRequestData.json');
+import {common} from './common'
 
 export class BenefitNumCompany {
     constructor() {
@@ -22,6 +23,7 @@ export class BenefitNumCompany {
         this.contactEmail = '#business-contact-info #txt-email'
         this.confirmContactEmail = '#business-contact-info #txt-confirm-email'
         this.phoneNumber = '#business-contact-info #txt-phone'
+
         this.buttonAddPeopleAndRoles = 'a[href="/businesses/create/add-people-and-roles"][id="review-confirm-btn"]'
 
         //add people and roles form elements
@@ -32,11 +34,16 @@ export class BenefitNumCompany {
         this.mailingPostalCodePeopleAndRoles = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Postal Code"]/following-sibling::input[starts-with(@id,"input")]'
         this.mailingCountryPeopleAndRole = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Country"]'
         this.mailingProvicePeopleAndRole = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Province"]'
-        this.deliveryStreetPeopleAndRoles = '//div[text()="Delivery Address"]/following-sibling::div//input[starts-with(@id,"street-address")]'
-        this.deliveryCityPopleAndRoles = '//div[text()="Delivery Address"]/following-sibling::div//label[text()="City"]/following-sibling::input[starts-with(@id,"input")]'
-        this.deliveryPostalCodePeopleAndRoles = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Postal Code"]/following-sibling::input[starts-with(@id,"input")]'
-        this.deliveryCountryPeopleAndRoles = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Country"]'
-        this.deliveryProvincePeopleAndRoles = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[contains(text(),"Province")]'
+        this.mailingStreetDirector = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//input[starts-with(@id,"street-address")]'
+        this.mailingCityDirector = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="City"]/following-sibling::input[starts-with(@id,"input")]'
+        this.mailingPostalCodeDirector = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"][@class="address-wrapper"]//label[text()="Postal Code"]/following-sibling::input[starts-with(@id,"input")]'
+        this.mailingCountryDirector = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"][@class="address-wrapper"]//label[text()="Country"]'
+        this.mailingProviceDirector = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Province"]'
+        this.deliveryStreetDirector = '//div[text()="Delivery Address"]/following-sibling::div//input[starts-with(@id,"street-address")]'
+        this.deliveryCityDirector = '//div[text()="Delivery Address"]/following-sibling::div//label[text()="City"]/following-sibling::input[starts-with(@id,"input")]'
+        this.deliveryPostalCodeDirector = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Postal Code"]/following-sibling::input[starts-with(@id,"input")]'
+        this.deliveryCountryDirector = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Country"]'
+        this.deliveryProvinceDirector = '//div[text()="Delivery Address"]/following-sibling::div[@class="address-wrapper"]//label[contains(text(),"Province")]'
         this.addCorporationOrFirm = '#btn-add-corp'
         this.firmName = '#firm-name'
         this.corporateMailingAddressStreet = '[class*="org-name-container"] ~ div [name="address-form"] [id^="street-address"]'
@@ -45,6 +52,9 @@ export class BenefitNumCompany {
         this.corporateMailingAddressCountry = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[text()="Country"]'
         this.corporateMailingAddressProvince = '//div[text()="Mailing Address"]/following-sibling::div[@class="address-wrapper"]//label[contains(text(),"Province")]'
         this.createShareStructure = 'a[href="/businesses/create/create-share-structure"][id="review-confirm-btn"]'
+        this.addPersonButton = '#btn-add-person'
+        this.personFirstName = '#person__first-name'
+        this.personLastName  = '#person__last-name'
 
         //Add share class form
         this.buttonAddShareClass = '#btn-start-add-cp'
@@ -97,7 +107,7 @@ export class BenefitNumCompany {
 
     fillDefineYourCompanyForm() {
         cy.get(this.nameTranslationCheckbox).click({force: true});
-        cy.get(this.inputNameTranslation).clear().type('Unique Translated name ' + this.getRandomString());
+        cy.get(this.inputNameTranslation).clear().type('Unique Translated name ' + common.getRandomString());
         cy.get(this.doneButton).scrollIntoView().click({force: true});
         this.fillMailingAddressDefineCompany();
         cy.xpath(this.checkboxDefineCompanySameAsMailing).invoke('attr', 'aria-checked').then((checked) => {
@@ -111,16 +121,22 @@ export class BenefitNumCompany {
 
     fillPeopleAndRolesForm() {
         cy.get(this.addCompletingParty).click({force: true});
+        //cy.get(this.addDirector).click({force: true});
+        this.fillMailingAddressCompletingParty();
+        cy.get(this.doneButton).scrollIntoView().click({force: true});
+        cy.get(this.addPersonButton).click({force:true});
+        cy.get(this.personFirstName).type('Director First '+common.getRandomString());
+        cy.get(this.personLastName).type('Director Last '+common.getRandomString());
         cy.get(this.addDirector).click({force: true});
-        this.fillMailingAddressParty();
+        this.fillMailingAddressPartyDirector();
         cy.xpath(this.checkboxPeopleAndRoleSameAsMailing).invoke('attr', 'aria-checked').then((checked) => {
             if (checked === 'true')
                 cy.xpath(this.checkboxPeopleAndRoleSameAsMailing).click({force: true});
         })
-        this.fillDeliveryAddressParty();
+        this.fillDeliveryAddressPartyDirector();
         cy.get(this.doneButton).scrollIntoView().click({force: true});
         cy.get(this.addCorporationOrFirm).click({force: true});
-        cy.get(this.firmName).clear().type('Unique firm ' + this.getRandomString());
+        cy.get(this.firmName).clear().type('Unique firm ' + common.getRandomString());
         this.fillCorporationAndFirmMailingAddress();
         cy.get(this.doneButton).scrollIntoView().click({force: true});
         cy.get(this.createShareStructure).scrollIntoView().click({force: true});
@@ -128,7 +144,7 @@ export class BenefitNumCompany {
 
     fillCreateShareStructureForm() {
         cy.get(this.buttonAddShareClass).click({force: true});
-        cy.get(this.shareClassName).clear().type('S Class ' + this.getRandomString());
+        cy.get(this.shareClassName).clear().type('S Class ' + common.getRandomString());
         this.fillSharesForm();
         cy.get(this.buttonIncorporationAgreement).scrollIntoView().click({force: true});
     }
@@ -139,7 +155,7 @@ export class BenefitNumCompany {
     }
 
     reviewAndConfirmForm() {
-        let dataAsList = this.getDataOutOfJson(data);
+        let dataAsList = common.getDataOutOfJson(data);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.street), 1);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.city), 1);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.postal_code), 1);
@@ -173,7 +189,7 @@ export class BenefitNumCompany {
                     });
                 } else if (file.includes('Incorporation Application')) {
                     cy.task('getPdfContents', 'cypress/downloads/' + file).then((text) => {
-                        let dataAsList = this.getDataOutOfJson(data);
+                        let dataAsList = common.getDataOutOfJson(data);
                         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_contact.email), 1);
                         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_contact.phone), 1);
                         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.name_translation), 1);
@@ -185,7 +201,7 @@ export class BenefitNumCompany {
                 }
                 else if (file.includes('Notice Of Articles')) {
                     cy.task('getPdfContents', 'cypress/downloads/' + file).then((text) => {
-                        let dataAsList = this.getDataOutOfJson(data);
+                        let dataAsList = common.getDataOutOfJson(data);
                         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_contact.email), 1);
                         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_contact.phone), 1);
                         dataAsList.splice(dataAsList.indexOf(data.addPeopleAndRolesForm.corporation_and_firm.mailing.street), 1);
@@ -205,7 +221,7 @@ export class BenefitNumCompany {
     verifyResumeAndDelete() {
         cy.get(this.resumeDraft).click({force: true});
         cy.get(this.reviewAndConfirmPage).click({force: true});
-        let dataAsList = this.getDataOutOfJson(data);
+        let dataAsList = common.getDataOutOfJson(data);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.street), 1);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.city), 1);
         dataAsList.splice(dataAsList.indexOf(data.fillDefineYourCompanyForm.registered_office_address.delivery.postal_code), 1);
@@ -266,33 +282,49 @@ export class BenefitNumCompany {
         cy.get(this.phoneNumber).clear().type(data.fillDefineYourCompanyForm.registered_office_contact.phone);
     }
 
-    fillMailingAddressParty() {
-        let street_name = data.addPeopleAndRolesForm.party_address.mailing.street;
-        cy.xpath(this.mailingStreetPeopleAndRoles).clear().type(street_name + '{backspace}');
+    fillMailingAddressPartyDirector() {
+        let street_name = data.addPeopleAndRolesForm.party_address_director.mailing.street;
+        cy.xpath(this.mailingStreetDirector).clear().type(street_name + '{backspace}');
         cy.wait(500);
-        cy.xpath(this.mailingStreetPeopleAndRoles).type(street_name.substr(street_name.length - 1));
-        cy.xpath('//div[@title="' + data.addPeopleAndRolesForm.party_address.mailing.street + '"]').click({force: true});
-        cy.xpath(this.mailingCityPeopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address.mailing.city);
-        cy.xpath(this.mailingPostalCodePeopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address.mailing.postal_code);
-        cy.xpath(this.mailingCountryPeopleAndRole).click({force: true});
+        cy.xpath(this.mailingStreetDirector).type(street_name.substr(street_name.length - 1));
+        cy.xpath('//div[@title="' + street_name + '"]').click({force: true});
+        cy.xpath(this.mailingCityDirector).clear().type(data.addPeopleAndRolesForm.party_address_director.mailing.city);
+        cy.xpath(this.mailingPostalCodeDirector).clear().type(data.addPeopleAndRolesForm.party_address_director.mailing.postal_code);
+        cy.xpath(this.mailingCountryDirector).click({force: true});
         cy.wait(2000);
         cy.xpath(this.optionCanadaInDropdown).click({force: true});
-        cy.xpath(this.mailingProvicePeopleAndRole).click({force: true});
+        cy.xpath(this.mailingProviceDirector).click({force: true});
         cy.wait(2000);
         cy.xpath(this.optionBritishColumbiaInDropdown).click({force: true});
     }
 
-    fillDeliveryAddressParty() {
-        let street_name = data.addPeopleAndRolesForm.party_address.delivery.street;
-        cy.xpath(this.deliveryStreetPeopleAndRoles).clear().type(street_name + '{backspace}');
+    fillDeliveryAddressPartyDirector() {
+        let street_name = data.addPeopleAndRolesForm.party_address_director.delivery.street;
+        cy.xpath(this.deliveryStreetDirector).clear().type(street_name + '{backspace}');
         cy.wait(500);
-        cy.xpath(this.deliveryStreetPeopleAndRoles).type(street_name.substr(street_name.length - 1));
-        cy.xpath('//div[@title="' + data.addPeopleAndRolesForm.party_address.delivery.street + '"]').click({force: true});
-        cy.xpath(this.deliveryCityPopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address.delivery.city);
-        cy.xpath(this.deliveryPostalCodePeopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address.delivery.postal_code);
-        cy.xpath(this.deliveryCountryPeopleAndRoles).click({force: true});
+        cy.xpath(this.deliveryStreetDirector).type(street_name.substr(street_name.length - 1));
+        cy.xpath('//div[@title="' + street_name + '"]').click({force: true});
+        cy.xpath(this.deliveryCityDirector).clear().type(data.addPeopleAndRolesForm.party_address_director.delivery.city);
+        cy.xpath(this.deliveryPostalCodeDirector).clear().type(data.addPeopleAndRolesForm.party_address_director.delivery.postal_code);
+        cy.xpath(this.deliveryCountryDirector).click({force: true});
+        cy.wait(2000);
         cy.xpath(this.optionCanadaInDropdown).click({force: true});
-        cy.xpath(this.deliveryProvincePeopleAndRoles).click({force: true});
+        cy.xpath(this.deliveryProvinceDirector).click({force: true});
+        cy.wait(2000);
+        cy.xpath(this.optionBritishColumbiaInDropdown).click({force: true});
+    }
+
+    fillMailingAddressCompletingParty() {
+        let street_name = data.addPeopleAndRolesForm.party_address_completing_party.mailing.street;
+        cy.xpath(this.mailingStreetPeopleAndRoles).clear().type(street_name + '{backspace}');
+        cy.wait(500);
+        cy.xpath(this.mailingStreetPeopleAndRoles).type(street_name.substr(street_name.length - 1));
+        cy.xpath('//div[@title="' + street_name + '"]').click({force: true});
+        cy.xpath(this.mailingCityPeopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address_completing_party.mailing.city);
+        cy.xpath(this.mailingPostalCodePeopleAndRoles).clear().type(data.addPeopleAndRolesForm.party_address_completing_party.mailing.postal_code);
+        cy.xpath(this.mailingCountryPeopleAndRole).click({force: true});
+        cy.xpath(this.optionCanadaInDropdown).click({force: true});
+        cy.xpath(this.mailingProvicePeopleAndRole).click({force: true});
         cy.wait(2000);
         cy.xpath(this.optionBritishColumbiaInDropdown).click({force: true});
     }
@@ -310,28 +342,6 @@ export class BenefitNumCompany {
         cy.xpath(this.corporateMailingAddressProvince).click({force: true});
         cy.wait(2000);
         cy.xpath(this.optionBritishColumbiaInDropdown).click({force: true});
-    }
-
-    getRandomString() {
-        let anySize = 8;
-        let charset = "abcdefghijklmnopqrstuvwxyz";
-        let result = "";
-        for (let i = 0; i < anySize; i++)
-            result += charset[Math.floor(Math.random() * charset.length)];
-        return result;
-    }
-
-    getDataOutOfJson(json) {
-        let list = []
-
-        function test(runObj) {
-            for (let i in runObj) {
-                typeof runObj[i] == "object" ? test(runObj[i]) : list.push(runObj[i]);
-            }
-            return list;
-        }
-
-        return test(JSON.parse(JSON.stringify(json)));
     }
 }
 
