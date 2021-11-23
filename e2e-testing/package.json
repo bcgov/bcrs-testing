@@ -4,7 +4,7 @@
   "description": "running Cypress ",
   "main": "index.js",
   "scripts": {
-    "cypress": "npx cypress run --spec cypress/integration/entity/directorChange.spec.js --browser chrome"
+    "cypress": "npx cypress run --spec cypress/integration/entity/addressChange.spec.js --browser chrome"
   },
   "author": "",
   "license": "ISC",

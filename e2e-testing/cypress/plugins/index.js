@@ -1,5 +1,4 @@
 const {LoginToApp} = require("./login");
-const pdf = require("pdf-parse");
 const path = require('path')
 const fs = require("fs");
 const {Cookie} = require("playwright-chromium");
