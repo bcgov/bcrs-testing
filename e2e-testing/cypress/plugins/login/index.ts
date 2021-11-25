@@ -32,8 +32,8 @@ export const LoginToApp = async function (url): Promise<{ cookies: Cookie[], loc
     await page.type(selectors.passcode, loginData.password);
     await page.click(selectors.submitButton);
 
-    await page.waitForSelector(selectors.submitButton);
-    await page.click(selectors.submitButton);
+    /*await page.waitForSelector(selectors.submitButton);
+    await page.click(selectors.submitButton);*/
 
     const cookies = await getCookies(context, page);
     const localStorage = await getStorageValues(page, "localStorage")

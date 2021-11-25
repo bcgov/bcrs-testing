@@ -11,6 +11,7 @@ let direct_name_change_list = [];
 export class NamedCompany {
 
     constructor() {
+        this.userInfo = '//div[@class="user-info"]'
         this.manageAnExistingBusiness = '//span[contains(text(),"Manage an Existing Business")]'
         this.namedCompanyButton = 'button[class*="btn-draft-resume"]'
         this.cooperativeAssocitionTypeDropdown = '//label[contains(text(),"Cooperative Association Type")]'
@@ -426,6 +427,11 @@ export class NamedCompany {
         dataAsList.splice(dataAsList.indexOf(data.address_change_director3.delivery_address.city), 1);
         dataAsList.splice(dataAsList.indexOf(data.address_change_director3.delivery_address.postal_code), 1);
         return dataAsList;
+    }
+
+    switchAccountTo(account) {
+        cy.xpath(this.userInfo).click({force:true});
+        cy.xpath('//div[@role="menuitem"]/div[@class="v-list-item__title"][text()="'+account+'"]').click({force:true});
     }
 }
 

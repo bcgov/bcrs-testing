@@ -14,6 +14,7 @@ describe('Validate incorporation of numbered benefit company', function () {
         cy.wait(4000);
     });
     it('Verify save for later and delete functionality', function () {
+        namedCompany.switchAccountTo('Apple Inc');
         namedCompany.navigateToNamedCompanyDashboard();
         namedCompany.proceedToNewFiling()
         namedCompany.fillDefineYourCooperativeDetails();
