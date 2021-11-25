@@ -4,7 +4,7 @@
   "description": "running Cypress ",
   "main": "index.js",
   "scripts": {
-    "cypress": "npx cypress run --spec cypress/integration/entity/addressChange.spec.js --browser chrome"
+    "cypress": "npx cypress run --spec cypress/integration/entity/namedCompany.spec.js --browser chrome"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "@types/node": "^11.13.8",
     "cypress": "^5.6.0",
     "cypress-downloadfile": "^1.2.1",
+    "cypress-file-upload": "^5.0.8",
     "cypress-log-to-output": "^1.1.2",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-xpath": "^1.6.2",

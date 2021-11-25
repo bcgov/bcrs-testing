@@ -23,6 +23,5 @@ describe('Validate address change of numbered benefit company', function () {
         cy.xpath(addressChange.getTitleOfFiling).should('be.visible');
         addressChange.downloadAndVerifyPdfs();
         cy.xpath(addressChange.pendingStatusAddressChange).should('be.visible');
-
     });
 });

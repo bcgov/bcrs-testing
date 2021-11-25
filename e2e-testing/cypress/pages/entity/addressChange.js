@@ -31,7 +31,7 @@ export class AddressChange {
         this.cardNumber = '//input[@name="trnCardNumber"]';
         this.cvvNumber = '//input[@name="trnCardCvd"]';
         this.submitPaymentDetails = '//input[@name="submitButton"]';
-        this.getTitleOfFiling = '//h3[text()="Address Change"]/following-sibling::div[@class="item-header__subtitle"]/span[contains(text(),"FILED AND PENDING")]'
+        this.getTitleOfFiling = '//h3[text()="Address Change"]/following-sibling::div[@class="item-header__subtitle"]/span[contains(text(),"FILED AND PAID")]'
         this.downloadButtons = '//button[contains(@class,"download-one-btn")]';
         this.pendingStatusAddressChange = '//h2[text()=\'Office Addresses\']/following-sibling::span//span[text()=\'Pending\']'
     }
@@ -94,7 +94,7 @@ export class AddressChange {
                 if (file.includes('Receipt')) {
                     cy.task('log','Reciept:')
                     cy.task('getPdfContents', 'cypress/downloads/' + file).then((text) => {
-                        expect(text.toString()).to.contains('21.50');
+                        expect(text.toString()).to.contains('20.00');
                         expect(text.toString()).to.contains(new Date().toISOString().slice(0, 10));
                         expect(text.toString()).to.contains('Credit Card');
                     });
