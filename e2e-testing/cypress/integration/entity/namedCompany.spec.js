@@ -1,7 +1,7 @@
 import {namedCompany} from '../../pages/entity/namedCompany'
 import {directorChange} from "../../pages/entity/directorChange";
-import dataDirectorChange from "../../fixtures/relationship/directorChangeNamedCompany.json";
-import dataNamedCompany from "../../fixtures/relationship/namedCompany.json";
+import dataDirectorChange from "../../fixtures/entity/directorChangeNamedCompany.json";
+import dataNamedCompany from "../../fixtures/entity/namedCompany.json";
 import {addressChange} from "../../pages/entity/addressChange";
 
 describe('Validate incorporation of numbered benefit company', function () {

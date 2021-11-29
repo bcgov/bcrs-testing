@@ -1,6 +1,6 @@
 import {common} from './common'
 import testDataPayment from "../../fixtures/relationship/nameRequestData.json";
-let data = require('../../fixtures/relationship/addressChange.json');
+let data = require('../../fixtures/entity/addressChange.json');
 
 export class AddressChange {
 

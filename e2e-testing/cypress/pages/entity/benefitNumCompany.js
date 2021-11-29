@@ -1,4 +1,4 @@
-const data = require('../../fixtures/relationship/benefitNumCompany.json');
+const data = require('../../fixtures/entity/benefitNumCompany.json');
 const testDataPayment = require('../../fixtures/relationship/nameRequestData.json');
 import {common} from './common'
 

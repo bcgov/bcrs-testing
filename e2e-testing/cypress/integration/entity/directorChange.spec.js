@@ -1,5 +1,5 @@
 import {directorChange} from '../../pages/entity/directorChange'
-let data = require('../../fixtures/relationship/directorChange.json');
+let data = require('../../fixtures/entity/directorChange.json');
 
 describe('Validate director change of numbered benefit company', function () {
     before(function () {
