@@ -6,7 +6,6 @@ import { securityAgreementPage } from '../../../pages/assets/securityAgreementPa
 import partyData from '../../../fixtures/assets/partyData.json'
 import debtorData from '../../../fixtures/assets/debtorData.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
@@ -22,9 +21,9 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.fr)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.fr)
 
         marriageOrSeparationAgreementPage.verifyRegistrationLength(partyData.lengthOfRegistration)
 
@@ -48,11 +47,13 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.mh, false)
 
-        //securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral)
+        securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral.mh)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
+
+        securityAgreementPage.clickConfirmAuthorization()
 
         securityAgreementPage.clickRegisterAndPayButton()
     })

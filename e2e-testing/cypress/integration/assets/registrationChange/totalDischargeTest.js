@@ -1,17 +1,17 @@
 /// <reference types="Cypress" />
 import { landingPage } from '../../../pages/assets/landingPage'
 import { myRegistrationsTablePage } from '../../../pages/assets/myRegistrationsTablePage'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
+import { securityAgreementPage } from '../../../pages/assets/securityAgreementPage'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import feeData from '../../../fixtures/assets/fees.json'
 import registrationNumbers from '../../../fixtures/assets/registrationNumbers.json'
 import totalDischargeData from '../../../fixtures/assets/totalDischargeData.json'
+import authorizationData from '../../../fixtures/assets/authorizationData.json'
 
-
-describe('Crown Charge Registrations Test Suite ', function () {
+describe('Registrations Change Test Suite ', function () {
     // Setup data and login as BC Service Card
 
-    it('Other Test Case', function () {
+    it('Total Discharge Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -19,7 +19,9 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        myRegistrationsTablePage.clickTotalDischargeButton(registrationNumbers)
+        myRegistrationsTablePage.clickTotalDischargeButton(registrationNumbers.discharge)
+
+        myRegistrationsTablePage.verifyHeader(totalDischargeData)
 
         feeSummaryModalPage.verifyTotalDischargeFeeModal(feeData.feeSummary.totalDischarge)
 
@@ -35,9 +37,9 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         myRegistrationsTablePage.verifyCollateral(totalDischargeData)
 
-        myRegistrationsTablePage.verifyHeader(totalDischargeData)
-
         myRegistrationsTablePage.verifyConfirmPage(totalDischargeData)
+
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
         
         myRegistrationsTablePage.verifyHeader(totalDischargeData)
 

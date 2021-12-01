@@ -5,7 +5,6 @@ import { securityAgreementPage } from '../../../pages/assets/securityAgreementPa
 import partyData from '../../../fixtures/assets/partyData.json'
 import debtorData from '../../../fixtures/assets/debtorData.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
@@ -23,19 +22,15 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.sg)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.sg)
 
         securityAgreementPage.clickRegistrationLengthInfiniteButton()
 
         feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.sg)
 
         securityAgreementPage.clickRegistrationLengthInfiniteButton()
-
-        securityAgreementPage.clickRegistrationLengthRadioButton()
-
-        securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.sa.setYears)
 
         securityAgreementPage.clickRegistrationLengthInfiniteButton()
 
@@ -66,6 +61,8 @@ describe('Standard Registrations Test Suite ', function () {
         securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.sg.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
+
+        securityAgreementPage.clickConfirmAuthorization()
 
         securityAgreementPage.clickRegisterAndPayButton()
 

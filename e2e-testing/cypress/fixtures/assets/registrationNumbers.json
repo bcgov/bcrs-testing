@@ -1,4 +1,18 @@
 {
-    "registrationNumber": "100241B",
-    "debtorName": "TEST"
+    "discharge": {
+        "registrationNumber": "100166B",
+        "debtorName": "TEST"
+    },
+    "rlRenew": {
+        "registrationNumber": "100183B",
+        "debtorName": "TEST"
+    },
+    "regRenew": {
+        "registrationNumber": "100165B",
+        "debtorName": "TEST"
+    },
+    "amend": {
+        "registrationNumber": "100230B",
+        "debtorName": "TEST"
+    }
 }

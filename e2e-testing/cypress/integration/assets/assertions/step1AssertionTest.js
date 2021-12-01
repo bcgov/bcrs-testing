@@ -8,9 +8,9 @@ import { step1AssertionPage } from '../../../pages/assets/step1AssertionPage'
 import step1Data from '../../../fixtures/assets/step1Data.json'
 
 
-describe('Standard Registrations Test Suite ', function () {
+describe('Assertions Test Suite ', function () {
 
-    it('Security Agreement Test Case', function () {
+    it('Step1 Assertions Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 

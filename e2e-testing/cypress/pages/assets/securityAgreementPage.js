@@ -73,7 +73,7 @@ export class SecurityAgreementPage {
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
-        this.debtorBusinessText = ':nth-child(1) > .v-list-item__content > .v-list-item__title'
+        this.debtorBusinessText = ':nth-child(1) > .v-list-item__content > .v-list-item__subtitle'
 
         //Add Collateral Next Button
 
@@ -125,6 +125,24 @@ export class SecurityAgreementPage {
         this.statuteName = '#dialog-text-field'
         this.startRegistrationButton = '#accept-btn'
         this.cancelRegistrationButton = '#cancel-btn'
+
+        //MiscellaneousRegistrationsAct Secured Party
+
+        this.securedPartyCodeDropdown = '#secured-party-autocomplete'
+        this.securedPartyList = 'div.row.auto-complete-row'
+        this.changeSecuredParty = '#accept-btn'
+        this.cancelSecuredParty = '#cancel-btn'
+
+        //Confirm Authorization
+
+        this.cerifyTitle = 'h2:contains("2. Authorization")'
+        this.certifyInfo = '#certify-summary > .pb-6 > .col'
+        this.certifyName = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title > .row > .col-9 > div'
+        this.certifyAccountName = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
+        this.certifyAddress = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(3)'
+        this.confirmAuthorizationInfo = 'label[for^="checkbox-certified"]'
+        this.confirmCertifyDate = '.pl-8 > .summary-text'
+        this.confirmCheckbox = '.v-input--selection-controls__ripple'
 
     }
 
@@ -451,6 +469,7 @@ export class SecurityAgreementPage {
 
     setFolioNumberText(data) {
         cy.get(this.folioNumberText).type(data)
+        cy.wait(2000)
         cy.log("Entered Folio Number")
     }
 
@@ -594,8 +613,8 @@ export class SecurityAgreementPage {
         const vehicleYear = '.vehicle-row > :nth-child(2)'
         const vehicleMake = '.vehicle-row > :nth-child(3)'
         const vehicleModel = '.vehicle-row > :nth-child(4)'
-        const vehicleSerialNumber = '.VehicleCollateral_vehicle-cell_2yvB9'
-        cy.get(vehicleType).should('have.text', " " + data.vehicleType + " ")
+        const vehicleSerialNumber = '.vehicle-cell'
+        cy.get(vehicleType).should('have.text', " " + data.type + " ")
         cy.get(vehicleYear).should('have.text', " " + data.year + " ")
         cy.get(vehicleMake).should('have.text', data.make)
         cy.get(vehicleModel).should('have.text', data.model)
@@ -604,7 +623,7 @@ export class SecurityAgreementPage {
 
     verifyGeneralCollateral(data) {
         const generalCollateralText = '.general-collateral-summary > .ma-0'
-        cy.get(generalCollateralText).should('have.text', " " + data + " ")
+        cy.get(generalCollateralText).should('have.text', data)
 
     }
 
@@ -617,6 +636,29 @@ export class SecurityAgreementPage {
         cy.get(this.statuteName).type(data)
         cy.get(this.startRegistrationButton).click()
         cy.log("Entered Other Registration")
+    }
+
+    setSecuredParty(data) {
+        cy.get(this.securedPartyCodeDropdown).type(data)
+        cy.wait(2000)
+        cy.get(this.securedPartyList).click()
+        cy.wait(2000)
+        cy.log("Entered secured Party")
+    }
+
+    verifyConfirmAuthorization(data) {
+        cy.get(this.cerifyTitle).should('have.text', data.cerifyTitle)
+        cy.get(this.certifyInfo).should('have.text', data.certifyInfo)
+        cy.get(this.certifyName).should('have.text', data.certifyName)
+        cy.get(this.certifyAccountName).should('have.text', data.certifyAccountName)
+        cy.get(this.certifyAddress).should('have.text',data.certifyAddress)
+        cy.get(this.confirmAuthorizationInfo).should('have.text', data.confirmAuthorizationInfo)
+        const todaysDate = Cypress.moment().format('MMMM DD, YYYY')
+        cy.get(this.confirmCertifyDate).should('contain', todaysDate)
+        cy.get(this.confirmCheckbox).click({ multiple: true })
+        cy.log("Clicked on Confirm Checkbox")
+        //cy.get(this.confirmCertifyDate).invoke('text').then(date)
+        //log.info("Printing text" + date)
     }
 
 }

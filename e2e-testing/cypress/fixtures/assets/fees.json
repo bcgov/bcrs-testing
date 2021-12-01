@@ -185,7 +185,7 @@
         },
         "ip": {
             "title": " Insurance Premium Tax Act ",
-            "titleAmount": "No Fee",
+            "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
             "serviceFeeAmount": " No Fee ",
@@ -195,7 +195,7 @@
         },
         "lo": {
             "title": " Logging Tax Act ",
-            "titleAmount": "No Fee",
+            "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
             "serviceFeeAmount": " No Fee ",
@@ -291,6 +291,45 @@
             "currency": "CAD",
             "totalFees": "Total Fees",
             "totalAmount": "$0.00"
+        },
+        "renew": {
+            "title": " Registration Renewal ",
+            "titleAmount": " $5.00 ",
+            "hint": "180 Day Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$6.50"
+        },
+        "regRenewInYears": {
+            "setYears": "5",
+            "title": " Registration Renewal ",
+            "titleAmount": " $25.00 ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$26.50"
+        },
+        "regRenewInfinite": {
+            "title": " Registration Renewal ",
+            "titleAmount": " $500.00 ",
+            "hint": "Infinite Registration",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$501.50"
+        },
+        "amendment": {
+            "title": " Registration Amendment ",
+            "titleAmount": " $10.00 ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$11.50"
         }
     }
 }

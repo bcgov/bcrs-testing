@@ -26,5 +26,8 @@
     "securedPartyCode": {
         "partyCode": "21121",
         "partyCodeResult": "THE BANK OF NOVA SCOTIA"
+    },
+    "securedPartyDropdown": {
+        "partyCode": "6205"
     }
 }

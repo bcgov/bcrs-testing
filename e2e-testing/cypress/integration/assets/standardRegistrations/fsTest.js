@@ -6,7 +6,6 @@ import partyData from '../../../fixtures/assets/partyData.json'
 import debtorData from '../../../fixtures/assets/debtorData.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
 import feeData from '../../../fixtures/assets/fees.json'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
@@ -23,9 +22,9 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.fs)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.fs)
 
         securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.fs.setYears)
 
@@ -35,7 +34,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.clickRegistrationLengthRadioButton()
 
-        securityAgreementPage.setLengthInYearsTextField(partyData.partyIndividual.lengthInYears)
+        securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.fs.setYears)
 
         securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
 
@@ -53,13 +52,15 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.clickAddCollateralButton()
 
-        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.fs)
+        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.fs.description)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 
-        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.fs)
+        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.fs.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
+
+        securityAgreementPage.clickConfirmAuthorization()
 
         securityAgreementPage.clickRegisterAndPayButton()
 

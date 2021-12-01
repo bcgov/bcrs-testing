@@ -19,15 +19,15 @@ export class AddSecurityAgreementPage {
 
     selectSecurityAgreementDropdown(user) {
 
-        cy.log(user)
+        cy.log(user.type)
 
-        if (user == 'bcsc') {
+        if (user.type == 'bcsc') {
             const element = '#registration-more-actions-btn'
             cy.get(element).click()
             cy.log("Non Govt dropdown got clicked")
         }
 
-        if (user == 'gov') {
+        if (user.type == 'gov') {
             const element = '.actions > .container > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
             cy.get(element).click()
             cy.log("Govt dropdown got clicked")
@@ -48,11 +48,11 @@ export class AddSecurityAgreementPage {
     }
 
     selectStandardRegistrations(user, data) {
-        if (user == 'bcsc') {
+        if (user.type == 'bcsc') {
             const element = 'div:contains("' + data + '")'
             cy.get(element).click()
         }
-        if (user == 'gov') {
+        if (user.type == 'gov') {
             const element = 'span:contains("' + data + '")'
             cy.get(element).trigger('mousedown')
             cy.get(element).click()

@@ -17,7 +17,7 @@ describe('PPR Search Test Suite ', function () {
 
         pprSearchPage.selectSearchCategoryDropdown()
 
-        pprSearchPage.searchManufacturedHomeRegistrationNumber(pprSearchData.searchCategory.mhrNumber)
+        pprSearchPage.searchManufacturedHomeRegistrationNumber(pprSearchData.searchCategory)
 
 
     })

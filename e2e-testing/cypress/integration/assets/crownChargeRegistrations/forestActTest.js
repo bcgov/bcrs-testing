@@ -8,7 +8,6 @@ import debtorData from '../../../fixtures/assets/debtorData.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 
@@ -24,9 +23,9 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.crownCharge.fo)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.crownCharge.fo)
 
         marriageOrSeparationAgreementPage.verifyRegistrationLength(partyData.lengthOfRegistration)
 
@@ -34,19 +33,23 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
 
+        securityAgreementPage.setSecuredParty(partyData.securedPartyDropdown.partyCode)
+
         securityAgreementPage.setDebtorIndividual(debtorData.debtorIndividual)
 
         securityAgreementPage.setDebtorBusiness(debtorData.debtorBusiness)
 
         securityAgreementPage.clickAddCollateralButton()
 
-        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.fo)
+        securityAgreementPage.setGeneralCollateralText(gcData.collateralDescription.fo.description)
         
         securityAgreementPage.clickReviewAndConfirmButton()
 
-        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.fo)
+        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.fo.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
+
+        securityAgreementPage.clickConfirmAuthorization()
 
         securityAgreementPage.clickRegisterAndPayButton()
  

@@ -10,7 +10,7 @@ export class PPRSearchPage {
         this.businessDebtorName = 'span:contains("Business Debtor Name")'
         this.manufacturedHomeRegistrationNumber = 'span:contains("Manufactured Home Registration Number")'
         this.aircraftNumber = 'span:contains("Aircraft Airframe D.O.T. Number")'
-        this.registrationNumber = 'span:contains("Registration Number")'
+        this.registrationNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6)'
         this.searchBarField = '#search-bar-field'
         this.firstName = '#first-name-field'
         this.middleName = '#second-name-field'
@@ -19,6 +19,8 @@ export class PPRSearchPage {
         this.acceptButton = '#accept-btn'
         this.cancelButton = '#cancel-btn'
         this.searchDoneButton = '#Search_done-btn_2xQsY'
+        this.generateSearchResultReportButton = '#btn-generate-result'
+        this.searchHeader = '#search-header'
 
     }
 
@@ -33,74 +35,76 @@ export class PPRSearchPage {
     searchSerialNumber(data){
 
         cy.get(this.serialNumber).click()
-        cy.get(this.searchBarField).type(data)
+        cy.get(this.searchBarField).type(data.serialNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
+        cy.get(this.generateSearchResultReportButton).click()
         cy.get(this.acceptButton).click()
-        cy.log("Entered Serial Number")
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Serial Number Search Report got Generated")
 
     }
     
     searchIndividualDebtorName(data){
 
         cy.get(this.individualDebtorName).click()
-        cy.get(this.firstName).type(data.firstName)
-        cy.get(this.middleName).type(data.middleName)
-        cy.get(this.lastName).type(data.lastName)
+        cy.get(this.firstName).type(data.individualDebtorName.firstName)
+        cy.get(this.middleName).type(data.individualDebtorName.middleName)
+        cy.get(this.lastName).type(data.individualDebtorName.lastName)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
+        cy.get(this.generateSearchResultReportButton).click()
         cy.get(this.acceptButton).click()
-        cy.log("Entered Individual Debtor Name")
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Individual Debtor Search Report got Generated")
 
     }
     
     searchBusinessDebtorName(data){
 
         cy.get(this.businessDebtorName).click()
-        cy.get(this.searchBarField).type(data)
+        cy.get(this.searchBarField).type(data.businessDebtorName)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
-        cy.get(this.acceptButton).click()
-        cy.log("Entered Business Debtor Name")
+        cy.get(this.generateSearchResultReportButton).click()
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Business Debtor Search Report got Generated")
 
     }
 
     searchManufacturedHomeRegistrationNumber(data){
 
         cy.get(this.manufacturedHomeRegistrationNumber).click()
-        cy.get(this.searchBarField).type(data)
+        cy.get(this.searchBarField).type(data.mhrNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
-        cy.get(this.acceptButton).click()
-        cy.log("Entered Manufactured Home Registration Number")
+        cy.get(this.generateSearchResultReportButton).click()
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Manufactured Home Registration Number Search got Generated")
 
     }
 
     searchAircraftNumber(data){
 
         cy.get(this.aircraftNumber).click()
-        cy.get(this.searchBarField).type(data)
+        cy.get(this.searchBarField).type(data.aircraftNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
-        cy.get(this.acceptButton).click()
-        cy.log("Entered Aircraft Number")
+        cy.get(this.generateSearchResultReportButton).click()
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Aircraft Number Search Report got Generated")
 
     }
     
     searchRegistrationNumber(data){
 
         cy.get(this.registrationNumber).click()
-        cy.get(this.searchBarField).type(data)
+        cy.get(this.searchBarField).type(data.registrationNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
-        cy.get(this.searchDoneButton).click()
-        cy.get(this.acceptButton).click()
-        cy.log("Entered Registration Number")
+        cy.get(this.generateSearchResultReportButton).click()
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Registration Number Search Report got Generated")
 
     }
 }

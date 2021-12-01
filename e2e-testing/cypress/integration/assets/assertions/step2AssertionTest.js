@@ -2,16 +2,15 @@
 
 import { landingPage } from '../../../pages/assets/landingPage'
 import { addSecurityAgreementPage } from '../../../pages/assets/addSecurityAgreementPage'
-import credentials from '../../../fixtures/relationship/assetsBCSC.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 import partyData from '../../../fixtures/assets/partyData.json'
 import debtorData from '../../../fixtures/assets/debtorData.json'
 import { step2AssertionPage } from '../../../pages/assets/step2AssertionPage'
 import step2Data from '../../../fixtures/assets/step2Data.json'
 
-describe('Standard Registrations Test Suite ', function () {
+describe('Assertions Test Suite ', function () {
 
-    it('Security Agreement Test Case', function () {
+    it('Step2 Assertions Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -19,9 +18,9 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(credentials.type)
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(credentials.type, registrationType.standard.sa)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.sa)
 
         step2AssertionPage.clickStep2()
 
