@@ -8,6 +8,9 @@ export class BCOLStaffPage {
 
     constructor() {
 
+        // BCOL Login
+
+     
 
 
 
@@ -20,7 +23,8 @@ export class BCOLStaffPage {
 
 
 
-        
+
+
     }
 
 
