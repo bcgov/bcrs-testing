@@ -1,4 +1,4 @@
-name: RepairersLien TEST Environment
+name: Standard Registrations TEST Environment
 on: [push]
 jobs:
   Regression:
