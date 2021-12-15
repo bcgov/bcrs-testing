@@ -10,6 +10,7 @@ import collateralData from '../../../fixtures/assets/collateralData.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
+import authorizationData from '../../../fixtures/assets/authorizationData.json'
 
 describe('Standard Registrations Test Suite ', function () {
   // Setup data and login as BC Service Card
@@ -58,7 +59,7 @@ describe('Standard Registrations Test Suite ', function () {
 
     securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
-    //securityAgreementPage.verifyConfirmAuthorization()
+    securityAgreementPage.verifyConfirmAuthorization(authorizationData)
 
     securityAgreementPage.clickRegisterAndPayButton()
 
