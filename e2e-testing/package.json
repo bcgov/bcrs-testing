@@ -6,7 +6,8 @@
   "scripts": {
     "info": "cypress info",
     "assetsRepairersLienTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/rlTest.js --headed",
-    "assetsStandardRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed"
+    "assetsStandardRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed",
+    "otherRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/otherRegistrations/*.js --headed"
   },
   "author": "",
   "license": "ISC",

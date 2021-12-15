@@ -1,5 +1,5 @@
-name: Repairers Lien TEST Environment
-on: 
+name: Other Registrations TEST Environment
+on: [push]
 jobs:
   Regression:
     runs-on: windows-latest
@@ -18,7 +18,7 @@ jobs:
           node-version: "12.x"
       - run: npm install
 
-      - run: npm run assetsRepairersLienTest
+      - run: npm run otherRegistrations
         if: ${{ always() }}
         env:
           CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
@@ -28,10 +28,10 @@ jobs:
 
       - name: Rocket.Chat Notification
         uses: RocketChat/Rocket.Chat.GitHub.Action.Notification@1.1.1
-        if: always()
+        if: success()
         with:
           type: ${{ job.status }}
           job_name: "Regression Test - TEST --->"
           icon_emoji: ":bell:"
           channel: "Automation-Testing-Notifications"
-          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}         
+          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}   

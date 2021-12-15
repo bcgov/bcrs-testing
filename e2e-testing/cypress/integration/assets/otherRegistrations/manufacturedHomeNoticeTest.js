@@ -9,6 +9,7 @@ import collateralData from '../../../fixtures/assets/collateralData.json'
 import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
+import authorizationData from '../../../fixtures/assets/authorizationData.json'
 
 
 describe('Other Registrations Test Suite ', function () {
@@ -20,11 +21,11 @@ describe('Other Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(Cypress.env('credentials'))
+        landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.other.mn)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.other.mn)
 
         marriageOrSeparationAgreementPage.verifyRegistrationLength(partyData.lengthOfRegistration)
 
@@ -48,7 +49,7 @@ describe('Other Registrations Test Suite ', function () {
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
-        securityAgreementPage.clickConfirmAuthorization()
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
 
         securityAgreementPage.clickRegisterAndPayButton()
 
