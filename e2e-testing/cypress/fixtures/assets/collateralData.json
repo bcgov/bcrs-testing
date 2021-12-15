@@ -22,7 +22,7 @@
             "model": "V/D 53 T/A AIR"
         },
         "om": {
-            "type": "Outbound Motor (OM)",
+            "type": "Outboard Motor (OM)",
             "seialOrVINNumber": "63PJ-28374689",
             "year": "2021",
             "make": "YAMAHA",
@@ -51,5 +51,8 @@
             "model": "AS350 B3+"
         }
     },
-    "folioNumber": "123456"
+    "folioNumber": "123456",
+    "serialNumberValidation": "Enter the Serial or VIN Number",
+    "makeValidationText": "Enter the vehicle make",
+    "modelValidationText": "Enter the vehicle model"
 }

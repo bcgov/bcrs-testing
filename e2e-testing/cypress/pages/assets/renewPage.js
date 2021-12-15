@@ -70,7 +70,7 @@ export class RenewPage {
         this.courtRegistry = '#txt-court-registry'
         this.courtFileNumber = '#txt-court-file-number'
         this.dateOfOrder = '#court-date-text-field'
-        this.selectDate = ':nth-child(3) > :nth-child(4)'
+        this.selectDate = 'tbody > :nth-child(2) > :nth-child(5)'
         this.clickOkButton = '.v-btn__content > strong'
         this.effectOfOrder = '#effect-of-order'
 

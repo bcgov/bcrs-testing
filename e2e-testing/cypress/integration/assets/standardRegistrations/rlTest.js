@@ -58,7 +58,7 @@ describe('Standard Registrations Test Suite ', function () {
 
     securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
-    securityAgreementPage.clickConfirmAuthorization()
+    //securityAgreementPage.verifyConfirmAuthorization()
 
     securityAgreementPage.clickRegisterAndPayButton()
 

@@ -14,10 +14,14 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
+          env: true
           node-version: "12.x"
       - run: npm install
 
       - run: npm run assetsRepairersLienTest
         if: ${{ always() }}
         env:
-          PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
+          CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
+          CYPRESS_credentials.username: ${{secrets.USERNAME}}
+          CYPRESS_credentials.password: ${{secrets.PASSWORD}}
+          CYPRESS_credentials.type: ${{secrets.TYPE}}          

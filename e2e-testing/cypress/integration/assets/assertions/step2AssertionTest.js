@@ -28,19 +28,37 @@ describe('Assertions Test Suite ', function () {
 
         step2AssertionPage.setPartyIndividual(partyData.partyIndividual)
 
+        step2AssertionPage.verifySecuredPartyEditModal(step2Data)
+
         step2AssertionPage.clickAddSecuredPartyLink()
 
         step2AssertionPage.setPartyBusiness(partyData.partyBusiness)
 
-        step2AssertionPage.setSecuredPartyCodeOrNameLookup(partyData.securedPartyCode)
+        step2AssertionPage.verifyPartyBusinessEditModal(step2Data)
+
+        step2AssertionPage.setSecuredPartyCodeLookup(partyData.securedPartyCode)
+
+        step2AssertionPage.setSecuredPartyNameLookup(step2Data)
+
+        step2AssertionPage.verifySecuredPartyCodeOrNameLookup(step2Data)
 
         step2AssertionPage.verifySecuredParties(step2Data)
+
+        step2AssertionPage.verifySecuredPartyDeleteModal(step2Data)
 
         step2AssertionPage.setDebtorIndividual(debtorData.debtorIndividual)
 
         step2AssertionPage.setDebtorBusiness(debtorData.debtorBusiness)
 
         step2AssertionPage.verifyDebtors(step2Data)
+
+        step2AssertionPage.verifyIndividualDebtorEditModal(step2Data)
+
+        step2AssertionPage.verifyBusinessDebtorEditModal(step2Data)
+
+        step2AssertionPage.verifyDebtorDeleteModal(step2Data)
+
+        step2AssertionPage.verifyRegisteringPartyModal(step2Data)
 
 
 
