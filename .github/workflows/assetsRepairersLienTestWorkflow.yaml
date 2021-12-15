@@ -31,7 +31,7 @@ jobs:
         if: always()
         with:
           type: ${{ job.status }}
-          job_name: "Repairers Lien Test - TEST --->"
+          job_name: "Regression Test - TEST --->"
           icon_emoji: ":bell:"
           channel: "Automation-Testing-Notifications"
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}         
