@@ -22,6 +22,6 @@ jobs:
         if: ${{ always() }}
         env:
           CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
-          CYPRESS_credentials.username: ${{secrets.USERNAME}}
-          CYPRESS_credentials.password: ${{secrets.PASSWORD}}
-          CYPRESS_credentials.type: ${{secrets.TYPE}}          
+          CYPRESS_USERNAME: ${{secrets.USERNAME}}
+          CYPRESS_PASSWORD: ${{secrets.PASSWORD}}
+          CYPRESS_TYPE: ${{secrets.TYPE}}          

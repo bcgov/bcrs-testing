@@ -60,11 +60,11 @@ export class LandingPage {
         cy.log("Clicked on submit button")
     }
 
-    bcscLogin(data){
+    bcscLogin(username,password){
         cy.wait(2000)
-        cy.get(this.cardSerialNumber).type(data.username)
+        cy.get(this.cardSerialNumber).type(username)
         cy.get(this.continueNext).click()
-        cy.get(this.passcode).type(data.password)
+        cy.get(this.passcode).type(password)
         cy.get(this.continue).click()
         cy.log("BCSC login is successful")
 

@@ -20,11 +20,11 @@ describe('Standard Registrations Test Suite ', function () {
 
     landingPage.clickVirtualCardTestingButton()
 
-    landingPage.bcscLogin(Cypress.env('credentials'))
+    landingPage.bcscLogin(Cypress.env('USERNAME') , Cypress.env('PASSWORD') )
 
-    addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
+    addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-    addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.rl)
+    addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.rl)
 
     repairersLienPage.setLienAmount(repairersLienData.amountOfLien)
 
