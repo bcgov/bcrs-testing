@@ -18,10 +18,10 @@ jobs:
           node-version: "12.x"
       - run: npm install
 
-      - run: npm run assetsRepairersLienTest
+      - run: npm run assetsStandardRegistrations
         if: ${{ always() }}
         env:
           CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
-          CYPRESS_USERNAME: ${{secrets.USERNAME}}
-          CYPRESS_PASSWORD: ${{secrets.PASSWORD}}
+          CYPRESS_BCSC_USERNAME: ${{secrets.BCSC_USERNAME}}
+          CYPRESS_BCSC_PASSWORD: ${{secrets.BCSC_PASSWORD}}
           CYPRESS_TYPE: ${{secrets.TYPE}}          

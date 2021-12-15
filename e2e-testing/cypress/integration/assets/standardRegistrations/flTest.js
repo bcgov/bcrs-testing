@@ -9,6 +9,7 @@ import feeData from '../../../fixtures/assets/fees.json'
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
+import authorizationData from '../../../fixtures/assets/authorizationData.json'
 
 
 describe('Standard Registrations Test Suite ', function () {
@@ -20,11 +21,11 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(Cypress.env('credentials'))
+        landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.fl)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.fl)
 
         securityAgreementPage.setLengthInYearsTextField(feeData.feeSummary.fl.setYears)
 
@@ -60,7 +61,7 @@ describe('Standard Registrations Test Suite ', function () {
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
         
-        securityAgreementPage.clickConfirmAuthorization()
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
 
         securityAgreementPage.clickRegisterAndPayButton()
 

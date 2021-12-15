@@ -21,7 +21,7 @@ describe('Standard Registrations Test Suite ', function () {
 
     landingPage.clickVirtualCardTestingButton()
 
-    landingPage.bcscLogin(Cypress.env('USERNAME') , Cypress.env('PASSWORD') )
+    landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD') )
 
     addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
