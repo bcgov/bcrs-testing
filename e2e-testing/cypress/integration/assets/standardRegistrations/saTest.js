@@ -10,7 +10,6 @@ import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 import authorizationData from '../../../fixtures/assets/authorizationData.json'
-import authorizationData from '../../../fixtures/assets/authorizationData.json'
 
 
 describe('Standard Registrations Test Suite ', function () {
