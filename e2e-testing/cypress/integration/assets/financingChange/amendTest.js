@@ -5,9 +5,6 @@ import { securityAgreementPage } from '../../../pages/assets/securityAgreementPa
 import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import feeData from '../../../fixtures/assets/fees.json'
 import registrationNumbers from '../../../fixtures/assets/registrationNumbers.json'
-import totalDischargeData from '../../../fixtures/assets/totalDischargeData.json'
-import renewalData from '../../../fixtures/assets/renewalData.json'
-import { renewPage } from '../../../pages/assets/renewPage'
 import authorizationData from '../../../fixtures/assets/authorizationData.json'
 import { amendPage } from '../../../pages/assets/amendPage'
 import amendData from '../../../fixtures/assets/amendData.json'
@@ -16,13 +13,13 @@ import amendData from '../../../fixtures/assets/amendData.json'
 describe(' Registrations Change Test Suite ', function () {
     // Setup data and login as BC Service Card
 
-    it('Registration Renewal Test Case', function () {
+    it('Registration Amendment Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(Cypress.env('credentials'))
+        landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
         myRegistrationsTablePage.clickAmendButton(registrationNumbers.amend)
 

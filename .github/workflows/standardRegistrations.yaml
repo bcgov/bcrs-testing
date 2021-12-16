@@ -1,5 +1,5 @@
 name: Standard Registrations TEST Environment
-on: 
+on: [push]
 jobs:
   Regression:
     runs-on: windows-latest
