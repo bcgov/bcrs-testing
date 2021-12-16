@@ -3,11 +3,7 @@
 import { landingPage } from '../../../pages/assets/landingPage'
 import { addSecurityAgreementPage } from '../../../pages/assets/addSecurityAgreementPage'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
-import partyData from '../../../fixtures/assets/partyData.json'
-import debtorData from '../../../fixtures/assets/debtorData.json'
 import { step3AssertionPage } from '../../../pages/assets/step3AssertionPage'
-import { securityAgreementPage } from '../../../pages/assets/securityAgreementPage'
-import step2Data from '../../../fixtures/assets/step2Data.json'
 import collateralData from '../../../fixtures/assets/collateralData.json'
 
 describe('Assertions Test Suite ', function () {
@@ -18,11 +14,11 @@ describe('Assertions Test Suite ', function () {
 
         landingPage.clickVirtualCardTestingButton()
 
-        landingPage.bcscLogin(Cypress.env('credentials'))
+        landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
-        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('credentials'))
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('credentials'), registrationType.standard.sa)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.sa)
 
         step3AssertionPage.clickStep3()
 

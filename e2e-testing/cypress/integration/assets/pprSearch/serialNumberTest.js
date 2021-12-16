@@ -16,8 +16,7 @@ describe('PPR Search Test Suite ', function () {
 
         pprSearchPage.selectSearchCategoryDropdown()
 
-        pprSearchPage.searchBusinessDebtorName(pprSearchData.searchCategory)
-
+        pprSearchPage.searchSerialNumber(pprSearchData.searchCategory)
 
 
     })
