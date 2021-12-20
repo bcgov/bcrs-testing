@@ -8,7 +8,7 @@ import collateralData from '../../../fixtures/assets/collateralData.json'
 
 describe('Assertions Test Suite ', function () {
 
-    it('Step2 Assertions Test Case', function () {
+    it('Step3 Assertions Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 

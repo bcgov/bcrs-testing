@@ -163,6 +163,7 @@ export class Step2AssertionPage {
         cy.wait(2000)
         const element = 'span:contains("' + data.partyCodeResult + '")'
         cy.get(element).click()
+        cy.wait(2000)
     }
 
     setSecuredPartyNameLookup(data) {
