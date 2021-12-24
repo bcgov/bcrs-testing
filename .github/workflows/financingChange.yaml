@@ -1,5 +1,6 @@
 name: Financing Change Registrations TEST Environment
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   Regression:
     runs-on: windows-latest
