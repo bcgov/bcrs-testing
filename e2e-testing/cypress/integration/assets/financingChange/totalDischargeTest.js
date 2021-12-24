@@ -39,12 +39,13 @@ describe('Registrations Change Test Suite ', function () {
 
         myRegistrationsTablePage.verifyConfirmPage(totalDischargeData)
 
-        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
-        
         myRegistrationsTablePage.verifyHeader(totalDischargeData)
 
+        feeSummaryModalPage.verifyTotalDischargeFeeModal(feeData.feeSummary.totalDischarge)
 
-
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
+        
+        
     })
 
 })

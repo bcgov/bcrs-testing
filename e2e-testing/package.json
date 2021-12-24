@@ -9,7 +9,9 @@
     "assetsStandardRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed",
     "otherRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/otherRegistrations/*.js --headed",
     "assertions": "./node_modules/.bin/cypress run --spec cypress/integration/assets/assertions/*.js --headed",
-    "crownChargeRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed"
+    "crownChargeRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed",
+    "financingChange": "./node_modules/.bin/cypress run --spec cypress/integration/assets/financingChange/*.js --headed",
+    "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed"
   },
   "author": "",
   "license": "ISC",

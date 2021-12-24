@@ -1,4 +1,4 @@
-name: Crown Charge Registrations TEST Environment
+name: Registration Flows TEST Environment
 on:
   workflow_dispatch:
 jobs:
@@ -19,7 +19,7 @@ jobs:
           node-version: "12.x"
       - run: npm install
 
-      - run: npm run crownChargeRegistrations
+      - run: npm run registrationFlows
         if: ${{ always() }}
         env:
           CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
@@ -35,4 +35,4 @@ jobs:
           job_name: "Regression Test - TEST --->"
           icon_emoji: ":bell:"
           channel: "Automation-Testing-Notifications"
-          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}   
+          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}  

@@ -56,6 +56,8 @@
         "registeringPartyName": " DIVYA ",
         "registeringPartyAddress": "799 MCCALLUM RDVICTORIA BC V9B 6A2Canada",
         "confirmRenewalLengthTitle": " Renewal Length and Terms",
+        "confirmRenewalLengthTitle1": " Renewal Length and Trust Indenture",
+        "trustIndenture": " Yes ",
         "confirmNewExpiry": "November 4, 2029 at 11:59:59 pm Pacific time",
         "folioNumberTitle": "1. Folio or Reference Number",
         "folioInfo": " Add an optional number for this transaction for your own tracking purposes. This information is not used by the Personal Property Registry. ",

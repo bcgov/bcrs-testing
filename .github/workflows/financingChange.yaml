@@ -1,6 +1,5 @@
-name: Crown Charge Registrations TEST Environment
-on:
-  workflow_dispatch:
+name: Financing Change Registrations TEST Environment
+on: [push]
 jobs:
   Regression:
     runs-on: windows-latest
@@ -19,7 +18,7 @@ jobs:
           node-version: "12.x"
       - run: npm install
 
-      - run: npm run crownChargeRegistrations
+      - run: npm run financingChange
         if: ${{ always() }}
         env:
           CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
@@ -35,4 +34,4 @@ jobs:
           job_name: "Regression Test - TEST --->"
           icon_emoji: ":bell:"
           channel: "Automation-Testing-Notifications"
-          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}   
+          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}  

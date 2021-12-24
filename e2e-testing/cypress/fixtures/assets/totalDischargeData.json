@@ -1,8 +1,10 @@
 {
     "cautionBox": "Important: Secured Parties in this registration will receive a copy of the Total Discharge Verification Statement. ",
     "step1Title": "Registration Length",
+    "registrationLengthTitle": "Registration Length and Trust Indenture",
     "registrationLength": " Registration Length ",
     "registrationLengthInYears": " 25 Years ",
+    "registrationLengthInYears1": " 10 Years ",
     "trustIndenture": " Trust Indenture ",
     "trustIndentureValue": " Yes ",
     "step2Title": "Registering Party, Secured Parties, and Debtors",
@@ -57,6 +59,7 @@
     "summaryCollateral": "Collateral: General Collateral and 0 Vehicles",
     "confirmCheckbox1": " I confirm that I wish to discharge this registration.",
     "confirmCheckbox2": " I understand that all collateral on this registration will be released.",
-    "confirmCheckbox3": " I understand that all Secured Parties will be notified."
+    "confirmCheckbox3": " I understand that all Secured Parties will be notified.",
+    "dashboardTombstoneHeader": "My Personal Property Registry"
 
 }

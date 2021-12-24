@@ -21,6 +21,8 @@ export class MyRegistrationsTablePage {
         this.deleteDraft = 'span:contains("Delete Draft")'
         this.actionDropdown = '.actions__more-actions__btn > .v-btn__content > .v-icon'
         this.regNumberTextbox = 'th:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)'
+        this.statusDropdown = '.my-reg-filter > .col > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
+        this.activeButton = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)'
 
         //Total Discharge
 
@@ -48,7 +50,7 @@ export class MyRegistrationsTablePage {
         this.tombstoneCurrentExpiryTitle = 'span:contains("Current Expiry Date and Time: ")'
         this.tombstoneCurrentExpiryDate = '.tombstone-sub-header > .ml-16 > .row > .pl-3'
         this.dischargeTitle = 'h1:contains("Total Discharge")'
-        
+
         // Registration Length and Trust Indenture
 
         this.step1Title = 'label:contains("Registration Length")'
@@ -63,7 +65,7 @@ export class MyRegistrationsTablePage {
         this.registeringPartyTitle = 'h3:contains("Original Registering Party")'
         this.registeringPartyName = ':nth-child(7) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title > .row > .col-9 > div'
         this.registeringPartyAddress = ':nth-child(7) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
-        
+
         //Secured Parties
 
         this.securedPartiesTitle = 'h3:contains("Secured Parties")'
@@ -120,7 +122,11 @@ export class MyRegistrationsTablePage {
         this.confirmCheckbox2 = ':nth-child(3) > .v-input__control > .v-input__slot > .v-label > .ma-0'
         this.confirmCheckbox3 = ':nth-child(4) > .v-input__control > .v-input__slot > .v-label'
 
-    
+        //Filter table
+
+        this.registrationNumber = '#registration-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(1)'
+
+
     }
 
     //Total Discharge
@@ -145,7 +151,7 @@ export class MyRegistrationsTablePage {
 
     }
 
-    verifyRegistrationLengthAndTrustIndenture(data){
+    verifyRegistrationLengthAndTrustIndenture(data) {
 
         cy.get(this.step1Title).should('have.text', data.step1Title)
         cy.get(this.registrationLengthInYears).should('have.text', data.registrationLengthInYears)
@@ -219,14 +225,14 @@ export class MyRegistrationsTablePage {
         cy.get(this.dischargeInfo).should('have.text', data.dischargeInfo)
         cy.get(this.registeringPartyDischargeTitle).should('have.text', data.registeringPartyDischargeTitle)
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
-        cy.get(this.folioInfo).should('have.text', data. folioInfo)
+        cy.get(this.folioInfo).should('have.text', data.folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
         cy.get(this.confirmTitle).should('have.text', data.confirmTitle)
         cy.get(this.confirmInfo).should('have.text', data.confirmInfo)
         cy.get(this.cofirmModalTitle).should('have.text', data.cofirmModalTitle)
-        cy.get(this.summaryRegNumber).should('have.text', data.summaryRegNumber)
-        cy.get(this.summaryRegType).should('have.text', data.summaryRegType)
-        cy.get(this.summaryCollateral).should('have.text', data.summaryCollateral)
+        cy.get(this.summaryRegNumber).should('not.be.empty')
+        cy.get(this.summaryRegType).should('not.be.empty')
+        cy.get(this.summaryCollateral).should('not.be.empty')
         cy.get(this.confirmCheckbox1).should('have.text', data.confirmCheckbox1)
         cy.get(this.confirmCheckbox2).should('have.text', data.confirmCheckbox2)
         cy.get(this.confirmCheckbox3).should('have.text', data.confirmCheckbox3)
@@ -266,6 +272,53 @@ export class MyRegistrationsTablePage {
         cy.log("Entered into Review Page")
     }
 
+    selectRegistrationFromTable() {
+        cy.get(this.statusDropdown).click()
+        cy.get(this.activeButton).click()
+        cy.wait(5000)
+    }
+
+    filterRegistration() {
+
+        cy.get(this.registrationNumber).invoke('text').then(elementText => {
+            cy.log(elementText)
+
+            cy.get(this.regNumberTextbox).type(elementText)
+
+        })
+
+    }
+
+    selectRenewButton(data) {
+        cy.get(this.actionDropdown).click()
+        cy.get(this.renew).click()
+        cy.get(this.debtorTextbox).type(data.debtorName)
+        cy.wait(2000)
+        cy.get(this.debtorTextbox).type('{enter}')
+        cy.get(this.continueButton).click()
+        cy.log("Entered into Review Page")
+    }
+
+    selectAmendButton(data) {
+        cy.get(this.actionDropdown).click()
+        cy.get(this.amend).click()
+        cy.get(this.debtorTextbox).type(data.debtorName)
+        cy.wait(2000)
+        cy.get(this.debtorTextbox).type('{enter}')
+        cy.get(this.continueButton).click()
+        cy.log("Entered into Review Page")
+    }
+
+    selectDischargeButton(data) {
+        cy.get(this.actionDropdown).click()
+        cy.get(this.totalDischarge).click()
+        cy.get(this.debtorTextbox).type(data.debtorName)
+        cy.wait(2000)
+        cy.get(this.debtorTextbox).type('{enter}')
+        cy.get(this.continueButton).click()
+        cy.log("Entered into Review Page")
+
+    }
 
 }
 export const myRegistrationsTablePage = new MyRegistrationsTablePage()
