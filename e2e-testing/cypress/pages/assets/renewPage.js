@@ -259,15 +259,15 @@ export class RenewPage {
 
     verifyRenewalConfirmPage(data) {
         cy.get(this.submitButton).click()
-        cy.get(this.confirmTombstoneRegDateandTime).should('have.text', data.tombstoneRegDateandTime)
-        cy.get(this.confirmTombstoneCurrentExpiryDate).should('have.text', data.tombstoneCurrentExpiryDate)
+        cy.get(this.confirmTombstoneRegDateandTime).should('not.be.empty')
+        cy.get(this.confirmTombstoneCurrentExpiryDate).should('not.be.empty')
         cy.get(this.renewInfo).should('have.text', data.renewInfo)
         cy.get(this.registeringPartyRenewalTitle).should('have.text', data.registeringPartyRenewalTitle)
         cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
         cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
         cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle)
         cy.get(this.confirmRenewalLength).should('have.text', data.confirmRenewalLength)
-        cy.get(this.confirmNewExpiry).should('have.text', data.confirmNewExpiry)
+        cy.get(this.confirmNewExpiry).should('not.be.empty')
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
         cy.get(this.folioInfo).should('have.text', data. folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
