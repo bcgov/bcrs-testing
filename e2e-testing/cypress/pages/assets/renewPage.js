@@ -197,8 +197,8 @@ export class RenewPage {
 
     verifyConfirmPage(data) {
         cy.get(this.submitButton).click()
-        cy.get(this.confirmTombstoneRegDateandTime).should('have.text', data.tombstoneRegDateandTime)
-        cy.get(this.confirmTombstoneCurrentExpiryDate).should('have.text', data.tombstoneCurrentExpiryDate)
+        cy.get(this.confirmTombstoneRegDateandTime).should('not.be.empty')
+        cy.get(this.confirmTombstoneCurrentExpiryDate).should('not.be.empty')
         cy.get(this.renewInfo).should('have.text', data.renewInfo)
         cy.get(this.registeringPartyRenewalTitle).should('have.text', data.registeringPartyRenewalTitle)
         cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
@@ -251,7 +251,7 @@ export class RenewPage {
         cy.get(this.step3Title).should('have.text', data.step3Title)
         cy.get(this.generalCollateralTitle).should('have.text', data.generalCollateralTitle)
         cy.get(this.viewGeneralCollateralLink).click()
-        cy.get(this.gcDateAndTime).should('have.text', data.gcDateAndTime)
+        cy.get(this.gcDateAndTime).should('not.be.empty')
         cy.get(this.collateralDescriptionTitle).should('have.text', data.collateralDescriptionTitle)
         cy.get(this.collateralDescription).should('have.text', data.collateralDescription)
         cy.log("Verified Collateral")
