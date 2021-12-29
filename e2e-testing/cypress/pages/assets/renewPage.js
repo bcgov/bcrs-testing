@@ -132,7 +132,7 @@ export class RenewPage {
 
         cy.get(this.step1Title).should('have.text', data.step1Title)
         cy.get(this.renewalLength).should('have.text', data.renewalLength)
-        cy.get(this.newExpiry).should('have.text', data.newExpiry)
+        cy.get(this.newExpiry).should('not.be.empty')
         cy.get(this.amountOfLien).should('have.text', data.amountOfLien)
         cy.get(this.surrenderDate).should('have.text', data.surrenderDate)
         cy.log("verified Renewal Length and Terms")
@@ -205,7 +205,7 @@ export class RenewPage {
         cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
         cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle)
         cy.get(this.confirmRenewalLength).should('have.text', data.renewalLength)
-        cy.get(this.confirmNewExpiry).should('have.text', data.confirmNewExpiry)
+        cy.get(this.confirmNewExpiry).should('not.be.empty')
         cy.get(this.confirmAmountOfLien).should('have.text', data.amountOfLien)
         cy.get(this.confirmSurrenderDate).should('have.text', data.surrenderDate)
         cy.get(this.confirmCourtOrderTitle).should('have.text', data.courtOrderTitle)
@@ -237,7 +237,7 @@ export class RenewPage {
         cy.get(this.registrationLengthRadioButton).click({ force: true })
         cy.get(this.lengthInYearsText).type(data.lengthInYears)
         cy.wait(2000)
-        cy.get(this.renewalExpiry).should('have.text', data.lengthExpiry)
+        cy.get(this.renewalExpiry).should('not.be.empty')
         cy.log("Verified Renewal Length")
     }
 
