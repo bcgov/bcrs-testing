@@ -11,7 +11,9 @@
     "assertions": "./node_modules/.bin/cypress run --spec cypress/integration/assets/assertions/*.js --headed",
     "crownChargeRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed",
     "financingChange": "./node_modules/.bin/cypress run --spec cypress/integration/assets/financingChange/*.js --headed",
-    "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed"
+    "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed",
+    "pprSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed"
+    
   },
   "author": "",
   "license": "ISC",
