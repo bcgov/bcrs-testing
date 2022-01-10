@@ -113,11 +113,11 @@ describe(' Registration Flows Test Suite ', function () {
 
         cy.wait(3000)
 
-       //Amend Flow
+        //Amend Flow
 
-       myRegistrationsTablePage.selectRegistrationFromTable()
+        myRegistrationsTablePage.selectRegistrationFromTable()
 
-       myRegistrationsTablePage.filterRegistration()
+        myRegistrationsTablePage.filterRegistration()
 
         myRegistrationsTablePage.selectAmendButton(registrationNumbers.amend)
 

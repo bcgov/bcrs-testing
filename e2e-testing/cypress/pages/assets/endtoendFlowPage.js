@@ -20,6 +20,13 @@ export class EndToEndFlowPage {
         this.confirmTrustIndenture = '#trust-indenture-summary'
         this.trustIndenture = '.summary-text'
 
+        // Repairers Lien Renewal
+
+        this.renewalLength = ':nth-child(2) > .summary-text'
+        this.newExpiry = '#new-expiry-rl'
+        this.amountOfLien = ':nth-child(6) > .summary-text'
+        this.surrenderDate = '#surrender-date'
+
 
         // Confirm Page
 
@@ -227,6 +234,19 @@ export class EndToEndFlowPage {
         cy.log("Clicked on Confirm Checkbox")
         //cy.get(this.confirmCertifyDate).invoke('text').then(date)
         //log.info("Printing text" + date)
+    }
+
+    // Repairers Lien Renewal
+
+    verifyRepairersLienRenewalLengthAndTerms(data) {
+
+        cy.get(this.step1Title).should('have.text', data.step1Title)
+        cy.get(this.renewalLength).should('have.text', data.renewalLength)
+        cy.get(this.newExpiry).should('not.be.empty')
+        cy.get(this.amountOfLien).should('have.text', data.amountOfLien)
+        cy.get(this.surrenderDate).should('not.be.empty')
+        cy.log("verified Renewal Length and Terms")
+
     }
 
 
