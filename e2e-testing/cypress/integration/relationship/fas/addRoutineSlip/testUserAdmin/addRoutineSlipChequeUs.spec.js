@@ -1,9 +1,7 @@
-
-import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
-import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
+import { addRoutineSlipUS } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlipUS"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
+import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 
-// The following test is with a a User that has been assigned to Payment Collection user group
 describe('RS Cheque', function () 
 {
     before(function () 
@@ -11,8 +9,8 @@ describe('RS Cheque', function ()
         cy.fixture('relationship/fasRelationsLogin.json').then((userLogin) =>
         {
             const url=userLogin.testFas
-            const username=userLogin.idir1
-            const password=userLogin.password1
+            const username=userLogin.idir4
+            const password=userLogin.password4
             cy.visit(url)
             cy.get('input[name="user"]').type(username) //Username
             cy.get('input[name="password"]').type(password) //Password
@@ -23,8 +21,7 @@ describe('RS Cheque', function ()
     // Adding Routine Slip Details
     it('Cheque Routine Slip Test Case', function ()
     {
-        //addRoutineSlip.routineDetailsCheque()
-        addRoutineSlip.routineDetailsCheque()
+        addRoutineSlipUS.routineDetailsChequeUS()
         cy.wait(3000)
     })
 
@@ -34,4 +31,5 @@ describe('RS Cheque', function ()
         createRoutineSlipButton.createSlip()
         
     })
+
 })

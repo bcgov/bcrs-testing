@@ -25,17 +25,18 @@ export class AddSingleTransaction
 
     changeOfDirectorFilling()
     {
-        cy.get('[data-test=input-filing-type]').type('Notice of Change - Benefit Company{enter}')
-        //cy.get('#list-item-288-2').click() // Search for Director and click from drop down
-        //cy.contains('Change of Director - Benefit Company').click()
+        cy.get('[data-test=input-filing-type]').type('Notice of Change')
+        cy.wait(1000)
+        cy.get('div[role="listbox"] > div:nth-of-type(1)').click() // Search for Director and click from drop down
         cy.get('[data-test=txt-quantity-0]').type('1{enter}') // Add Quantity
         cy.get('[data-test=txt-incorporation-0]').type('13421{enter}') // Add Reference/Incorportation Number
     }
 
     amalgamationFilling()
     {
-        cy.get('[data-test=input-filing-type]').type('ama{enter}')
-        cy.get('#list-item-215-0').click() // Search for Amalgamation and click from drop down
+        cy.get('[data-test=input-filing-type]').type('Amalgamation')
+        cy.wait(1000)
+        cy.get('div[role="listbox"] > div:nth-of-type(1)').click() // Search for Amalgamation and click from drop down
         cy.get('[data-test=txt-quantity-0]').type('1{enter}') // Add Quantity
         cy.get('[data-test=txt-incorporation-0]').type('13421{enter}') // Add Reference/Incorportation Number
     }

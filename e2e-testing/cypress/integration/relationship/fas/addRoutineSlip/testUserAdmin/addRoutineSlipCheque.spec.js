@@ -1,9 +1,9 @@
 import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
-import { addSingleTransaction } from "../../../../../pages/relationship/fas/addManualTransaction/singleManualTransaction"
-import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/requestRefundApproved"
-import { refundRequestAuthorized } from "../../../../../pages/relationship/fas/refundRequest/refundRequestAuthorized"
+import { addSingleTransaction } from "../../../../../pages/relationship/fas/addManualTransaction/manualTransactions"
+//import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/requestRefundApproved"
+//import { refundRequestAuthorized } from "../../../../../pages/relationship/fas/refundRequest/refundRequestAuthorized"
 
 // The following test is with a a User that has been assigned to user group
 /*describe('test', function () 
@@ -34,7 +34,7 @@ describe('RS Cheque', function ()
     // Adding Routine Slip Details
     it('Cheque Routine Slip Test Case', function ()
     {
-        //addRoutineSlip.routineDetailsCheque()
+
         addRoutineSlip.routineDetailsCheque()
         cy.wait(3000)
     })
@@ -47,16 +47,17 @@ describe('RS Cheque', function ()
     })
 
     // Add Manual Transaction
-    /*it('Change Director Filling Transction', function()
+    it('Change Director Filling Transction', function()
     {
         addSingleTransaction.transactionAdd()
         cy.wait(3000)
-        addSingleTransaction.amalgamationFilling()
+        addSingleTransaction.changeOfDirectorFilling()
         cy.wait(3000)
-        //addSingleTransaction.addTranscationFilling()
-        //cy.wait(3000)
-    })*/
-
+        addSingleTransaction.addTranscationFilling()
+        cy.wait(5000)
+    })
+    
+    /*
     // Refund Request Flow
     it('Refund Request', function()
     {
@@ -79,10 +80,10 @@ describe('RS Cheque', function ()
         requestRefundDetails.countryDropDown()
         cy.wait(2000)
         requestRefundDetails.selectCanada()
-        cy.wait(2000)*/
+        cy.wait(2000)
         requestRefundDetails.doneButton()
         cy.wait(2000)
-        refundRequestAuthorized.cancelRefund()
+        refundRequestAuthorized.authorizeRefund()
         cy.wait(2000)
-    })
+    })*/
 })
