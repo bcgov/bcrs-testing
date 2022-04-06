@@ -6,12 +6,13 @@ export class LandingPage {
 
         this.pprLink = 'a[href = "/ppr-marketing"]'
         this.accountDropdown = 'span:contains("Log in to my BC Registries Account")'
-        this.bcServicesCardMenuItem = 'div:contains("BC Services Card")'
+        this.bcServicesCardMenuItem = 'div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)'
         this.virtualCardTesting = '#tile_btn_virtual_device_div_id'
         this.cardSerialNumber = '#csn'
         this.continueNext = '#continue'
         this.passcode = '#passcode'
         this.continue = '#btnSubmit'
+        this.loginDropdown = '#loginBtn'
 
     }
 
@@ -22,6 +23,16 @@ export class LandingPage {
     clickPPRLink() {
         cy.get(this.pprLink).click()
         cy.log("Clicked on PPR Link")
+    }
+
+    clickLoginDropdown() {
+        cy.get(this.loginDropdown).click()
+        cy.log("Clicked on Login Dropdown Button")
+        cy.get(this.bcServicesCardMenuItem).click({ multiple: true })
+        cy.log("Clicked on BC services card")
+        cy.get(this.virtualCardTesting).click()
+        cy.log("Clicked on Virtual Card Testing button")
+
     }
 
     clickAccountDropdown() {

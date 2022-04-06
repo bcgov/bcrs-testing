@@ -1,0 +1,47 @@
+{
+    "securedParty": {
+        "firstName": "This is a veryyyyy longg secured party's first name",
+        "middleName": "This is a veryyyy longg secured party's middle name",
+        "lastName": "This is a veryyyyyy longg secured party's last name",
+        "emailAddress": "something_someplace@someone.com",
+        "country": "Australia",
+        "addressLine1": "31 Campbell St",
+        "addressLine2": "Australian Capital Territory",
+        "city": "Ainslie",
+        "region": "ACT",
+        "postalCode": "2602",
+        "deliveryInstructions": "This is a veryyyyy longg secured party's delivery instructions which is optional.",
+        "businessName": "Granville savings and mortgage corporation. granville savings and mortgage corporation granville savings and mortgage corporation granville savings and"
+    },
+    "debtor": {
+        "firstName": "This is a veryy long individual debtor's first name",
+        "middleName": "This is a very long individual debtor's middle name",
+        "lastName": "This is a veryyy long individual debtor's last name",
+        "debtorBirthMonth": "April",
+        "debtorBirthDay": "12",
+        "debtorBirthYear": "1965",
+        "emailAddress": "something_someplace@someone.com",
+        "country": "Germany",
+        "addressLine1": "Brandenburger Str. 21",
+        "addressLine2": "Nordrhein-Westfalen",
+        "city": "Leverkusen",
+        "region": "NWE",
+        "postalCode": "51377",
+        "deliveryInstructions": "This is a veryyyy long business debtor's delivery instructions which is optional.",
+        "businessName": "Little mountain residential care & housing society. Little mountain residential care & housing society. Little mountain residential care & housing soci"
+    },
+    "registeringParty": {
+        "firstName": "This is a veryy long registering party's first name",
+        "middleName": "This is a very long registering party's middle name",
+        "lastName": "This is a veryyy long registering party's last name",
+        "emailAddress": "something_someplace@someone.com",
+        "country": "Italy",
+        "addressLine1": "Via Alessandro Volta 23",
+        "addressLine2": "Padova",
+        "city": "Abano Terme",
+        "region": "ATS",
+        "postalCode": "35031",
+        "deliveryInstructions": "This is a veryyy long registering party's individual person delivery instructions",
+        "businessName": "Royal bank of canada, non-negotiable securities centre. Royal bank of canada, non-negotiable securities centre. Royal bank of canada, non-negotiable se"
+    }
+}

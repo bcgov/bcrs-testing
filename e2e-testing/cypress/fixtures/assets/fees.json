@@ -330,6 +330,15 @@
             "currency": "CAD",
             "totalFees": "Total Fees",
             "totalAmount": "$11.50"
+        },
+        "ctAmendment": {
+            "title": " Registration Amendment ",
+            "titleAmount": " No Fee ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
         }
     }
 }

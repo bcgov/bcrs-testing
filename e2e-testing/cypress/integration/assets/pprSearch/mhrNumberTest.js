@@ -11,7 +11,7 @@ describe('PPR Search Test Suite ', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
-        landingPage.clickVirtualCardTestingButton()
+        landingPage.clickLoginDropdown()
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 

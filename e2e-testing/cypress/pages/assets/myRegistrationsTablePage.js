@@ -16,10 +16,13 @@ export class MyRegistrationsTablePage {
         this.registrationNumberSearch = 'my-reg-add'
         this.amend = '.edit-action > .v-btn'
         this.totalDischarge = 'span:contains("Total Discharge")'
+        this.RLTotalDischarge = '.TableRow_discharge-btn_1yDa0'
         this.renew = 'span:contains("Renew")'
+        this.rlAmend = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)'
         this.removeFromTable = 'span:contains("Remove From Table")'
         this.deleteDraft = 'span:contains("Delete Draft")'
-        this.actionDropdown = '.actions__more-actions__btn > .v-btn__content > .v-icon'
+        this.amendButton = '.edit-action > .v-btn'
+        this.actionDropdown = '.actions__more-actions__btn'
         this.regNumberTextbox = 'th:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)'
         this.statusDropdown = '.my-reg-filter > .col > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
         this.activeButton = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)'
@@ -50,6 +53,7 @@ export class MyRegistrationsTablePage {
         this.tombstoneCurrentExpiryTitle = 'span:contains("Current Expiry Date and Time: ")'
         this.tombstoneCurrentExpiryDate = '.tombstone-sub-header > .ml-16 > .row > .pl-3'
         this.dischargeTitle = 'h1:contains("Total Discharge")'
+        this.confirmDischargeTitle = 'h1:contains("Confirm and Complete Total Discharge")'
 
         // Registration Length and Trust Indenture
 
@@ -134,6 +138,7 @@ export class MyRegistrationsTablePage {
     clickTotalDischargeButton(data) {
 
         cy.get(this.regNumberTextbox).type(data.registrationNumber)
+        cy.wait(10000)
         cy.get(this.actionDropdown).click()
         cy.get(this.totalDischarge).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
@@ -155,6 +160,7 @@ export class MyRegistrationsTablePage {
 
         cy.get(this.step1Title).should('have.text', data.step1Title)
         cy.get(this.registrationLengthInYears).should('have.text', data.registrationLengthInYears)
+        cy.get(this.trustIndentureValue).should('have.text', data.trustIndentureValue)
         cy.log("verified Registration Length and Trust Indenture")
 
     }
@@ -220,6 +226,16 @@ export class MyRegistrationsTablePage {
         cy.log("Verified Total Discharge Header")
     }
 
+    confirmDischargeHeader(data) {
+        cy.get(this.breadcrumbTitle).should('have.text', data.breadcrumbTitle)
+        cy.get(this.tombstoneHeader).should('have.text', data.tombstoneHeader)
+        cy.get(this.tombstoneSubHeader).should('have.text', data.tombstoneSubHeader)
+        cy.get(this.tombstoneRegDateandTime).should('not.be.empty')
+        cy.get(this.tombstoneCurrentExpiryDate).should('not.be.empty')
+        cy.get(this.confirmDischargeTitle).should('have.text', data.confirmDischargeTitle)
+        cy.log("Verified Total Discharge Header")
+    }
+
     verifyConfirmPage(data) {
         cy.get(this.submitButton).click()
         cy.get(this.dischargeInfo).should('have.text', data.dischargeInfo)
@@ -248,6 +264,7 @@ export class MyRegistrationsTablePage {
     clickRenewButton(data) {
 
         cy.get(this.regNumberTextbox).type(data.registrationNumber)
+        cy.wait(10000)
         cy.get(this.actionDropdown).click()
         cy.get(this.renew).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
@@ -263,6 +280,7 @@ export class MyRegistrationsTablePage {
     clickAmendButton(data) {
 
         cy.get(this.regNumberTextbox).type(data.registrationNumber)
+        cy.wait(10000)
         cy.get(this.actionDropdown).click()
         cy.get(this.amend).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
@@ -273,9 +291,10 @@ export class MyRegistrationsTablePage {
     }
 
     selectRegistrationFromTable() {
-        cy.get(this.statusDropdown).click()
+        cy.get(this.statusDropdown).click({force: true})
+        cy.wait(2000)
         cy.get(this.activeButton).click()
-        cy.wait(5000)
+        cy.wait(10000)
     }
 
     filterRegistration() {
@@ -284,6 +303,7 @@ export class MyRegistrationsTablePage {
             cy.log(elementText)
 
             cy.get(this.regNumberTextbox).type(elementText)
+            cy.wait(10000)
 
         })
 
@@ -301,7 +321,8 @@ export class MyRegistrationsTablePage {
 
     selectAmendButton(data) {
         cy.get(this.actionDropdown).click()
-        cy.get(this.amend).click()
+        cy.wait(2000)
+        cy.get(this.amendButton).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
@@ -312,6 +333,28 @@ export class MyRegistrationsTablePage {
     selectDischargeButton(data) {
         cy.get(this.actionDropdown).click()
         cy.get(this.totalDischarge).click()
+        cy.get(this.debtorTextbox).type(data.debtorName)
+        cy.wait(2000)
+        cy.get(this.debtorTextbox).type('{enter}')
+        cy.get(this.continueButton).click()
+        cy.log("Entered into Review Page")
+
+    }
+
+    selectRLAmendButton(data) {
+        cy.get(this.actionDropdown).click()
+        cy.wait(2000)
+        cy.get(this.rlAmend).click()
+        cy.get(this.debtorTextbox).type(data.debtorName)
+        cy.wait(2000)
+        cy.get(this.debtorTextbox).type('{enter}')
+        cy.get(this.continueButton).click()
+        cy.log("Entered into Review Page")
+    }
+
+    selectRLDischargeButton(data) {
+        cy.get(this.actionDropdown).click()
+        cy.get(this.RLTotalDischarge).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')

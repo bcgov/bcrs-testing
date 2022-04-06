@@ -1,9 +1,9 @@
 {
     "cautionBox": "Important: Secured Parties in this registration will receive a copy of the Total Discharge Verification Statement. ",
-    "step1Title": "Registration Length",
+    "step1Title": "Registration Length and Trust Indenture",
     "registrationLengthTitle": "Registration Length and Trust Indenture",
     "registrationLength": " Registration Length ",
-    "registrationLengthInYears": " 25 Years ",
+    "registrationLengthInYears": " 10 Years ",
     "registrationLengthInYears1": " 10 Years ",
     "trustIndenture": " Trust Indenture ",
     "trustIndentureValue": " Yes ",
@@ -40,13 +40,14 @@
     "gcDateAndTime": "October 15, 2021 at 2:22:51 pm Pacific time",
     "collateralDescriptionTitle": "Base Registration General Collateral:",
     "collateralDescription": "General Collateral Automation Test.",
-    "breadcrumbTitle": "Base Registration 100166B - Total Discharge",
-    "tombstoneHeader": " Base Registration Number 100166B ",
-    "tombstoneSubHeader": " Forestry - Sub-contractor Charge ",
-    "tombstoneRegDateandTime": " October 15, 2021 at 2:22:51 pm Pacific time ",
-    "tombstoneCurrentExpiryDate": " October 15, 2026 at 11:59:59 pm Pacific time ",
+    "breadcrumbTitle": "Base Registration 501922N - Total Discharge",
+    "tombstoneHeader": " Base Registration Number 501922N ",
+    "tombstoneSubHeader": " Security Agreement ",
+    "tombstoneRegDateandTime": " February 9, 2022 at 8:06:56 am Pacific time ",
+    "tombstoneCurrentExpiryDate": " February 9, 2032 at 11:59:59 pm Pacific time ",
     "dischargeTitle": "Total Discharge",
-    "dischargeInfo": " Confirm and complete any additional information before submitting this Total Discharge. ",
+    "confirmDischargeTitle": "Confirm and Complete Total Discharge",
+    "dischargeInfo": " Confirm your Total Discharge and complete the additional information before registering. ",
     "registeringPartyDischargeTitle": " Registering Party for this Discharge ",
     "folioNumberTitle": "1. Folio or Reference Number",
     "folioInfo": " Add an optional number for this transaction for your own tracking purposes. This information is not used by the Personal Property Registry. ",
@@ -60,6 +61,7 @@
     "confirmCheckbox1": " I confirm that I wish to discharge this registration.",
     "confirmCheckbox2": " I understand that all collateral on this registration will be released.",
     "confirmCheckbox3": " I understand that all Secured Parties will be notified.",
-    "dashboardTombstoneHeader": "My Personal Property Registry"
+    "dashboardTombstoneHeader": "My Personal Property Registry",
+    "removeFromTable": "Remove FromTable" 
 
 }

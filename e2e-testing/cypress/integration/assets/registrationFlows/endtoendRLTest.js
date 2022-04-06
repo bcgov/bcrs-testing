@@ -20,6 +20,7 @@ import { amendPage } from '../../../pages/assets/amendPage'
 import amendData from '../../../fixtures/assets/amendData.json'
 import { repairersLienPage } from '../../../pages/assets/repairersLienPage'
 import repairersLienData from '../../../fixtures/assets/repairersLienData.json'
+import { endtoendRLPage } from '../../../pages/assets/endtoendRLPage'
 
 describe(' Registration Flows Test Suite ', function () {
     // Setup data and login as BC Service Card
@@ -28,51 +29,49 @@ describe(' Registration Flows Test Suite ', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
-        landingPage.clickVirtualCardTestingButton()
+        landingPage.clickLoginDropdown()
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
-        // addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
+        addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-        // addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.rl)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.rl)
 
-        // repairersLienPage.setLienAmount(repairersLienData.amountOfLien)
+        repairersLienPage.setLienAmount(repairersLienData.amountOfLien)
 
-        // repairersLienPage.setSurrenderDate(repairersLienData.surrenderDate)
+        repairersLienPage.setSurrenderDate(repairersLienData.surrenderDate)
 
-        // feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.rl)
+        feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.rl)
 
-        // repairersLienPage.clickDateOkButton()
+        securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
 
-        // securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
+        securityAgreementPage.clickAddSecuredPartyLink()
 
-        // securityAgreementPage.clickAddSecuredPartyLink()
+        securityAgreementPage.setPartyIndividual(partyData.partyIndividual)
 
-        // securityAgreementPage.setPartyIndividual(partyData.partyIndividual)
+        securityAgreementPage.clickAddSecuredPartyLink()
 
-        // securityAgreementPage.clickAddSecuredPartyLink()
+        securityAgreementPage.setPartyBusiness(partyData.partyBusiness)
 
-        // securityAgreementPage.setPartyBusiness(partyData.partyBusiness)
+        securityAgreementPage.setDebtorIndividual(debtorData.debtorIndividual)
 
-        // securityAgreementPage.setDebtorIndividual(debtorData.debtorIndividual)
+        securityAgreementPage.setDebtorBusiness(debtorData.debtorBusiness)
 
-        // securityAgreementPage.setDebtorBusiness(debtorData.debtorBusiness)
+        securityAgreementPage.clickAddCollateralButton()
 
-        // securityAgreementPage.clickAddCollateralButton()
+        securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.bo, true)
 
-        // securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.bo, true)
+        securityAgreementPage.setVehicleCollateral(collateralData.vehicleCollateral.mv, true)
 
-        // securityAgreementPage.verifyVehicleCollateral(collateralData.vehicleCollateral.bo)
+        securityAgreementPage.clickReviewAndConfirmButton()
 
-        // securityAgreementPage.clickReviewAndConfirmButton()
+        securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
-        // securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
 
-        // securityAgreementPage.verifyConfirmAuthorization(authorizationData)
+        securityAgreementPage.clickRegisterAndPayButton()
 
-        // securityAgreementPage.clickRegisterAndPayButton()
-
-        // cy.wait(5000)
+        cy.wait(5000)
 
         //Renew Flow
 
@@ -92,7 +91,7 @@ describe(' Registration Flows Test Suite ', function () {
 
         renewPage.verifyDebtors(totalDischargeData)
 
-        renewPage.verifyCollateral(renewalData.rlRenew)
+        endtoendRLPage.verifyRLCollateral(renewalData.rlRenewal)
 
         renewPage.setCourtOrder(renewalData.rlRenew)
 
@@ -103,6 +102,68 @@ describe(' Registration Flows Test Suite ', function () {
         endtoendFlowPage.submitRenewal()
 
         cy.wait(3000)
+
+        //Amend Flow
+
+        // myRegistrationsTablePage.selectRegistrationFromTable()
+
+        // myRegistrationsTablePage.filterRegistration()
+
+        myRegistrationsTablePage.selectRLAmendButton(registrationNumbers.amend)
+
+        endtoendRLPage.verifyAmountAndSurrenderDate(amendData)
+
+        feeSummaryModalPage.verifyAmendmentFeeModal(feeData.feeSummary.amendment)
+
+        endtoendRLPage.verifyRegisteringParty(amendData)
+
+        endtoendRLPage.verifySecuredParties(amendData)
+
+        endtoendRLPage.verifyDebtors(amendData)
+
+        endtoendRLPage.verifyRLAmendmentCollateral(renewalData.rlAmendment)
+
+        amendPage.setCourtOrder(amendData)
+
+        endtoendFlowPage.verifyAmendConfirmPage(amendData)
+
+        feeSummaryModalPage.verifyAmendmentFeeModal(feeData.feeSummary.amendment)
+
+        securityAgreementPage.verifyConfirmAuthorization(authorizationData)
+
+        endtoendFlowPage.submitAmendment()
+
+        cy.wait(3000)
+
+        //Discharge Flow
+
+        // myRegistrationsTablePage.selectRegistrationFromTable()
+
+        // myRegistrationsTablePage.filterRegistration()
+
+        myRegistrationsTablePage.selectRLDischargeButton(registrationNumbers.discharge)
+
+        feeSummaryModalPage.verifyTotalDischargeFeeModal(feeData.feeSummary.totalDischarge)
+
+        myRegistrationsTablePage.verifyCautionBox(totalDischargeData)
+
+        endtoendRLPage.verifyAmountAndSurrenderDate(amendData)
+
+        myRegistrationsTablePage.verifyRegisteringParty(totalDischargeData)
+
+        endtoendFlowPage.verifyRLSecuredParties(totalDischargeData)
+
+        myRegistrationsTablePage.verifyDebtors(totalDischargeData)
+
+        endtoendRLPage.verifyRLCollateral(renewalData.rlRenewal)
+
+        myRegistrationsTablePage.verifyConfirmPage(totalDischargeData)
+
+        feeSummaryModalPage.verifyTotalDischargeFeeModal(feeData.feeSummary.totalDischarge)
+
+        endtoendFlowPage.verifyConfirmAuthorization(authorizationData)
+
+        endtoendFlowPage.submitDischarge(totalDischargeData)
 
 
     })

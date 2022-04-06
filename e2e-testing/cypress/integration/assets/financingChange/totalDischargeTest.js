@@ -15,7 +15,7 @@ describe('Registrations Change Test Suite ', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
-        landingPage.clickVirtualCardTestingButton()
+        landingPage.clickLoginDropdown()
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
@@ -39,7 +39,7 @@ describe('Registrations Change Test Suite ', function () {
 
         myRegistrationsTablePage.verifyConfirmPage(totalDischargeData)
 
-        myRegistrationsTablePage.verifyHeader(totalDischargeData)
+        myRegistrationsTablePage.confirmDischargeHeader(totalDischargeData)
 
         feeSummaryModalPage.verifyTotalDischargeFeeModal(feeData.feeSummary.totalDischarge)
 

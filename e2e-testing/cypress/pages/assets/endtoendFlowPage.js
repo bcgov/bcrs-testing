@@ -37,14 +37,14 @@ export class EndToEndFlowPage {
         this.confirmTombstoneCurrentExpiryDate = '.tombstone-sub-header > .ml-16 > .row > .pl-3'
         this.renewInfo = '[style="padding-top: 25px; max-width: 875px;"] > .ma-0'
         this.registeringPartyRenewalTitle = '[style="min-width: 960px;"] > :nth-child(1) > :nth-child(1) > .pt-14'
-        this.confirmRegisteringPartyName = ':nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title'
-        this.confirmRegisteringPartyAddress = ':nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
+        this.confirmRegisteringPartyName = '.registering-row > .list-item__title'
+        this.confirmRegisteringPartyAddress = '.registering-row > :nth-child(2)'
         this.confirmRenewalLengthTitle = '#length-trust-summary > .pt-2'
         this.confirmRenewalLength = '#registration-length'
         this.confirmNewExpiry = '#new-expiry'
         this.confirmAmountOfLien = ':nth-child(3) > .summary-text'
         this.confirmSurrenderDate = ':nth-child(4) > .summary-text'
-        this.confirmCourtOrderTitle = '.container > .pa-2'
+        this.confirmCourtOrderTitle = '.py-2'
         this.courtNameDisplay = '#court-name-display'
         this.courtRegistryDisplay = '#court-registry-display'
         this.courtFileNumberDisplay = '#file-number-display'
@@ -63,7 +63,7 @@ export class EndToEndFlowPage {
         this.trustIndentureValue = '#trust-indenture-summary'
 
 
-        //Secured Parties
+        //Secured Parties (total discharge)
 
         this.securedPartiesTitle = 'h3:contains("Secured Parties")'
         this.individualPersonName = ':nth-child(9) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title > .row > .col-9 > div'
@@ -88,7 +88,10 @@ export class EndToEndFlowPage {
         //Tombstone Header
         this.verifyTombstoneHeader = '.tombstone-header > b'
 
-        
+        //Registration table button
+        this.removeFromTable = '.TableRow_remove-btn_1a8lM'
+
+
         //Confirm Authorization
 
         this.cerifyTitle = 'h2:contains("2. Authorization")'
@@ -99,6 +102,30 @@ export class EndToEndFlowPage {
         this.confirmAuthorizationInfo = 'label[for^="checkbox-certified"]'
         this.confirmCertifyDate = '.pl-8 > .summary-text'
         this.confirmCheckbox = '.summary-text > .v-input > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple'
+
+        //RL Amendment
+
+        // this.currentExpiryTitle = 'strong:contains("Current Expiry")'
+        // this.currentExpiry = '#current-expiry'
+        // this.step2Title = 'label:contains("Registering Party, Secured Parties, and Debtors")'
+        // this.registeringPartyTitle = 'h3:contains("Original Registering Party")'
+        // this.registeringPartyName = '.container.pt-4 > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title'
+        // this.registeringPartyAddress = '.container.pt-4 > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
+        // this.securedPartiesTitle = 'h3:contains("Secured Parties")'
+        // this.individualPersonName = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title'
+        // this.individualPartyAddress = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2)'
+        // this.individualPartyEmail = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(3)'
+        // this.individualBusinessName = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > .list-item__title'
+        // this.individualBusinessAddress = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > :nth-child(2)'
+        // this.individualBusinessEmail = '.secured-party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > :nth-child(3)'
+        // this.debtorTitle = 'h3:contains("Debtors")'
+        // this.individualDebtorName = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title'
+        // this.individualDebtorAddress = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2)'
+        // this.individualDebtorEmail = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(3)'
+        // this.individualDebtorBirthdate = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(4)'
+        // this.businessDebtorName = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > .list-item__title'
+        // this.businessDebtorAddress = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > :nth-child(2)'
+        // this.businessDebtorEmail = '.debtor-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(2) > :nth-child(3)'
 
     }
 
@@ -155,11 +182,11 @@ export class EndToEndFlowPage {
         cy.get(this.courtNameDisplay).should('have.text', data.courtName)
         cy.get(this.courtRegistryDisplay).should('have.text', data.courtRegistry)
         cy.get(this.courtFileNumberDisplay).should('have.text', data.courtFileNumberDisplay)
-        cy.get(this.dateDisplay).should('have.text', data.dateOfOrder)
+        cy.get(this.dateDisplay).should('not.be.empty')
         cy.get(this.effectOfOrderDisplay).should('have.text', data.effectOfOrder)
         cy.get(this.registeringPartyAmendmentTitle).should('have.text', data.registeringPartyAmendmentTitle)
-        cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
-        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
+        cy.get(this.confirmRegisteringPartyName).should('have.text', data.confirmRegisteringPartyName)
+        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.confirmRegisteringPartyAddress)
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
         cy.get(this.folioInfo).should('have.text', data.folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
@@ -216,7 +243,7 @@ export class EndToEndFlowPage {
         cy.get(this.submitButton).click()
         cy.wait(2000)
         cy.log("Submitted Total Discharge")
-        cy.get(this.verifyTombstoneHeader).should('have.text', data.dashboardTombstoneHeader)
+        cy.get(this.removeFromTable).should('have.text', data.removeFromTable)
         cy.log("Verified End to End Registration Flow")
 
     }
@@ -226,9 +253,9 @@ export class EndToEndFlowPage {
         cy.get(this.certifyInfo).should('have.text', data.certifyInfo)
         cy.get(this.certifyName).should('have.text', data.certifyName)
         cy.get(this.certifyAccountName).should('have.text', data.certifyAccountName)
-        cy.get(this.certifyAddress).should('have.text',data.certifyAddress)
+        cy.get(this.certifyAddress).should('have.text', data.certifyAddress)
         cy.get(this.confirmAuthorizationInfo).should('have.text', data.confirmAuthorizationInfo)
-        const todaysDate = Cypress.moment().format('MMMM DD, YYYY')
+        const todaysDate = Cypress.moment().format('MMMM D, YYYY')
         cy.get(this.confirmCertifyDate).should('contain', todaysDate)
         cy.get(this.confirmCheckbox).click({ multiple: true })
         cy.log("Clicked on Confirm Checkbox")
@@ -247,6 +274,46 @@ export class EndToEndFlowPage {
         cy.get(this.surrenderDate).should('not.be.empty')
         cy.log("verified Renewal Length and Terms")
 
+    }
+
+    //Repairers Lien Amendment
+
+    // verifyCurrentExpiry(data) {
+    //     cy.get(this.currentExpiryTitle).should('have.text', data.currentExpiryTitle)
+    //     cy.get(this.currentExpiry).should('not.be.empty')
+    //     cy.log("Verified Current Expiry")
+    // }
+
+    // verifyRegisteringParty(data) {
+    //     cy.get(this.step2Title).should('have.text', data.step2Title)
+    //     cy.get(this.registeringPartyTitle).should('have.text', data.registeringPartyTitle)
+    //     cy.get(this.registeringPartyName).should('have.text', data.registeringPartyName)
+    //     cy.get(this.registeringPartyAddress).should('have.text', data.registeringPartyAddress)
+    //     cy.log("Verified Registering Party")
+    // }
+
+    // verifySecuredParties(data) {
+    //     cy.get(this.securedPartiesTitle).should('have.text', data.securedPartiesTitle)
+    //     cy.get(this.individualPersonName).should('have.text', data.individualPersonName)
+    //     cy.get(this.individualPartyAddress).should('have.text', data.individualPartyAddress)
+    //     cy.get(this.individualPartyEmail).should('have.text', data.individualPartyEmail)
+    //     cy.get(this.individualBusinessName).should('have.text', data.individualBusinessName)
+    //     cy.get(this.individualBusinessAddress).should('have.text', data.individualBusinessAddress)
+    //     cy.get(this.individualBusinessEmail).should('have.text', data.individualBusinessEmail)
+    //     cy.log("Verified Secured Parties")
+
+    // }
+        //Total Discharge
+
+ verifyRLSecuredParties(data) {
+        cy.get(this.securedPartiesTitle).should('have.text', data.securedPartiesTitle)
+        cy.get(this.individualPersonName).should('have.text', data.individualPersonName)
+        cy.get(this.individualPartyAddress).should('have.text', data.individualPartyAddress)
+        cy.get(this.individualPartyEmail).should('have.text', data.individualPartyEmail)
+        cy.get(this.individualBusinessName).should('have.text', data.individualBusinessName)
+        cy.get(this.individualBusinessAddress).should('have.text', data.individualBusinessAddress)
+        cy.get(this.individualBusinessEmail).should('have.text', data.individualBusinessEmail)
+        cy.log("Verified Secured Parties")
     }
 
 

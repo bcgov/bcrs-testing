@@ -1,6 +1,8 @@
 /// <reference types="Cypress" />
 
 const log = require("log");
+const dayjs = require("dayjs");
+
 
 export class RenewPage {
 
@@ -83,14 +85,15 @@ export class RenewPage {
         this.confirmTombstoneCurrentExpiryDate = '.tombstone-sub-header > .ml-16 > .row > .pl-3'
         this.renewInfo = '[style="padding-top: 25px; max-width: 875px;"] > .ma-0'
         this.registeringPartyRenewalTitle = '[style="min-width: 960px;"] > :nth-child(1) > :nth-child(1) > .pt-14'
-        this.confirmRegisteringPartyName = ':nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title'
-        this.confirmRegisteringPartyAddress = ':nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
+        this.confirmRegisteringPartyName = '.registering-row > .list-item__title'
+        this.confirmRegisteringPartyAddress = '.registering-row > :nth-child(2)'
         this.confirmRenewalLengthTitle = '#length-trust-summary > .pt-2'
         this.confirmRenewalLength = '#registration-length'
+        this.confirmTrustIndenture = '#trust-indenture-summary'
         this.confirmNewExpiry = '#new-expiry'
         this.confirmAmountOfLien = ':nth-child(3) > .summary-text'
         this.confirmSurrenderDate = ':nth-child(4) > .summary-text'
-        this.confirmCourtOrderTitle = '.pa-0 > .pt-2'
+        this.confirmCourtOrderTitle = '#court-order-component > .pt-2'
         this.courtNameDisplay = '#court-name-display'
         this.courtRegistryDisplay = '#court-registry-display'
         this.courtFileNumberDisplay = '#file-number-display'
@@ -113,6 +116,7 @@ export class RenewPage {
         this.gcDateAndTime = '.gc-description > :nth-child(1)'
         this.collateralDescriptionTitle = '.gc-description > :nth-child(2)'
         this.collateralDescription = '.gc-description > .ma-0'
+        this.trustIndenture = '.summary-text'
 
 
     }
@@ -159,7 +163,7 @@ export class RenewPage {
         cy.log("Verified Secured Parties")
     }
 
-    
+
     verifyDebtors(data) {
         cy.get(this.debtorTitle).should('have.text', data.debtorTitle)
         cy.get(this.individualDebtorName).should('have.text', data.individualDebtorName)
@@ -183,13 +187,20 @@ export class RenewPage {
         cy.log("Verified Collateral")
     }
 
+
     setCourtOrder(data) {
         cy.get(this.courtOrderTitle).should('have.text', data.courtOrderTitle)
         cy.get(this.courtName).type(data.courtName)
         cy.get(this.courtRegistry).type(data.courtRegistry)
         cy.get(this.courtFileNumber).type(data.courtFileNumber)
         cy.get(this.dateOfOrder).click()
-        cy.get(this.selectDate).click()
+
+        const todaysDate = dayjs().format("D");
+        cy.log(todaysDate);
+        const element = 'td > button:contains('+todaysDate+')'
+        cy.get(element).should('be.visible').first().click()
+
+        // cy.get(this.selectDate).click()
         cy.get(this.clickOkButton).click()
         cy.log("Entered Court Order")
 
@@ -201,21 +212,28 @@ export class RenewPage {
         cy.get(this.confirmTombstoneCurrentExpiryDate).should('not.be.empty')
         cy.get(this.renewInfo).should('have.text', data.renewInfo)
         cy.get(this.registeringPartyRenewalTitle).should('have.text', data.registeringPartyRenewalTitle)
-        cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
-        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
+        cy.get(this.confirmRegisteringPartyName).should('have.text', data.confirmRegisteringPartyName)
+        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.confirmRegisteringPartyAddress)
         cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle)
         cy.get(this.confirmRenewalLength).should('have.text', data.renewalLength)
         cy.get(this.confirmNewExpiry).should('not.be.empty')
         cy.get(this.confirmAmountOfLien).should('have.text', data.amountOfLien)
-        cy.get(this.confirmSurrenderDate).should('have.text', data.surrenderDate)
+        cy.get(this.confirmSurrenderDate).should('not.be.empty')
         cy.get(this.confirmCourtOrderTitle).should('have.text', data.courtOrderTitle)
         cy.get(this.courtNameDisplay).should('have.text', data.courtName)
         cy.get(this.courtRegistryDisplay).should('have.text', data.courtRegistry)
         cy.get(this.courtFileNumberDisplay).should('have.text', data.courtFileNumberDisplay)
-        cy.get(this.dateDisplay).should('have.text', data.dateOfOrder)
+
+
+        const todaysDate = dayjs().format("MMMM D, YYYY");
+        cy.log(todaysDate);
+
+        cy.get(this.dateDisplay).should('have.text', todaysDate)
+
+
         cy.get(this.effectOfOrderDisplay).should('have.text', data.effectOfOrder)
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
-        cy.get(this.folioInfo).should('have.text', data. folioInfo)
+        cy.get(this.folioInfo).should('have.text', data.folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
         cy.log("Verified Confirm Page")
 
@@ -238,6 +256,7 @@ export class RenewPage {
         cy.get(this.lengthInYearsText).type(data.lengthInYears)
         cy.wait(2000)
         cy.get(this.renewalExpiry).should('not.be.empty')
+        cy.get(this.trustIndenture).should('have.text', data.trustIndenture)
         cy.log("Verified Renewal Length")
     }
 
@@ -265,11 +284,12 @@ export class RenewPage {
         cy.get(this.registeringPartyRenewalTitle).should('have.text', data.registeringPartyRenewalTitle)
         cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
         cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
-        cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle)
+        cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle1)
         cy.get(this.confirmRenewalLength).should('have.text', data.confirmRenewalLength)
         cy.get(this.confirmNewExpiry).should('not.be.empty')
+        cy.get(this.confirmTrustIndenture).should('have.text', data.confirmTrustIndenture)
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
-        cy.get(this.folioInfo).should('have.text', data. folioInfo)
+        cy.get(this.folioInfo).should('have.text', data.folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
         cy.log("Verified Registration Renewal Confirm Page")
 
