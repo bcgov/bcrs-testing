@@ -24,9 +24,17 @@ export class ColumnListSearch
         cy.get(':nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-label').click() // UnSelect/Select Entity Number
     }
 
-    selectDate()
+    selectTodayDate()
     {
-        cy.get(':nth-child(4) > .v-input > .v-input__control > .v-input__slot > .v-label').click() // UnSelect/Select Date
+        cy.get('[data-test="input-date-picker"]').click() // Select Date field
+        cy.get('.v-item-group > :nth-child(1) > .v-list-item__content').click() // Select Today's Date
+        cy.get('.date-filter-btns > .font-weight-bold').click() // Select Apply Button
+    }
+
+    selectActiveStatus()
+    {
+        cy.get('.v-select__selections').click() // Select Status field
+        cy.get('#list-item-96-0 > .v-list-item__content').click() // Select Active Status
     }
 
     selectStatus()

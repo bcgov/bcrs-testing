@@ -15,7 +15,8 @@ export class RefundRequestDetails
 
     editStatus()
     {
-        cy.get('[data-test=btn-edit]').click()
+        //cy.get('[data-test=btn-edit]').click()
+        cy.get('.col-sm-9 > :nth-child(2) > .v-btn > .v-btn__content').click()
     }
 
     statusDropDown()
@@ -23,9 +24,40 @@ export class RefundRequestDetails
         cy.get('.v-select__selections').click()
     }
 
+    placeOnHold()
+    {
+        cy.get('.v-list-item__title').contains('Place routing slip on hold').click()
+        
+    }
+
+    placeOnActive()
+    {
+        cy.get('.v-list-item__title').contains('Place routing slip to active').click()
+    }
+
+    placeOnNSF()
+    {
+        cy.get('.v-list-item__title').contains('Place routing slip to NSF').click()
+    }
+
+    placeOnWriteOff()
+    {
+        cy.get('.v-list-item__title').contains('Write off request').click()
+    }
+
+    popUpWindowNSF()
+    {
+        cy.get('v-btn__content').contains('Place status to NSF').click()
+    }
+
+    popUpWindowCancel()
+    {
+        cy.get('v-btn__content').contains('Cancel').click()
+    }
+
     refundRequestOption()
     {
-        cy.get('#list-item-211-7 > .v-list-item__content').click() // Select Refund Request
+        cy.get('.v-list-item__title').contains('Refund request').click()
     }
 
     /*formDetails ()

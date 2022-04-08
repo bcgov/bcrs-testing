@@ -1,9 +1,9 @@
-import { addRoutineSlipUS } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlipUS"
+import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/statusRoutinSlip"
+import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
 import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 
-
-describe('RS Cash', function () 
+describe('RS NSF Status', function () 
 {
     before(function () 
     {
@@ -19,18 +19,26 @@ describe('RS Cash', function ()
         })
     })
 
-    // Adding Routine Slip Details
     it('Cash Routine Slip Test Case', function ()
     {
-        addRoutineSlipUS.routineDetailsCashUS()
+        addRoutineSlip.routineDetailsCash()
         cy.wait(3000)
     })
 
-    // Submit Button
     it('Create Routine Slip', function()
     {
         createRoutineSlipButton.createSlip()
-        //createRoutineSlipButton.createSlip()
         cy.wait(3000)
+    })
+
+    it('NSF Request', function()
+    {
+        requestRefundDetails.editStatus()
+        cy.wait(1000)
+        requestRefundDetails.placeOnNSF()
+        cy.wait(2000)
+        requestRefundDetails.popUpWindowNSF()
+        cy.wait(2000)
+
     })
 })

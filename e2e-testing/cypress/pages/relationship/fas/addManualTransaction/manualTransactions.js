@@ -70,6 +70,11 @@ export class AddSingleTransaction
     {
         cy.get('[data-test=btn-cancel] > .v-btn__content > .font-weight-bold').click()
     }
+
+    addTransaction()
+    {
+        cy.get('.d-inline-flex > [data-test="btn-add-transaction"]').click()
+    }
 }
 
 export const addSingleTransaction = new AddSingleTransaction()

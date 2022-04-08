@@ -6,7 +6,7 @@ export class RoutineSlipSearch
 
     routineSlipNumber()
     {
-        cy.get('#routingSlipNumber').type('Test{enter}') //Enter Routine Slip Number
+        cy.get('#routingSlipNumber').type('400000002{enter}') //Enter Routine Slip Number
     }
 
     receiptNumber()

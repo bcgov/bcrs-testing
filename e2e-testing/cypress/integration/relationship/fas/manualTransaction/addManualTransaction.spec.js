@@ -1,23 +1,9 @@
-import { addSingleTransaction } from "../../../../pages/relationship/fas/addManualTransaction/singleManualTransaction"
+import { addSingleTransaction } from "../../../../pages/relationship/fas/addManualTransaction/manualTransactions"
 import { addRoutineSlip } from "../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { createRoutineSlipButton } from "../../../../pages/relationship/fas/routeSlipAdd/createButton"
 import { loginFAS } from "../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
-import { columnListSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/columnSearchList"
-import { resultSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/searchResult"
-import { routineSlipSearch } from "../../../../pages/relationship/fas/searchRoutineSlips/searchSlips"
 
-/*describe('test', function () 
-{
-    // FAS URL navigation
-    it('Login using IDIR', function ()
-    {
-        loginFAS.visit(Cypress.env('fas-test'))
-        loginFAS.testIdir4()
-        loginFAS.SubmitButton()
-        cy.wait(5000)
-    })*/
-
-describe('RS Cash', function () 
+describe('Manual Transactions', function () 
 {
     before(function () 
     {
@@ -43,7 +29,6 @@ describe('RS Cash', function ()
     // Submit Button
     it('Create Routine Slip', function()
     {
-        
         createRoutineSlipButton.createSlip()
         cy.wait(3000)
     })
@@ -51,17 +36,13 @@ describe('RS Cash', function ()
     // Search Routine Slip
    it('Add Manual Transaction from Existing Routine Slip', function ()
     {
-        /*columnListSearch.columnSelectDropDown()
-        columnListSearch.selectEntityNumber()
-        routineSlipSearch.entityNumber()
-        routineSlipSearch.slipStatus()
-        cy.wait(3000)
-        resultSearch.openRoutineSlip()*/
-        cy.wait(3000)
+        cy.wait(2000)
         addSingleTransaction.transactionAdd()
-        cy.wait(3000)
+        cy.wait(1000)
         addSingleTransaction.changeOfDirectorFilling()
-        cy.wait(3000)
+        cy.wait(1000)
+        addSingleTransaction.addTranscationFilling()
+        cy.wait(2000)
     })
 
 })

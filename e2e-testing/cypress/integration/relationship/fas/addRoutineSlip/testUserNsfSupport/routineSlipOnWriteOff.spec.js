@@ -1,9 +1,9 @@
-import { addRoutineSlipUS } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlipUS"
+import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/statusRoutinSlip"
+import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
 import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
 
-
-describe('RS Cash', function () 
+describe('RS Write Off Status', function () 
 {
     before(function () 
     {
@@ -19,18 +19,25 @@ describe('RS Cash', function ()
         })
     })
 
-    // Adding Routine Slip Details
-    it('Cash Routine Slip Test Case', function ()
+    it.only('Cash Routine Slip Test Case', function ()
     {
-        addRoutineSlipUS.routineDetailsCashUS()
-        cy.wait(3000)
+        addRoutineSlip.routineDetailsCheque()
+        cy.wait(2000)
     })
 
-    // Submit Button
-    it('Create Routine Slip', function()
+    it.only('Create Routine Slip', function()
     {
         createRoutineSlipButton.createSlip()
-        //createRoutineSlipButton.createSlip()
-        cy.wait(3000)
+        cy.wait(2000)
     })
+
+    it.only('Write Off Request', function()
+    {
+        requestRefundDetails.editStatus()
+        cy.wait(1000)
+        requestRefundDetails.placeOnWriteOff()
+        cy.wait(2000)
+
+    })
+
 })
