@@ -35,6 +35,11 @@ export class RefundRequestDetails
         cy.get('.v-list-item__title').contains('Place routing slip to active').click()
     }
 
+    cancelWriteOffRequest()
+    {
+        cy.get('.v-list-item__title').contains('Cancel Write off request').click()
+    }
+
     placeOnNSF()
     {
         cy.get('.v-list-item__title').contains('Place routing slip to NSF').click()

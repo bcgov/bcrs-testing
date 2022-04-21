@@ -8,7 +8,7 @@ export class AddRoutineSlipUS
     routineDetailsChequeUS()
     {
         cy.get('.col-sm-4 > .v-btn > .v-btn__content').click() //Add Routine Slip Button
-        cy.get('.col-12 > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('400000009') //Enter routine Slip
+        cy.get('.col-12 > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('600000003') //Enter routine Slip
         cy.get('.row > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > [data-test=input-date-picker]').click() //Date Picker
         cy.get(':nth-child(3) > :nth-child(3) > .v-btn > .v-btn__content').click() //Select Date
         cy.get('.row > :nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('Test Business') //Name of Person/Business
@@ -32,7 +32,7 @@ export class AddRoutineSlipUS
     routineDetailsCashUS()
     {
         cy.get('.col-sm-4 > .v-btn > .v-btn__content').click() //Add Routine Slip Button
-        cy.get('.col-12 > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('400000009') //Enter routine Slip
+        cy.get('.col-12 > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('600000004') //Enter routine Slip
         cy.get('.row > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > [data-test=input-date-picker]').click() //Date Picker
         cy.get(':nth-child(3) > :nth-child(3) > .v-btn > .v-btn__content').click() //Select Date
         cy.get('.row > :nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('Test Business') //Name of Person/Business

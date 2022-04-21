@@ -1,7 +1,8 @@
 import { requestRefundDetails } from "../../../../../pages/relationship/fas/refundRequest/statusRoutinSlip"
-import { addRoutineSlip } from "../../../../../pages/relationship/fas/routeSlipAdd/addRoutineSlip"
 import { createRoutineSlipButton } from "../../../../../pages/relationship/fas/routeSlipAdd/createButton"
 import { loginFAS } from "../../../../../pages/relationship/fas/routeSlipAdd/loginFAS"
+import { resultSearch } from "../../../../../pages/relationship/fas/searchRoutineSlips/searchResult"
+import { routineSlipSearch } from "../../../../../pages/relationship/fas/searchRoutineSlips/searchSlips"
 
 describe('RS Write Off Status', function () 
 {
@@ -19,25 +20,29 @@ describe('RS Write Off Status', function ()
         })
     })
 
-    it.only('Cash Routine Slip Test Case', function ()
+    it('Search for Routine Slip', function()
     {
-        addRoutineSlip.routineDetailsCheque()
+        routineSlipSearch.routineSlipNumber()
+        cy.wait(2000)
+        resultSearch.openRoutineSlip()
         cy.wait(2000)
     })
 
-    it.only('Create Routine Slip', function()
-    {
-        createRoutineSlipButton.createSlip()
-        cy.wait(2000)
-    })
-
-    it.only('Write Off Request', function()
+    it('Write Off Request', function()
     {
         requestRefundDetails.editStatus()
         cy.wait(1000)
         requestRefundDetails.placeOnWriteOff()
         cy.wait(2000)
 
+    })
+
+    it('Cancel Write of Request', function()
+    {
+        requestRefundDetails.editStatus()
+        cy.wait(1000)
+        requestRefundDetails.cancelWriteOffRequest()
+        cy.wait(2000)
     })
 
 })
