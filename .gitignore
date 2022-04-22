@@ -115,4 +115,6 @@ node_modules/
 # Mac OS
 .DS_Store
 
-
+# cypress
+e2e-testing/package-lock.json
+fasRelationsLogin.json
