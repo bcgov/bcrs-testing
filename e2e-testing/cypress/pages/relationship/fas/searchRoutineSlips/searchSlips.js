@@ -25,11 +25,6 @@ export class RoutineSlipSearch
         cy.get(':nth-child(3) > :nth-child(2) > .v-btn > .v-btn__content').click() // Select Date
     }
 
-    /*datePickerOptions()
-    {
-        cy.get(':nth-child(4) > .v-list-item__content').click() // Last Month Date
-    }*/
-
     slipStatus()
     {
         cy.get('.v-select__selections').click() // Click on Status Slip Drop down
