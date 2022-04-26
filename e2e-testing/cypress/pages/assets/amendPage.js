@@ -85,6 +85,10 @@ export class AmendPage {
         this.generalCollateralDoneButton = '#done-btn-gen-col'
         this.generalCollateralCancelButton = '#cancel-btn-gen-col'
         this.addVehicleCollateral = '#btn-add-collateral'
+        this.dischargeVehicleType = '.summary-cell > div'
+        this.dischargeVehicleYear = '[title="2020"]'
+        this.dischargeVehicleMake = '[title="GMC"]'
+        this.dischargeVehicleModel = '[title="SIERRA 1500"]'
 
 
         //Details Description
@@ -143,6 +147,18 @@ export class AmendPage {
         this.securedPartyAddedName = '.row.pt-2 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title > .row > .col-9 > :nth-child(1)'
         this.securedPartyAddedAddress = '.row.pt-2 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2)'
         this.securedPartyAddedCode = '.row.pt-2 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(4)'
+        this.reviewPageAmendmentTitle = 'h1:contains("Review and Complete Amendment")'
+        this.amendmentInfo = '[style="padding-top: 25px; max-width: 875px;"] > .ma-0'
+        this.amendmentSubTitle = '.pt-6'
+        this.verifyAddedSecuredPartyName = '.party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > .list-item__title > .row > .col-9 > :nth-child(1)'
+        this.verifyAddedSecuredPartyAddress = '.party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2)'
+        this.verifyAddedSecuredPartyCode = '.party-summary > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(4)'
+        this.verifyDeletedSecuredPartyName = '.disabled-text'
+        this.verifyDeletedSecuredPartyAddress = '.disabled-text-not-first > :nth-child(2)'
+        this.verifyDeletedSecuredPartyCode = '.disabled-text-not-first > :nth-child(4)'
+        this.verifyDeletedChip = '.disabled-text-not-first > .list-item__title > .row > .col-9 > :nth-child(2) > .v-chip'
+        this.confirmRegisteringPartyTitle = '.pt-14'
+
 
 
     }
@@ -286,6 +302,13 @@ export class AmendPage {
     }
 
     verifyCTCollateral(data) {
+        cy.get(this.step3Title).should('have.text', data.step3Title)
+        cy.get(this.vehicleType).should('have.text', data.vehicleType)
+        cy.get(this.vehicleYear).should('have.text', data.vehicleYear)
+        cy.get(this.vehicleMake).should('have.text', data.vehicleMake)
+        cy.get(this.vehicleModel).should('have.text', data.vehicleModel)
+        cy.get(this.vehicleSerialNumber).should('have.text', data.vehicleSerialNumber)
+        cy.get(this.generalCollateralTitle).should('have.text', data.generalCollateralTitle)
         cy.get(this.viewGeneralCollateralLink).click()
         cy.get(this.gcDateAndTime).should('not.be.empty')
         cy.get(this.collateralDescriptionTitle).should('have.text', data.collateralDescriptionTitle)
@@ -297,22 +320,84 @@ export class AmendPage {
     verifyAmendConfirmPage(data) {
         cy.get(this.submitButton).click()
         cy.get(this.confirmTombstoneRegDateandTime).should('not.be.empty')
-        cy.get(this.confirmTombstoneCurrentExpiryDate).should('not.be.empty')
-        cy.get(this.renewInfo).should('have.text', data.renewInfo)
-        cy.get(this.registeringPartyRenewalTitle).should('have.text', data.registeringPartyRenewalTitle)
-        cy.get(this.confirmRegisteringPartyName).should('have.text', data.registeringPartyName)
-        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.registeringPartyAddress)
-        cy.get(this.confirmRenewalLengthTitle).should('have.text', data.confirmRenewalLengthTitle1)
-        cy.get(this.confirmRenewalLength).should('have.text', data.confirmRenewalLength)
-        cy.get(this.confirmNewExpiry).should('not.be.empty')
-        cy.get(this.confirmTrustIndenture).should('have.text', data.trustIndenture)
+        cy.get(this.confirmTombstoneCurrentExpiryDate).should('have.text', data.confirmTombstoneCurrentExpiryDate)
+        cy.get(this.reviewPageAmendmentTitle).should('have.text', data.reviewPageAmendmentTitle)
+        cy.get(this.amendmentInfo).should('have.text', data.amendmentInfo)
+        cy.get(this.cautionBox).should('have.text', data.cautionBox)
+        cy.get(this.confirmAmendTitle).should('have.text', data.confirmAmendTitle)
+        cy.get(this.amendmentSubTitle).should('have.text', data.amendmentSubTitle)
+        cy.get(this.verifyAddedSecuredPartyName).should('have.text', data.securedPartyAddedName)
+        cy.get(this.verifyAddedSecuredPartyAddress).should('have.text', data.securedPartyAddedAddress)
+        cy.get(this.verifyAddedSecuredPartyCode).should('have.text', data.securedPartyAddedCode)
+        cy.get(this.addedChip).should('have.text', data.addedChip)
+        cy.get(this.verifyDeletedSecuredPartyName).should('have.text', data.securedPartyName)
+        cy.get(this.verifyDeletedSecuredPartyAddress).should('have.text', data.securedPartyAddress)
+        cy.get(this.verifyDeletedSecuredPartyCode).should('have.text', data.ctSecuredPartyCode)
+        cy.get(this.verifyDeletedChip).should('have.text', data.deletedChip)
+        cy.get(this.confirmCourtOrderTitle).should('have.text', data.courtOrderTitle)
+        cy.get(this.courtNameDisplay).should('have.text', data.courtName)
+        cy.get(this.courtRegistryDisplay).should('have.text', data.courtRegistry)
+        cy.get(this.courtFileNumberDisplay).should('have.text', data.courtFileNumberDisplay)
+        cy.get(this.dateDisplay).should('not.be.empty')
+        cy.get(this.effectOfOrderDisplay).should('have.text', data.effectOfOrder)
+        cy.get(this.confirmRegisteringPartyTitle).should('have.text', data.confirmRegisteringPartyTitle)
+        cy.get(this.confirmRegisteringPartyName).should('have.text', data.confirmRegisteringPartyName)
+        cy.get(this.confirmRegisteringPartyAddress).should('have.text', data.confirmRegisteringPartyAddress)
         cy.get(this.folioNumberTitle).should('have.text', data.folioNumberTitle)
         cy.get(this.folioInfo).should('have.text', data.folioInfo)
         cy.get(this.folioTextbox).type(data.folioTextbox)
-        cy.log("Verified Registration Renewal Confirm Page")
+        cy.log("Verified Amendment Confirm Page")
     }
 
+    //CT TotalDischarge
+    verifyDischargeCTCollateral(data) {
+        cy.get(this.step3Title).should('have.text', data.step3Title)
+        cy.get(this.dischargeVehicleType).should('have.text', data.vehicleType)
+        cy.get(this.dischargeVehicleYear).should('have.text', data.vehicleYear)
+        cy.get(this.dischargeVehicleMake).should('have.text', data.vehicleMake)
+        cy.get(this.dischargeVehicleModel).should('have.text', data.vehicleModel)
+        cy.get(this.vehicleSerialNumber).should('have.text', data.vehicleSerialNumber)
+        cy.get(this.generalCollateralTitle).should('have.text', data.generalCollateralTitle)
+        cy.get(this.viewGeneralCollateralLink).click()
+        cy.get(this.gcDateAndTime).should('not.be.empty')
+        cy.get(this.collateralDescriptionTitle).should('have.text', data.collateralDescriptionTitle)
+        cy.get(this.collateralDescription).should('have.text', data.generalCollateralDescription)
+        cy.log("Verified Collateral")
 
+    }
+
+    //WL Amendment
+    verifyWLCollateral(data) {
+        cy.get(this.step3Title).should('have.text', data.step3Title)
+        cy.get(this.vehicleType).should('have.text', data.vehicleType)
+        cy.get(this.vehicleYear).should('have.text', data.vehicleYear)
+        cy.get(this.vehicleMake).should('have.text', data.vehicleMake)
+        cy.get(this.vehicleModel).should('have.text', data.vehicleModel)
+        cy.get(this.vehicleSerialNumber).should('have.text', data.vehicleSerialNumber)
+        cy.get(this.generalCollateralTitle).should('have.text', data.generalCollateralTitle)
+        cy.get(this.viewGeneralCollateralLink).click()
+        cy.get(this.gcDateAndTime).should('not.be.empty')
+        cy.get(this.collateralDescriptionTitle).should('have.text', data.collateralDescriptionTitle)
+        cy.get(this.collateralDescription).should('have.text', data.generalCollateralWLDescription)
+        cy.log("Verified Collateral")
+
+    }
+
+    verifyDischargeWLCollateral(data) {
+        cy.get(this.step3Title).should('have.text', data.step3Title)
+        cy.get(this.dischargeVehicleType).should('have.text', data.vehicleType)
+        cy.get(this.dischargeVehicleYear).should('have.text', data.vehicleYear)
+        cy.get(this.dischargeVehicleMake).should('have.text', data.vehicleMake)
+        cy.get(this.dischargeVehicleModel).should('have.text', data.vehicleModel)
+        cy.get(this.vehicleSerialNumber).should('have.text', data.vehicleSerialNumber)
+        cy.get(this.generalCollateralTitle).should('have.text', data.generalCollateralTitle)
+        cy.get(this.viewGeneralCollateralLink).click()
+        cy.get(this.gcDateAndTime).should('not.be.empty')
+        cy.get(this.collateralDescriptionTitle).should('have.text', data.collateralDescriptionTitle)
+        cy.get(this.collateralDescription).should('have.text', data.generalCollateralWLDescription)
+        cy.log("Verified Collateral")
+
+    }
 
 
 }

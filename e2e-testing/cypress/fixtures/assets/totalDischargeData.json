@@ -1,5 +1,5 @@
 {
-    "cautionBox": "Important: Secured Parties in this registration will receive a copy of the Total Discharge Verification Statement. ",
+    "cautionBox": "Note: The Registry will provide the verification statement to all Secured Parties named in this registration. ",
     "step1Title": "Registration Length and Trust Indenture",
     "registrationLengthTitle": "Registration Length and Trust Indenture",
     "registrationLength": " Registration Length ",
@@ -62,6 +62,11 @@
     "confirmCheckbox2": " I understand that all collateral on this registration will be released.",
     "confirmCheckbox3": " I understand that all Secured Parties will be notified.",
     "dashboardTombstoneHeader": "My Personal Property Registry",
-    "removeFromTable": "Remove FromTable" 
+    "removeFromTable": "Remove FromTable" ,
+    "verifyCTRegistrationLength": " Infinite ",
+    "securedPartyName": " HER MAJESTY THE QUEEN IN THE RIGHT OF THE PROVINCE OF BRITISH COLUMBIA ",
+    "securedPartyAddress": "PARLIAMENT BUILDINGS,VICTORIA BC V8V1X4Canada",
+    "ctSecuredPartyCode": "35",
+    "ctRegistrationLengthTitle": "Registration Length"
 
 }

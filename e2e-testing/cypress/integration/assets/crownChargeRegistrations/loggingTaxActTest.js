@@ -11,6 +11,7 @@ import { feeSummaryModalPage } from '../../../pages/assets/feeSummaryModalPage'
 import gcData from '../../../fixtures/assets/gcData.json'
 import registrationType from '../../../fixtures/assets/registrationTypesData.json'
 import authorizationData from '../../../fixtures/assets/authorizationData.json'
+import { step3AssertionPage } from '../../../pages/assets/step3AssertionPage'
 
 
 describe('Crown Charge Registrations Test Suite ', function () {
@@ -41,6 +42,8 @@ describe('Crown Charge Registrations Test Suite ', function () {
         securityAgreementPage.setDebtorBusiness(debtorData.debtorBusiness)
 
         securityAgreementPage.clickAddCollateralButton()
+
+        step3AssertionPage.setVehicleCollateral(collateralData.vehicleCollateral.af)
 
         securityAgreementPage.clickReviewAndConfirmButton()
 

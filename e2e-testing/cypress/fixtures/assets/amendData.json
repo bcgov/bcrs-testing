@@ -3,7 +3,7 @@
     "tombstoneHeader": " Base Registration Number 501840N ",
     "tombstoneSubHeader": " Security Agreement ",
     "amendTitle": "Amendment",
-    "cautionBoxInfo": "Important: Secured Parties in this registration will receive a copy of the Amendment Verification Statement. ",
+    "cautionBoxInfo": "Note: The Registry will provide the verification statement to all Secured Parties named in this registration. ",
     "step1Title": "Current Expiry and Trust Indenture",
     "currentExpiry": "February 3, 2027 at 11:59:59 pm Pacific time",
     "trustIndenture": " Yes ",
@@ -31,7 +31,7 @@
     "businessDebtorEmail": "email@test.com",
     "step3Title": "Collateral",
     "vehicleType": " Motor Vehicle (MV) ",
-    "vehicleYear": " 2020 ",
+    "vehicleYear": "2020",
     "vehicleMake": "GMC",
     "vehicleModel": "SIERRA 1500",
     "vehicleSerialNumber": " 8347IUWE293692 ",
@@ -70,5 +70,11 @@
     "securedPartyAddedAddress": "PARLIAMENT BUILDINGS,VICTORIA BC V8V1X4Canada",
     "securedPartyAddedCode": "35",
     "generalCollateralDescription": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables.",
-    "reviewPageAmendmentTitle": "Review and Complete Amendment"
+    "reviewPageAmendmentTitle": "Review and Complete Amendment",
+    "confirmTombstoneCurrentExpiryDate": " No Expiry ",
+    "amendmentInfo": " Review your Amendment and complete the additional information before registering. ",
+    "cautionBox": "Note: The Registry will provide the verification statement to all Secured Parties named in this registration. ",
+    "amendmentSubTitle": "Secured Parties",
+    "confirmRegisteringPartyTitle": " Registering Party for this Amendment ",
+    "generalCollateralWLDescription": "All the personal property of the debtor, including money due or accruing due"
 }

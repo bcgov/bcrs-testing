@@ -103,6 +103,12 @@ export class EndToEndFlowPage {
         this.confirmCertifyDate = '.pl-8 > .summary-text'
         this.confirmCheckbox = '.summary-text > .v-input > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple'
 
+        //CT Discharge
+
+        this.securedPartyName = ':nth-child(9) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title'
+        this.securedPartyAddress = ':nth-child(9) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
+        this.ctSecuredPartyCode = ':nth-child(9) > .container > :nth-child(1) > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(4)'
+
         //RL Amendment
 
         // this.currentExpiryTitle = 'strong:contains("Current Expiry")'
@@ -303,9 +309,9 @@ export class EndToEndFlowPage {
     //     cy.log("Verified Secured Parties")
 
     // }
-        //Total Discharge
+    //Total Discharge
 
- verifyRLSecuredParties(data) {
+    verifyRLSecuredParties(data) {
         cy.get(this.securedPartiesTitle).should('have.text', data.securedPartiesTitle)
         cy.get(this.individualPersonName).should('have.text', data.individualPersonName)
         cy.get(this.individualPartyAddress).should('have.text', data.individualPartyAddress)
@@ -314,6 +320,21 @@ export class EndToEndFlowPage {
         cy.get(this.individualBusinessAddress).should('have.text', data.individualBusinessAddress)
         cy.get(this.individualBusinessEmail).should('have.text', data.individualBusinessEmail)
         cy.log("Verified Secured Parties")
+    }
+
+    verifyCTRegistrationLength(data) {
+        cy.get(this.step1Title).should('have.text', data.ctRegistrationLengthTitle)
+        cy.get(this.registrationLengthInYears).should('have.text', data.verifyCTRegistrationLength)
+        cy.log("Verified Registration Length")
+    }
+
+    verifyCTSecuredParty(data) {
+        cy.get(this.securedPartiesTitle).should('have.text', data.securedPartiesTitle)
+        cy.get(this.securedPartyName).should('have.text', data.securedPartyName)
+        cy.get(this.securedPartyAddress).should('have.text', data.securedPartyAddress)
+        cy.get(this.ctSecuredPartyCode).should('have.text', data.ctSecuredPartyCode)
+        cy.log("Verified Secured Parties")
+
     }
 
 

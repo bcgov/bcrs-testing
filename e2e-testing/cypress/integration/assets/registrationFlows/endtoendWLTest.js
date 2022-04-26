@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+
 import { landingPage } from '../../../pages/assets/landingPage'
 import { addSecurityAgreementPage } from '../../../pages/assets/addSecurityAgreementPage'
 import { marriageOrSeparationAgreementPage } from '../../../pages/assets/marriageOrSeparationAgreementPage'
@@ -19,10 +20,11 @@ import { endtoendFlowPage } from '../../../pages/assets/endtoendFlowPage'
 import { renewPage } from '../../../pages/assets/renewPage'
 import totalDischargeData from '../../../fixtures/assets/totalDischargeData.json'
 
-describe('Crown Charge Registrations Test Suite ', function () {
-    // Setup data and login as BC Service Card
 
-    it('Carbon Tax Act Test Case', function () {
+describe('Other Registrations Test Suite ', function () {
+    // Setup data and login as BC Service Card
+    
+    it('Lien for Unpaid Wages Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -32,11 +34,11 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
-        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.crownCharge.ct)
+        addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.other.wl)
 
         marriageOrSeparationAgreementPage.verifyRegistrationLength(partyData.lengthOfRegistration)
 
-        feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.ct)
+        feeSummaryModalPage.verifyFeeSummaryModal(feeData.feeSummary.wl)
 
         securityAgreementPage.clickAddSecuredPartiesAndDebtorsButton()
 
@@ -52,15 +54,13 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         securityAgreementPage.clickReviewAndConfirmButton()
 
-        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.ct.description)
+        securityAgreementPage.verifyGeneralCollateral(gcData.collateralDescription.wl.description)
 
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
         securityAgreementPage.verifyConfirmAuthorization(authorizationData)
 
         securityAgreementPage.clickRegisterAndPayButton()
-
-        cy.wait(5000)
 
         //Amend Flow
 
@@ -80,7 +80,7 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         amendPage.verifyDebtors(amendData)
 
-        amendPage.verifyCTCollateral(amendData)
+        amendPage.verifyWLCollateral(amendData)
 
         amendPage.setCourtOrder(amendData)
 
@@ -122,7 +122,7 @@ describe('Crown Charge Registrations Test Suite ', function () {
 
         myRegistrationsTablePage.verifyDebtors(totalDischargeData)
 
-        amendPage.verifyDischargeCTCollateral(amendData)
+        amendPage.verifyDischargeWLCollateral(amendData)
 
         myRegistrationsTablePage.verifyConfirmPage(totalDischargeData)
 
@@ -131,7 +131,6 @@ describe('Crown Charge Registrations Test Suite ', function () {
         endtoendFlowPage.verifyConfirmAuthorization(authorizationData)
 
         endtoendFlowPage.submitDischarge(totalDischargeData)
-
 
 
     })

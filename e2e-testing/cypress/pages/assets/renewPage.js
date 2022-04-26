@@ -118,6 +118,10 @@ export class RenewPage {
         this.collateralDescription = '.gc-description > .ma-0'
         this.trustIndenture = '.summary-text'
 
+        //CT Renewal
+        this.renewButton = '.v-list > :nth-child(5)'
+        this.actionDropdown = '.actions__more-actions__btn'
+
 
     }
 
@@ -293,6 +297,12 @@ export class RenewPage {
         cy.get(this.folioTextbox).type(data.folioTextbox)
         cy.log("Verified Registration Renewal Confirm Page")
 
+    }
+
+    verifyCTRenewal() {
+        cy.get(this.actionDropdown).click()
+        cy.get(this.renewButton).should('be.disabled')
+        cy.log("Verified Carbon Tax Renewal")
     }
 
 }

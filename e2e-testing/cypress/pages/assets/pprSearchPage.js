@@ -5,11 +5,11 @@ export class PPRSearchPage {
     constructor() {
 
         this.selectSearchCategory = '.ml-n6 > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
-        this.serialNumber = 'span:contains("Serial Number")'
-        this.individualDebtorName = 'span:contains("Individual Debtor Name")'
-        this.businessDebtorName = 'span:contains("Business Debtor Name")'
-        this.manufacturedHomeRegistrationNumber = 'span:contains("Manufactured Home Registration Number")'
-        this.aircraftNumber = 'span:contains("Aircraft Airframe D.O.T. Number")'
+        this.serialNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)'
+        this.individualDebtorName = 'div:contains("Individual Debtor Name")[tabindex^="0"]'
+        this.businessDebtorName = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)'
+        this.manufacturedHomeRegistrationNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4)'
+        this.aircraftNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5)'
         this.registrationNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(6)'
         this.searchBarField = '#search-bar-field'
         this.firstName = '#first-name-field'

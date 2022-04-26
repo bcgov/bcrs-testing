@@ -117,7 +117,7 @@ export class Step3AssertionPage {
         const vehicleModel = 'tbody > :nth-child(1) > :nth-child(4)'
         const vehicleSerialNumber = ':nth-child(1) > .vehicle-cell'
         cy.get(vehicleType).should('have.text', " " + data.type + " ")
-        cy.get(vehicleYear).should('have.text', " " + data.year + " ")
+        cy.get(vehicleYear).should('have.text', data.year )
         cy.get(vehicleMake).should('have.text', data.make)
         cy.get(vehicleModel).should('have.text', data.model)
         cy.get(vehicleSerialNumber).should('have.text', " " + data.seialOrVINNumber + " ")

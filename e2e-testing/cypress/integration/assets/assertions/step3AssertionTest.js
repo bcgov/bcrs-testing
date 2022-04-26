@@ -28,7 +28,7 @@ describe('Assertions Test Suite ', function () {
 
         step3AssertionPage.setVehicleCollateral(collateralData.vehicleCollateral.tr)
 
-        step3AssertionPage.setVehicleCollateral(collateralData.vehicleCollateral.om)
+        step3AssertionPage.setVehicleCollateral(collateralData.vehicleCollateral.ob)
 
         step3AssertionPage.setVehicleCollateral(collateralData.vehicleCollateral.mh)
 

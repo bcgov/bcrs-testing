@@ -43,7 +43,7 @@
             "description": "General Collateral Automation Test."
         },
         "wl": {
-            "description": "All the personal property of the debtor"
+            "description": "All the personal property of the debtor, including money due or accruing due"
         },
         "hn": {
             "description": "General Collateral Automation Test."
