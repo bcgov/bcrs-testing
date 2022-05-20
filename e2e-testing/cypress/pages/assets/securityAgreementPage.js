@@ -89,7 +89,7 @@ export class SecurityAgreementPage {
         this.makeText = 'input#txt-make'
         this.modelText = 'input#txt-model'
         this.collateralDoneButton = 'button#done-btn-collateral'
-        this.generalCollateralText = '#general-collateral-new-desc'
+        this.generalCollateralText = '.ProseMirror'
         this.generalCollateralDescription = '.general-collateral-summary > .ma-0'
 
         //Review and Confirm Next Button
@@ -456,7 +456,7 @@ export class SecurityAgreementPage {
     }
 
     setGeneralCollateralText(data) {
-        cy.get(this.generalCollateralText).type(data)
+        cy.get(this.generalCollateralText).click().type(data)
         cy.log("Entered General Collateral Text")
     }
 
@@ -615,7 +615,7 @@ export class SecurityAgreementPage {
         const vehicleModel = '.vehicle-row > :nth-child(4)'
         const vehicleSerialNumber = '.vehicle-cell'
         cy.get(vehicleType).should('have.text', " " + data.type + " ")
-        cy.get(vehicleYear).should('have.text', " " + data.year + " ")
+        cy.get(vehicleYear).should('have.text', data.year)
         cy.get(vehicleMake).should('have.text', data.make)
         cy.get(vehicleModel).should('have.text', data.model)
         cy.get(vehicleSerialNumber).should('have.text', " " + data.seialOrVINNumber + " ")

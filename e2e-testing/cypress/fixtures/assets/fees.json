@@ -144,7 +144,7 @@
             "totalAmount": "$0.00"
         },
         "ct": {
-            "title": " Carbon Tax Act ",
+            "title": " Crown Charge - Carbon Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -154,7 +154,7 @@
             "totalAmount": "$0.00"
         },
         "et": {
-            "title": " Excise Tax Act ",
+            "title": " Crown Charge - Excise Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -164,7 +164,7 @@
             "totalAmount": "$0.00"
         },
         "fo": {
-            "title": " Forest Act ",
+            "title": " Crown Charge - Forest Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -174,7 +174,7 @@
             "totalAmount": "$0.00"
         },
         "it": {
-            "title": " Income Tax Act ",
+            "title": " Crown Charge - Income Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -184,7 +184,7 @@
             "totalAmount": "$0.00"
         },
         "ip": {
-            "title": " Insurance Premium Tax Act ",
+            "title": " Crown Charge - Insurance Premium Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -194,7 +194,7 @@
             "totalAmount": "$0.00"
         },
         "lo": {
-            "title": " Logging Tax Act ",
+            "title": " Crown Charge - Logging Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -204,7 +204,7 @@
             "totalAmount": "$0.00"
         },
         "md": {
-            "title": " Mineral Land Tax Act ",
+            "title": " Crown Charge - Mineral Land Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -214,7 +214,7 @@
             "totalAmount": "$0.00"
         },
         "ft": {
-            "title": " Motor Fuel Tax Act ",
+            "title": " Crown Charge - Motor Fuel Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -224,7 +224,7 @@
             "totalAmount": "$0.00"
         },
         "pg": {
-            "title": " Petroleum and Natural Gas Act ",
+            "title": " Crown Charge - Petroleum and Natural Gas Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -234,7 +234,7 @@
             "totalAmount": "$0.00"
         },
         "pt": {
-            "title": " Property Transfer Tax Act ",
+            "title": " Crown Charge - Property Transfer Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -244,7 +244,7 @@
             "totalAmount": "$0.00"
         },
         "ps": {
-            "title": " Provincial Sales Tax Act ",
+            "title": " Crown Charge - Provincial Sales Tax Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -254,7 +254,7 @@
             "totalAmount": "$0.00"
         },
         "ra": {
-            "title": " Rural Property Tax Act ",
+            "title": " Crown Charge - Taxation (Rural Area) Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -264,7 +264,7 @@
             "totalAmount": "$0.00"
         },
         "sc": {
-            "title": " School Act ",
+            "title": " Crown Charge - School Act ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",
@@ -274,7 +274,7 @@
             "totalAmount": "$0.00"
         },
         "ot": {
-            "title": " Automation Test ",
+            "title": " Crown Charge - Automation Test ",
             "titleAmount": " No Fee ",
             "hint": "Infinite Registration (default)",
             "serviceFee": " Service Fee ",

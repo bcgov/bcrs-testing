@@ -86,9 +86,9 @@ export class AmendPage {
         this.generalCollateralCancelButton = '#cancel-btn-gen-col'
         this.addVehicleCollateral = '#btn-add-collateral'
         this.dischargeVehicleType = '.summary-cell > div'
-        this.dischargeVehicleYear = '[title="2020"]'
-        this.dischargeVehicleMake = '[title="GMC"]'
-        this.dischargeVehicleModel = '[title="SIERRA 1500"]'
+        this.dischargeVehicleYear = 'td:contains("2020")'
+        this.dischargeVehicleMake = 'td:contains("GMC")'
+        this.dischargeVehicleModel = 'td:contains("SIERRA 1500")'
 
 
         //Details Description

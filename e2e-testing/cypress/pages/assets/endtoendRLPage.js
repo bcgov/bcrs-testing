@@ -29,14 +29,14 @@ export class EndToEndRLPage {
 
         this.step3Title = '#collateral-summary > .summary-header'
         this.amendVehicleType1 = ':nth-child(1) > .pl-4'
-        this.amendVehicleYear1 = '[title="2019"]'
-        this.amendVehicleMake1 = '[title="KAWASAKI"]'
-        this.amendVehicleModel1 = '[title="JETSKI"]'
+        this.amendVehicleYear1 = 'td:contains("2019")'
+        this.amendVehicleMake1 = 'td:contains("KAWASAKI")'
+        this.amendVehicleModel1 = 'td:contains("JETSKI")'
         this.amendVehicleSerialNumber1 = ':nth-child(1) > .vehicle-cell'
         this.amendVehicleType2 = ':nth-child(2) > .pl-4'
-        this.amendVehicleYear2 = '[title="2020"]'
-        this.amendVehicleMake2 = '[title="GMC"]'
-        this.amendVehicleModel2 = '[title="SIERRA 1500"]'
+        this.amendVehicleYear2 = 'td:contains("2020")'
+        this.amendVehicleMake2 = 'td:contains("GMC")'
+        this.amendVehicleModel2 = 'td:contains("SIERRA 1500")'
         this.amendVehicleSerialNumber2 = ':nth-child(2) > .vehicle-cell'
 
 
