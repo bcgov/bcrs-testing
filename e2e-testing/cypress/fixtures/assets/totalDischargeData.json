@@ -19,7 +19,7 @@
     "individualBusinessAddress": "B-6437 CAMBIE STVANCOUVER BC V5Z 3B2Canada",
     "individualBusinessEmail": "email@test.com",
     "individualPartyBusinessName": " THE BANK OF NOVA SCOTIA ",
-    "individualPartyBusinessAddress": "212 MAIN ST, PO BOX 4310WHITEHORSE YT Y1A3T3Canada",
+    "individualPartyBusinessAddress": "212 MAIN ST, PO BOX 4310WHITEHORSE YT Y1A 3T3Canada",
     "securedPartyCode": "21121",
     "debtorTitle": "Debtors",
     "individualDebtorName": " JOHN AUTOMATION TEST ",
@@ -65,7 +65,7 @@
     "removeFromTable": "Remove FromTable" ,
     "verifyCTRegistrationLength": " Infinite ",
     "securedPartyName": " HER MAJESTY THE QUEEN IN THE RIGHT OF THE PROVINCE OF BRITISH COLUMBIA ",
-    "securedPartyAddress": "PARLIAMENT BUILDINGS,VICTORIA BC V8V1X4Canada",
+    "securedPartyAddress": "PARLIAMENT BUILDINGS,VICTORIA BC V8V 1X4Canada",
     "ctSecuredPartyCode": "35",
     "ctRegistrationLengthTitle": "Registration Length"
 

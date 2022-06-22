@@ -12,8 +12,9 @@
     "crownChargeRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed",
     "financingChange": "./node_modules/.bin/cypress run --spec cypress/integration/assets/financingChange/*.js --headed",
     "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed",
-    "pprSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed"
-    
+    "pprSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed",
+    "mhrSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/*.js --headed",
+    "mhrSearchValidations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchValidationsTest.js --headed"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "cypress": "^5.6.0",
     "cypress-log-to-output": "^1.1.2",
+    "cypress-plugin-tab": "^1.0.5",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-cypress": "^2.11.2",
@@ -33,7 +35,6 @@
   "dependencies": {
     "browserstack-cypress-cli": "^1.5.1",
     "cypress-downloadfile": "^1.2.1",
-    "cypress-plugin-tab": "^1.0.5",
     "dayjs": "^1.10.7",
     "puppeteer": "^5.5.0"
   },

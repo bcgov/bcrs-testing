@@ -1,0 +1,39 @@
+{
+    "orgNameSearch": {
+        "orgNameHint": "Organization names must contain between 2 and 70 characters",
+        "orgName": "HOMETTE CORPORATION",
+        "searchResultsPageTitle": "Search Results",
+        "searchResultsInfo": " Select the manufactured home to download the full details of the home. Selecting the home will debit your search fee from your BC Online account. The downloaded report will contain the full record of the registration for the home and will be automatically saved to your dashboard. ",
+        "searchSubTitle": "Organization Name - ",
+        "reviewSearchResultTitle": "Review Search Result",
+        "reviewSearchResultInfo": " Review the details of the manufactured home before paying. Your search result will be available in your Searches list. ",
+        "folioNumber": "833748234S20",
+        "searchResultsSummaryTitle": "Search Results Summary",
+        "homeResultsNumber": "1",
+        "homeResultsText": " homes found",
+        "activeHomesNumber": "1",
+        "activeHomesText": " active homes",
+        "selectedHomesNumberInitial": "0",
+        "selectedHomesNumber": "1",
+        "selectedHomesText": " homes selected + ",
+        "lienSearchNumberInitial": "0",
+        "lienSearchNumber": "1",
+        "lienSearchText": " lien search ",
+        "resultsCountNumber": "1",
+        "resultsCountText": " Manufactured Homes",
+        "registry": "Manufactured Homes",
+        "searchType": " Organization Name ",
+        "searchHeader": " Manufactured Home and Personal Property Registry Search"
+    },
+    "orgNameValidation": {
+        "orgNameHint": "Organization names must contain between 2 and 70 characters",
+        "searchValueEmptyMessage": "Enter an organization name to search",
+        "specialCharcterValue": "sdjhsgd!",
+        "specialCharacterMessage": "Names don't normally contain special characters",
+        "maxCharacterMessage": "Maximum 70 characters",
+        "maxCharacterValue": "hjsgdhsdjsdhfjsdfh jsdfhsjkdfhsjdfh jkshdfjksdhfsdjf jshdfjkshdfjsdhfjd",
+        "minCharacterMessage": "Must contain more than 1 character",
+        "minCharacterValue": "a",
+        "minCharacterValue2": "ap"
+    }
+}
