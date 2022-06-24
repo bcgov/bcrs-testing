@@ -6,10 +6,10 @@ export class MHRSearchValidationsPage {
 
         this.selectSearchCategory = '.ml-n6 > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
         this.pprDropdown = '#srch-type-drop-1 > .col-11'
-        this.mhrNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(9)'
-        this.ownerName = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(10)'
-        this.orgName = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(11)'
-        this.serialNumber = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(12)'
+        this.mhrNumber = '#list-mhr-mhr-number'
+        this.ownerName = '#list-mhr-owner-name'
+        this.orgName = '#list-mhr-organization-name'
+        this.serialNumber = '#list-mhr-serial-number'
         this.searchBarField = '#search-bar-field'
         this.searchButton = '#SearchBar_search-btn_1WRSN'
         this.hintMessage = '.v-messages__message'
@@ -54,7 +54,7 @@ export class MHRSearchValidationsPage {
 
         cy.get(this.mhrDropdown).click()
         cy.wait(2000)
-        //cy.get(this.ownerName).click()
+        cy.get(this.ownerName).click()
         cy.get(this.hintMessage).should('have.text', data.ownerNameHint)
         cy.get(this.searchButton).click()
         cy.get(this.firstNameHintValidation).should('have.text', data.firstNameHintValidation)
@@ -82,7 +82,7 @@ export class MHRSearchValidationsPage {
 
         cy.get(this.mhrDropdown).click()
         cy.wait(2000)
-        //cy.get(this.orgName).click()
+        cy.get(this.orgName).click()
         cy.get(this.hintMessage).should('have.text', data.orgNameHint)
         cy.get(this.searchButton).click()
         cy.get(this.hintMessage).should('have.text', data.searchValueEmptyMessage)
@@ -105,7 +105,7 @@ export class MHRSearchValidationsPage {
 
         cy.get(this.mhrDropdown).click()
         cy.wait(2000)
-        //cy.get(this.serialNumber).click()
+        cy.get(this.serialNumber).click()
         cy.get(this.hintMessage).should('have.text', data.serialNumberHint)
         cy.get(this.searchButton).click()
         cy.get(this.hintMessage).should('have.text', data.searchValueEmptyMessage)

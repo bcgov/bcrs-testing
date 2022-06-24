@@ -25,7 +25,8 @@
         "resultsCountText": " Manufactured Homes",
         "folioNumberTitle": "1. Folio or Reference Number",
         "folioInfo": " Add an optional number for this transaction for your own tracking purposes. This information is not used by the Manufactured Home Registry. ",
-        "searchHeader": " Manufactured Home and Personal Property Registry Search"
+        "searchHeader": " Manufactured Home and Personal Property Registry Search",
+        "searchResultsBreadcrumb": "Search Results"
     },
     "mhrNumberValidation": {
         "mhrHintMessage": "Manufactured home registration numbers normally contain up to 6 digits",
@@ -34,6 +35,23 @@
         "incorrectFormatErrorMessage": "Must contain numbers only",
         "mhrNumberMaxCharacter": "0220000",
         "mhrNumberIncorrectFormat": "02C00!"
+    },
+    "mhrNumberNILSearch": {
+        "mhrNumber": "124234",
+        "noSearchResultInfo": " No Registrations were found. A printable PDF search result report and a general record of your search will be saved to your Personal Property Registry dashboard. ",
+        "searchResultsPageTitle": "Search Results",
+        "searchSubTitle": "Manufactured Home Registration Number - ",
+        "homeResultsNumber": "0",
+        "homeResultsText": " homes found",
+        "activeHomesNumber": "0",
+        "activeHomesText": " active homes",
+        "selectedHomesNumber": "0",
+        "selectedHomesText": " homes selected + ",
+        "lienSearchNumber": "0",
+        "lienSearchText": " lien search ",
+        "noResultsInfo":" No registered homes can be found to match the search criteria above. ",
+        "noResultsTitle": "Nil Result",
+        "dashboardBreadcrumb": " My Asset Registries "
     },
     "feeSummary": {
         "mhrNumber": {

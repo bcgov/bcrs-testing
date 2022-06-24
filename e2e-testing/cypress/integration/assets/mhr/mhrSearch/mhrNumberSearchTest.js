@@ -62,6 +62,24 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyMHRSearchHistoryTable(mhrNumberData.mhrNumberSearch)
 
+        //NIL Search
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectMHRNumber()
+
+        mhrSearchPage.verifyMHRHint(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.setFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.setMHRNumber(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyMHRNILSearchTableHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
 
 
     })

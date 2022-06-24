@@ -14,7 +14,8 @@
     "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed",
     "pprSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed",
     "mhrSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/*.js --headed",
-    "mhrSearchValidations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchValidationsTest.js --headed"
+    "mhrSearchValidations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchValidationsTest.js --headed",
+    "mhrSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchTest.js --headed"
   },
   "author": "",
   "license": "ISC",

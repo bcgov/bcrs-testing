@@ -6,10 +6,10 @@ export class MHRSearchPage {
 
         this.selectSearchCategory = '.ml-n6 > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
         this.pprDropdown = '#srch-type-drop-1 > .col-11'
-        this.mhrNumber = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(9)'
-        this.ownerName = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(10)'
-        this.orgName = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(11)'
-        this.serialNumber = 'html:first-of-type > body:first-of-type > div:first-of-type > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(12)'
+        this.mhrNumber = '#list-mhr-mhr-number'
+        this.ownerName = '#list-mhr-owner-name'
+        this.orgName = '#list-mhr-organization-name'
+        this.serialNumber = '#list-mhr-serial-number'
         this.searchBarField = '#search-bar-field'
         this.searchButton = '#SearchBar_search-btn_1WRSN'
         this.firstName = '#first-name-field'
@@ -19,6 +19,7 @@ export class MHRSearchPage {
         this.folioText = '#folio-edit-txt'
 
         //Search Results
+        this.searchResultsBreadcrumb = '.Breadcrumb_breadcrumb-text_2jfZ3'
         this.searchResultsPageTitle = '.MHRSearch_search-title_3HmOy'
         this.searchResultsInfo = '#results-info'
         this.searchSubTitle = '.search-sub-title'
@@ -41,6 +42,7 @@ export class MHRSearchPage {
         this.folioNumberTitle = 'h2:contains("1. Folio or Reference Number")'
         this.folioInfo = '.pb-6 > .col'
         this.reviewResultsCount = '#review-results-count'
+        this.dashboardBreadcrumb = ':nth-child(3) > .v-breadcrumbs__item > .Breadcrumb_underlined_3aQWa'
 
         //fee summary
 
@@ -62,6 +64,11 @@ export class MHRSearchPage {
         this.type = '#search-history-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(2)'
         this.registry = '#search-history-table > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(3)'
 
+        //NIL Search
+
+        this.noResultsTitle = '.no-results-title'
+        this.noResultsInfo = '.pt-2'
+        this.noSearchResultInfo = '#no-results-info'
     }
 
     selectSearchCategoryDropdown() {
@@ -346,6 +353,44 @@ export class MHRSearchPage {
         cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
         cy.log("Verified Search Results Table Before Selection")
 
+    }
+
+    verifySearchResultsBreadcrumb(data) {
+        cy.get(this.searchResultsBreadcrumb).should('have.text', data.searchResultsBreadcrumb)
+        cy.log("Verified Search Results Breadcrumb")
+    }
+
+    verifyReviewSearchResultsBreadcrumb(data) {
+        cy.get(this.searchResultsBreadcrumb).should('have.text', data.searchResultsBreadcrumb)
+        cy.log("Verified Search Results Page Breadcrumb")
+    }
+
+    verifyNILSearchResultsHeader(data) {
+        cy.wait(2000)
+        cy.get(this.searchResultsPageTitle).should('have.text', data.searchResultsPageTitle)
+        cy.get(this.noSearchResultInfo).should('have.text', data.noSearchResultInfo)
+        cy.log("Verified NIL Search Results Header")
+    }
+
+    verifyMHRNILSearchTableHeader(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.mhrNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified MHR NIL Search Results Table Header")
+
+    }
+
+    verifyNILSearchResultInfo(data) {
+        cy.get(this.noResultsTitle).should('have.text', data.noResultsTitle)
+        cy.get(this.noResultsInfo).should('have.text', data.noResultsInfo)
+        cy.log("Verified NIL Search Results Info")
+    }
+
+    clickSearchResultsBreadcrumb(data) {
+        cy.get(this.dashboardBreadcrumb).click()
+        cy.get(this.searchHeader).should('have.text', data.searchHeader)
+        cy.log("Verified Search Results Breadcrumb")
     }
 
     //MHR Number Scenarios
