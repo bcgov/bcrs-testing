@@ -35,5 +35,48 @@
         "minCharacterMessage": "Must contain more than 1 character",
         "minCharacterValue": "a",
         "minCharacterValue2": "ap"
+    },
+
+    "orgNameNILSearch": {
+        "orgName": "BEEBLEBROX LTD.",
+        "noSearchResultInfo": " No Registrations were found. A printable PDF search result report and a general record of your search will be saved to your Personal Property Registry dashboard. ",
+        "searchResultsPageTitle": "Search Results",
+        "searchSubTitle": "Organization Name - ",
+        "homeResultsNumber": "0",
+        "homeResultsText": " homes found",
+        "activeHomesNumber": "0",
+        "activeHomesText": " active homes",
+        "selectedHomesNumber": "0",
+        "selectedHomesText": " homes selected + ",
+        "lienSearchNumber": "0",
+        "lienSearchText": " lien search ",
+        "noResultsInfo":" No registered homes can be found to match the search criteria above. ",
+        "noResultsTitle": "Nil Result",
+        "dashboardBreadcrumb": " My Asset Registries "
+    },
+    "orgNameMultipleSearch": {
+        "orgName": "COMMONWEALTH HOMES LTD.",
+        "noSearchResultInfo": " No Registrations were found. A printable PDF search result report and a general record of your search will be saved to your Personal Property Registry dashboard. ",
+        "searchResultsPageTitle": "Search Results",
+        "searchSubTitle": "Organization Name - ",
+        "homeResultsNumber": "10",
+        "homeResultsText": " homes found",
+        "activeHomesNumber": "7",
+        "activeHomesText": " active homes",
+        "selectedHomesNumberInitial": "0",
+        "selectedHomesNumber": "10",
+        "selectedHomesText": " homes selected + ",
+        "lienSearchNumberInitial": "0",
+        "lienSearchNumber": "10",
+        "lienSearchText": " lien search ",
+        "resultsCountNumber": "10",
+        "resultsCountText": " Manufactured Homes",
+        "registry": "Manufactured Homes",
+        "searchType": " Organization Name ",
+        "searchHeader": " Manufactured Home and Personal Property Registry Search",
+        "reviewSearchResultTitle": "Review Search Result",
+        "reviewSearchResultInfo": " Review the details of the manufactured home before paying. Your search result will be available in your Searches list. ",
+        "folioNumber": "833748234S20",
+        "searchResultsSummaryTitle": "Search Results Summary"
     }
 }

@@ -8,7 +8,7 @@ import mhrNumberData from '../../../../fixtures/assets/mhr/mhrNumberData.json'
 
 describe('MHR Search Test Suite ', function () {
 
-    it('MHR Search Test Case', function () {
+    it('Serial Number Single Search Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -62,7 +62,127 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifySerialNumberSearchHistoryTable(serialNumberData.serialNumberSearch)
 
+    })
+
+    //NIL Search
+
+    it('Serial Number NIL Search Test Case', function () {
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectSerialNumber()
+
+        mhrSearchPage.verifySerialNumberHint(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setFolioNumber(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setSerialNumber(serialNumberData.serialNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifySerialNumberNILSearchTableHeader(serialNumberData.serialNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
 
     })
+
+    //Serial Number Multiple Results
+
+    it('Serial Number Multiple Results Test Case', function () {
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectSerialNumber()
+
+        mhrSearchPage.verifySerialNumberHint(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setFolioNumber(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setSerialNumber(serialNumberData.serialNumberMultipleResults)
+
+        mhrSearchPage.verifySearchResultsHeader(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.verifySerialNumberMultipleResultsTableBeforeSelection(serialNumberData.serialNumberMultipleResults)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModalWithoutHomes(feeSummaryData.mhrNumberWithoutHomes)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllCheckbox()
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.serialNumberMultipleResults)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.verifySerialNumberMultipleResultsTableAfterSelection(serialNumberData.serialNumberMultipleResults)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        mhrSearchPage.verifySerialNumberReviewSearchResultScreen(serialNumberData.serialNumberMultipleResults)
+
+        mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.clickPayAndDownloadResultButton()
+
+        mhrSearchPage.verifySerialNumberSearchHistoryTable(serialNumberData.serialNumberMultipleResults)
+
+    })
+
+    //Serial Number Combo Search
+
+    it('Serial Number Combo Search Test Case', function () {
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectSerialNumber()
+
+        mhrSearchPage.verifySerialNumberHint(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setFolioNumber(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setSerialNumber(serialNumberData.serialNumberComboSearch)
+
+        mhrSearchPage.verifySearchResultsHeader(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.verifySerialNumberSearchResultsTableBeforeSelection(serialNumberData.serialNumberComboSearch)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModalWithoutHomes(feeSummaryData.mhrNumberWithoutHomes)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllCheckbox()
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.serialNumber)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllLienCheckbox()
+
+        mhrSearchPage.verifySerialNumberComboResultsTableAfterSelection(serialNumberData.serialNumberComboSearch)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.serialNumberComboSearch)
+
+        mhrSearchPage.verifySerialNumberReviewSearchResultScreen(serialNumberData.serialNumberComboSearch)
+
+        mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.clickPayAndDownloadResultButton()
+
+        mhrSearchPage.verifySerialNumberSearchHistoryTable(serialNumberData.serialNumberComboSearch)
+
+    })
+
 
 })

@@ -8,7 +8,7 @@ import feeSummaryData from '../../../../fixtures/assets/mhr/feeSummaryData.json'
 
 describe('MHR Search Test Suite ', function () {
 
-    it('MHR Search Test Case', function () {
+    it('MHR Single Search Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -62,7 +62,11 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyMHRSearchHistoryTable(mhrNumberData.mhrNumberSearch)
 
-        //NIL Search
+    })
+
+    //NIL Search
+
+    it('MHR NIL Search Test Case', function () {
 
         mhrSearchPage.selectSearchCategoryDropdown()
 
@@ -80,6 +84,55 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
 
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
+
+    })
+
+    it('MHR Combo Search Results Test Case', function () {
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectMHRNumber()
+
+        mhrSearchPage.verifyMHRHint(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.setFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.setMHRNumber(mhrNumberData.mhrNumberComboSearch)
+
+        mhrSearchPage.verifySearchResultsHeader(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.verifyMHRSearchResultsTableBeforeSelection(mhrNumberData.mhrNumberComboSearch)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModalWithoutHomes(feeSummaryData.mhrNumberWithoutHomes)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllCheckbox()
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.mhrNumber)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllLienCheckbox()
+
+        mhrSearchPage.verifyMHRNumberComboResultsTableAfterSelection(mhrNumberData.mhrNumberComboSearch)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.mhrNumberComboSearch)
+
+        mhrSearchPage.verifyMHRReviewSearchResultScreen(mhrNumberData.mhrNumberComboSearch)
+
+        mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.clickPayAndDownloadResultButton()
+
+        mhrSearchPage.verifyMHRSearchHistoryTable(mhrNumberData.mhrNumberComboSearch)
 
 
     })

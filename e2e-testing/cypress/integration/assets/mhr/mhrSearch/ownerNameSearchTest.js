@@ -62,6 +62,26 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyOwnerNameSearchHistoryTable(ownerNameData.ownerNameSearch)
 
+        //NIL Search
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectOwnerName()
+
+        mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.setOwnerName(ownerNameData.ownerNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyOwnerNameNILSearchTableHeader(ownerNameData.ownerNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
+
     })
 
 })

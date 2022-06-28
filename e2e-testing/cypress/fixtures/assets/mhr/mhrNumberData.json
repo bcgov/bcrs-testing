@@ -53,6 +53,29 @@
         "noResultsTitle": "Nil Result",
         "dashboardBreadcrumb": " My Asset Registries "
     },
+    "mhrNumberComboSearch": {
+        "mhrNumber": "010245",
+        "searchSubTitle": "Manufactured Home Registration Number - ",
+        "homeResultsNumber": "1",
+        "homeResultsText": " homes found",
+        "activeHomesNumber": "1",
+        "activeHomesText": " active homes",
+        "selectedHomesNumberInitial": "0",
+        "selectedHomesNumber": "1",
+        "selectedHomesText": " homes selected + ",
+        "lienSearchNumberInitial": "0",
+        "lienSearchNumber": "1",
+        "lienSearchText": " lien search ",
+        "resultsCountNumber": "1",
+        "resultsCountText": " Manufactured Homes",
+        "registry": "Manufactured Homes",
+        "searchType": " Manufactured Home Registration Number ",
+        "searchHeader": " Manufactured Home and Personal Property Registry Search",
+        "reviewSearchResultTitle": "Review Search Result",
+        "reviewSearchResultInfo": " Review the details of the manufactured home before paying. Your search result will be available in your Searches list. ",
+        "folioNumber": "823748234S23",
+        "searchResultsSummaryTitle": "Search Results Summary"
+    },
     "feeSummary": {
         "mhrNumber": {
             "title": " Manufactured Home search ",

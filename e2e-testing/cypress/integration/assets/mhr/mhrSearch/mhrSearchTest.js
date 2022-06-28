@@ -141,6 +141,27 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyOwnerNameSearchHistoryTable(ownerNameData.ownerNameSearch)
 
+        //NIL Search
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectOwnerName()
+
+        mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.setOwnerName(ownerNameData.ownerNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyOwnerNameNILSearchTableHeader(ownerNameData.ownerNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
+
+
     })
 
     it('MHR Organization Name Search Test Case', function () {
@@ -197,6 +218,26 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.verifyOrgNameSearchHistoryTable(orgNameData.orgNameSearch)
 
+        //NIL Search
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectOrgName()
+
+        mhrSearchPage.verifyOrgNameHint(orgNameData.orgNameSearch)
+
+        mhrSearchPage.setFolioNumber(orgNameData.orgNameSearch)
+
+        mhrSearchPage.setOrgName(orgNameData.orgNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifyOrgNameNILSearchTableHeader(orgNameData.orgNameNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
+
     })
 
     it('MHR Serial Number Search Test Case', function () {
@@ -252,6 +293,26 @@ describe('MHR Search Test Suite ', function () {
         mhrSearchPage.clickPayAndDownloadResultButton()
 
         mhrSearchPage.verifySerialNumberSearchHistoryTable(serialNumberData.serialNumberSearch)
+
+        //NIL Search
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        mhrSearchPage.selectSerialNumber()
+
+        mhrSearchPage.verifySerialNumberHint(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setFolioNumber(serialNumberData.serialNumberSearch)
+
+        mhrSearchPage.setSerialNumber(serialNumberData.serialNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultsHeader(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.verifySerialNumberNILSearchTableHeader(serialNumberData.serialNumberNILSearch)
+
+        mhrSearchPage.verifyNILSearchResultInfo(mhrNumberData.mhrNumberNILSearch)
+
+        mhrSearchPage.clickSearchResultsBreadcrumb(mhrNumberData.mhrNumberSearch)
 
 
     })

@@ -381,6 +381,33 @@ export class MHRSearchPage {
 
     }
 
+    verifyOwnerNameNILSearchTableHeader(data) {
+        //cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.ownerName + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified MHR NIL Search Results Table Header")
+
+    }
+
+    verifyOrgNameNILSearchTableHeader(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.orgName + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified MHR NIL Search Results Table Header")
+
+    }
+
+    verifySerialNumberNILSearchTableHeader(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.serialNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified MHR NIL Search Results Table Header")
+
+    }
+
     verifyNILSearchResultInfo(data) {
         cy.get(this.noResultsTitle).should('have.text', data.noResultsTitle)
         cy.get(this.noResultsInfo).should('have.text', data.noResultsInfo)
@@ -491,6 +518,82 @@ export class MHRSearchPage {
         cy.get(this.reviewAndConfirmButton).click()
         //cy.get(this.confirmFolioNumber).should('have.text', data.folioNumber)
         cy.log("Verified Serial Number Search")
+
+    }
+
+    // Multiple Results
+
+    verifyOrgNameMultipleResultsTableBeforeSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.orgName + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumberInitial + data.selectedHomesText + data.lienSearchNumberInitial + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    verifyOrgNameMultipleResultsTableAfterSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.orgName + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumberInitial + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    verifyOrgNameMultipleReviewSearchResultScreen(data) {
+        cy.get(this.reviewSearchResultTitle).should('have.text', data.reviewSearchResultTitle)
+        cy.get(this.reviewSearchResultInfo).should('have.text', data.reviewSearchResultInfo)
+        cy.get(this.searchResultsSummaryTitle).should('have.text', data.searchResultsSummaryTitle)
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.orgName + '"')
+        cy.get(this.reviewResultsCount).should('have.text', data.resultsCountNumber + data.resultsCountText)
+        cy.log("Verified Org Name Review Search Results")
+    }
+
+    verifySerialNumberMultipleResultsTableBeforeSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.serialNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumberInitial + data.selectedHomesText + data.lienSearchNumberInitial + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    verifySerialNumberMultipleResultsTableAfterSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.serialNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumberInitial + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    //Combo Search
+
+    verifyOrgNameComboResultsTableAfterSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.orgName + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    verifySerialNumberComboResultsTableAfterSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.serialNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
+
+    }
+
+    verifyMHRNumberComboResultsTableAfterSelection(data) {
+        cy.get(this.searchSubTitle).should('have.text', data.searchSubTitle + '"' + data.mhrNumber + '"')
+        cy.get(this.homeResultsCount).should('have.text', data.homeResultsNumber + data.homeResultsText)
+        cy.get(this.activeResultsCount).should('have.text', data.activeHomesNumber + data.activeHomesText)
+        cy.get(this.selectedResultsCount).should('have.text', data.selectedHomesNumber + data.selectedHomesText + data.lienSearchNumber + data.lienSearchText)
+        cy.log("Verified Search Results Table Before Selection")
 
     }
 
