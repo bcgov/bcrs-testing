@@ -22,7 +22,7 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.selectOwnerName()
 
-        mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+        //mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
 
         mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
 
@@ -68,7 +68,7 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.selectOwnerName()
 
-        mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+        //mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
 
         mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
 

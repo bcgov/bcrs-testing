@@ -24,6 +24,8 @@
         "ps": "Provincial Sales Tax Act",
         "ra": "Rural Property Tax Act",
         "sc": "School Act",
+        "to": "Tobacco Tax Act",
+        "sv": "Speculation and Vacancy Tax Act",
         "ot": "Other..."
     },
     "other": {

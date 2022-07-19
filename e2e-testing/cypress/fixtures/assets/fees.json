@@ -273,6 +273,26 @@
             "totalFees": "Total Fees",
             "totalAmount": "$0.00"
         },
+        "to": {
+            "title": " Crown Charge - Tobacco Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "sv": {
+            "title": " Crown Charge - Speculation and Vacancy Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
         "ot": {
             "title": " Crown Charge - Automation Test ",
             "titleAmount": " No Fee ",

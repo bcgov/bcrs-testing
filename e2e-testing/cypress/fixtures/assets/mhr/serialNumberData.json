@@ -2,7 +2,7 @@
     "serialNumberSearch": {
         "serialNumberHint": "Serial numbers normally contain letters and numbers only",
         "serialNumber": "12345",
-        "searchResultsPageTitle": "Search Results",
+        "searchResultsPageTitle": "Selection List",
         "searchResultsInfo": " Select the manufactured home to download the full details of the home. Selecting the home will debit your search fee from your BC Online account. The downloaded report will contain the full record of the registration for the home and will be automatically saved to your dashboard. ",
         "searchSubTitle": "Serial Number - ",
         "reviewSearchResultTitle": "Review Search Result",
@@ -36,7 +36,7 @@
     "serialNumberNILSearch": {
         "serialNumber": "Z98989898",
         "noSearchResultInfo": " No Registrations were found. A printable PDF search result report and a general record of your search will be saved to your Personal Property Registry dashboard. ",
-        "searchResultsPageTitle": "Search Results",
+        "searchResultsPageTitle": "Selection List",
         "searchSubTitle": "Serial Number - ",
         "homeResultsNumber": "0",
         "homeResultsText": " homes found",

@@ -55,7 +55,7 @@ export class MHRSearchValidationsPage {
         cy.get(this.mhrDropdown).click()
         cy.wait(2000)
         cy.get(this.ownerName).click()
-        cy.get(this.hintMessage).should('have.text', data.ownerNameHint)
+        //cy.get(this.hintMessage).should('have.text', data.ownerNameHint)
         cy.get(this.searchButton).click()
         cy.get(this.firstNameHintValidation).should('have.text', data.firstNameHintValidation)
         cy.get(this.lastNameHintValidation).should('have.text', data.lastNameHintValidation)
