@@ -1,16 +1,26 @@
 {
-    "DebtorFirstName": "John",
-    "DebtorMiddleName": "Automation",
-    "DebtorLastName": "Test",
-    "DebtorBirthMonth": "April",
-    "DebtorBirthDay": "20",
-    "DebtorBirthYear": "1965",
-    "DebtorEmailAddress": "email@email.com",
-    "DebtorCountry": "Canada",
-    "DebtorAddressLine1": "3320 Jacombs Rd Richmond, BC, V6V 1Z6",
-    "DebtorCity": "Richmond",
-    "DebtorRegion": "BC",
-    "DebtorPostalCode": "V6V 1Z6",
-    "DebtorDeliveryInstructions": "Deliver to the mentioned Address",
-    "DebtorBusinessName": "PARTY FAVOUR PARTY SERVICE"
+    "debtorIndividual": {
+        "debtorFirstName": "John",
+        "debtorMiddleName": "Automation",
+        "debtorLastName": "Test",
+        "debtorBirthMonth": "April",
+        "debtorBirthDay": "12",
+        "debtorBirthYear": "1965",
+        "debtorEmailAddress": "email@email.com",
+        "debtorCountry": "Canada",
+        "debtorAddressLine1": "3320 Jacombs Rd Richmond, BC, V6V 1Z6",
+        "addressTitle":"3320 Jacombs Rd",
+        "debtorCity": "Richmond",
+        "debtorRegion": "BC",
+        "debtorPostalCode": "V6V 1Z6",
+        "debtorDeliveryInstructions": "Debtor Delivery Instructions"
+    },
+    "debtorBusiness": {
+        "debtorBusinessName": "PARTY FAVOUR PARTY SERVICE",
+        "debtorEmailAddress": "email@test.com",
+        "debtorCountry": "Canada",
+        "debtorAddressLine1": "Bc-435 North Rd Coquitlam, BC, V3K 3V9",
+        "addressTitle":"Bc-435 North Rd",
+        "debtorDeliveryInstructions": "Debtor Business Delivery Instructions"
+    }
 }

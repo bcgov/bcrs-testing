@@ -1,3 +1,4 @@
+
 module.exports = (on, config) => {
   on('before:browser:launch', (browser, launchOptions) => {
     console.log('before launching browser')
@@ -32,4 +33,9 @@ module.exports = (on, config) => {
       })()
     }
   })
+}
+
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
+module.exports = (on, config) => {
+  on('task', {downloadFile})
 }

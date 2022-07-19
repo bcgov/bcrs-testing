@@ -1,0 +1,364 @@
+{
+    "feeSummary": {
+        "sa": {
+            "setYears": "5",
+            "title": " Security Agreement ",
+            "titleAmount": " $25.00 ",
+            "hint": "5 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$26.50"
+        },
+        "sg": {
+            "title": " Possession under S.30 of the Sale of Goods Act ",
+            "titleAmount": " $500.00 ",
+            "hint": "Infinite Registration",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$501.50"
+        },
+        "fl": {
+            "setYears": "3",
+            "title": " Forestry - Contractor Lien ",
+            "titleAmount": " $15.00 ",
+            "hint": "3 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$16.50"
+        },
+        "fa": {
+            "title": " Forestry - Contractor Charge ",
+            "titleAmount": " $500.00 ",
+            "hint": "Infinite Registration",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$501.50"
+        },
+        "fs": {
+            "setYears": "25",
+            "title": " Forestry - Sub-contractor Charge ",
+            "titleAmount": " $125.00 ",
+            "hint": "25 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$126.50"
+        },
+        "rl": {
+            "title": " Repairers Lien ",
+            "titleAmount": " $5.00 ",
+            "hint": "180 Day Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$6.50"
+        },
+        "fr": {
+            "title": " Marriage / Separation Agreement affecting Manufactured Home under Family Law Act ",
+            "titleAmount": " $10.00 ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$11.50"
+        },
+        "lt": {
+            "title": " Land Tax Deferment Lien on a Manufactured Home ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "mh": {
+            "title": " Tax Lien under S.27/28 of the Manufactured Home Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "wl": {
+            "title": " Lien for Unpaid Wages ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "hn": {
+            "title": " Heritage Conservation Notice ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "mn": {
+            "title": " Manufactured Home Notice ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ml": {
+            "title": " Maintenance Lien ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "pn": {
+            "title": " Proceeds of Crime Notice ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ct": {
+            "title": " Crown Charge - Carbon Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "et": {
+            "title": " Crown Charge - Excise Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "fo": {
+            "title": " Crown Charge - Forest Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "it": {
+            "title": " Crown Charge - Income Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ip": {
+            "title": " Crown Charge - Insurance Premium Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "lo": {
+            "title": " Crown Charge - Logging Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "md": {
+            "title": " Crown Charge - Mineral Land Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ft": {
+            "title": " Crown Charge - Motor Fuel Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "pg": {
+            "title": " Crown Charge - Petroleum and Natural Gas Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "pt": {
+            "title": " Crown Charge - Property Transfer Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ps": {
+            "title": " Crown Charge - Provincial Sales Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ra": {
+            "title": " Crown Charge - Taxation (Rural Area) Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "sc": {
+            "title": " Crown Charge - School Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "to": {
+            "title": " Crown Charge - Tobacco Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "sv": {
+            "title": " Crown Charge - Speculation and Vacancy Tax Act ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "ot": {
+            "title": " Crown Charge - Automation Test ",
+            "titleAmount": " No Fee ",
+            "hint": "Infinite Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "totalDischarge": {
+            "title": " Total Discharge ",
+            "titleAmount": " No Fee ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        },
+        "renew": {
+            "title": " Registration Renewal ",
+            "titleAmount": " $5.00 ",
+            "hint": "180 Day Registration (default)",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$6.50"
+        },
+        "regRenewInYears": {
+            "setYears": "5",
+            "title": " Registration Renewal ",
+            "titleAmount": " $25.00 ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$26.50"
+        },
+        "regRenewInfinite": {
+            "title": " Registration Renewal ",
+            "titleAmount": " $500.00 ",
+            "hint": "Infinite Registration",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$501.50"
+        },
+        "amendment": {
+            "title": " Registration Amendment ",
+            "titleAmount": " $10.00 ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$11.50"
+        },
+        "ctAmendment": {
+            "title": " Registration Amendment ",
+            "titleAmount": " No Fee ",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " No Fee ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$0.00"
+        }
+    }
+}

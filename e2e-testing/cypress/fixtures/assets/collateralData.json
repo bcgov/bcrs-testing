@@ -1,9 +1,58 @@
 {
-    "VehicleType": "Motor Vehicle (MV)",
-    "SeialOrVINNumber": "2435123HJGDSFD",
-    "Year": "2020",
-    "Make": "FORD",
-    "Model": "F350 XL",
-    "GeneralCollateral": "General Collateral Test.",
-    "FolioNumber": "123456"
+    "vehicleCollateral": {
+        "mv": {
+            "type": "Motor Vehicle (MV)",
+            "seialOrVINNumber": "8347IUWE293692",
+            "year": "2020",
+            "make": "GMC",
+            "model": "SIERRA 1500"
+        },
+        "bo": {
+            "type": "Boat (BO)",
+            "seialOrVINNumber": "OOUS-KAW72354972",
+            "year": "2019",
+            "make": "KAWASAKI",
+            "model": "JETSKI"
+        },
+        "tr": {
+            "type": "Trailer (TR)",
+            "seialOrVINNumber": "1KDGWUGWK9237649",
+            "year": "2015",
+            "make": "UTILITY",
+            "model": "V/D 53 T/A AIR"
+        },
+        "ob": {
+            "type": "Outboard Motor (OB)",
+            "seialOrVINNumber": "63PJ-28374689",
+            "year": "2021",
+            "make": "YAMAHA",
+            "model": "OUTBOARD F150JB"
+        },
+        "mh": {
+            "type": "Manufactured Home (MH)",
+            "seialOrVINNumber": "716325HGD8237",
+            "mhrNumber": "523425",
+            "year": "2021",
+            "make": "KEYSTONE",
+            "model": "RV COMPANY SPRIN"
+        },
+        "ac": {
+            "type": "Aircraft/Airframe Registered in Canada (AC)",
+            "seialOrVINNumber": "C-OIWYS",
+            "year": "1997",
+            "make": "BELL HELICOPTER",
+            "model": "MODEL 407"
+        },
+        "af": {
+            "type": "Aircraft/Airframe Not Registered in Canada (AF)",
+            "seialOrVINNumber": "GCH42A",
+            "year": "2007",
+            "make": "EUROCOPTER",
+            "model": "AS350 B3+"
+        }
+    },
+    "folioNumber": "123456",
+    "serialNumberValidation": "Enter the Serial or VIN Number",
+    "makeValidationText": "Enter the vehicle make",
+    "modelValidationText": "Enter the vehicle model"
 }

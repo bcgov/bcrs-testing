@@ -1,0 +1,293 @@
+{
+    "years": [
+        {
+            "lengthInYears": "1",
+            "title": " Security Agreement ",
+            "titleAmount": " $5.00 ",
+            "hint": "1 Year @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$6.50"
+        },
+        {
+            "lengthInYears": "2",
+            "title": " Security Agreement ",
+            "titleAmount": " $10.00 ",
+            "hint": "2 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$11.50"
+        },
+        {
+            "lengthInYears": "3",
+            "title": " Security Agreement ",
+            "titleAmount": " $15.00 ",
+            "hint": "3 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$16.50"
+        },
+        {
+            "lengthInYears": "4",
+            "title": " Security Agreement ",
+            "titleAmount": " $20.00 ",
+            "hint": "4 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$21.50"
+        },
+        {
+            "lengthInYears": "5",
+            "title": " Security Agreement ",
+            "titleAmount": " $25.00 ",
+            "hint": "5 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$26.50"
+        },
+        {
+            "lengthInYears": "6",
+            "title": " Security Agreement ",
+            "titleAmount": " $30.00 ",
+            "hint": "6 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$31.50"
+        },
+        {
+            "lengthInYears": "7",
+            "title": " Security Agreement ",
+            "titleAmount": " $35.00 ",
+            "hint": "7 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$36.50"
+        },
+        {
+            "lengthInYears": "8",
+            "title": " Security Agreement ",
+            "titleAmount": " $40.00 ",
+            "hint": "8 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$41.50"
+        },
+        {
+            "lengthInYears": "9",
+            "title": " Security Agreement ",
+            "titleAmount": " $45.00 ",
+            "hint": "9 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$46.50"
+        },
+        {
+            "lengthInYears": "10",
+            "title": " Security Agreement ",
+            "titleAmount": " $50.00 ",
+            "hint": "10 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$51.50"
+        },
+        {
+            "lengthInYears": "11",
+            "title": " Security Agreement ",
+            "titleAmount": " $55.00 ",
+            "hint": "11 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$56.50"
+        },
+        {
+            "lengthInYears": "12",
+            "title": " Security Agreement ",
+            "titleAmount": " $60.00 ",
+            "hint": "12 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$61.50"
+        },
+        {
+            "lengthInYears": "13",
+            "title": " Security Agreement ",
+            "titleAmount": " $65.00 ",
+            "hint": "13 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$66.50"
+        },
+        {
+            "lengthInYears": "14",
+            "title": " Security Agreement ",
+            "titleAmount": " $70.00 ",
+            "hint": "14 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$71.50"
+        },
+        {
+            "lengthInYears": "15",
+            "title": " Security Agreement ",
+            "titleAmount": " $75.00 ",
+            "hint": "15 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$76.50"
+        },
+        {
+            "lengthInYears": "16",
+            "title": " Security Agreement ",
+            "titleAmount": " $80.00 ",
+            "hint": "16 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$81.50"
+        },
+        {
+            "lengthInYears": "17",
+            "title": " Security Agreement ",
+            "titleAmount": " $85.00 ",
+            "hint": "17 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$86.50"
+        },
+        {
+            "lengthInYears": "18",
+            "title": " Security Agreement ",
+            "titleAmount": " $90.00 ",
+            "hint": "18 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$91.50"
+        },
+        {
+            "lengthInYears": "19",
+            "title": " Security Agreement ",
+            "titleAmount": " $95.00 ",
+            "hint": "19 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$96.50"
+        },
+        {
+            "lengthInYears": "20",
+            "title": " Security Agreement ",
+            "titleAmount": " $100.00 ",
+            "hint": "20 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$101.50"
+        },
+        {
+            "lengthInYears": "21",
+            "title": " Security Agreement ",
+            "titleAmount": " $105.00 ",
+            "hint": "21 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$106.50"
+        },
+        {
+            "lengthInYears": "22",
+            "title": " Security Agreement ",
+            "titleAmount": " $110.00 ",
+            "hint": "22 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$111.50"
+        },
+        {
+            "lengthInYears": "23",
+            "title": " Security Agreement ",
+            "titleAmount": " $115.00 ",
+            "hint": "23 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$116.50"
+        },
+        {
+            "lengthInYears": "24",
+            "title": " Security Agreement ",
+            "titleAmount": " $120.00 ",
+            "hint": "24 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$121.50"
+        },
+        {
+            "lengthInYears": "25",
+            "title": " Security Agreement ",
+            "titleAmount": " $125.00 ",
+            "hint": "25 Years @ $5.00/year",
+            "serviceFee": " Service Fee ",
+            "serviceFeeAmount": " $1.50 ",
+            "currency": "CAD",
+            "totalFees": "Total Fees",
+            "totalAmount": "$126.50"
+        }
+    ],
+    "invalidData": [
+        {
+            "lengthInYears": ".5",
+            "errorMessage": "Registration length must be a number between 1 and 25"
+        },
+        {
+            "lengthInYears": "29",
+            "errorMessage": "Registration length must be between 1 and 25"
+        },
+        {
+            "lengthInYears": "0",
+            "errorMessage": "Registration length must be between 1 and 25"
+        }
+    ]
+}

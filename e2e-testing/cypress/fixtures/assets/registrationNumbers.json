@@ -1,0 +1,18 @@
+{
+    "discharge": {
+        "registrationNumber": "501922N",
+        "debtorName": "TEST"
+    },
+    "rlRenew": {
+        "registrationNumber": "501917N",
+        "debtorName": "TEST"
+    },
+    "regRenew": {
+        "registrationNumber": "501863N",
+        "debtorName": "TEST"
+    },
+    "amend": {
+        "registrationNumber": "501840N",
+        "debtorName": "TEST"
+    }
+}

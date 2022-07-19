@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 const log = require("log");
+const dayjs = require("dayjs");
 
 export class RepairersLienPage {
 
@@ -10,6 +11,7 @@ export class RepairersLienPage {
         this.lienAmount = '#lien-amount'
         this.surrenderDate = '#date-text-field'
         this.dateOkButton = '.v-picker__actions > :nth-child(2)'
+        this.clickOkButton = '#btn-done'
     }
 
     setLienAmount(data){
@@ -17,13 +19,16 @@ export class RepairersLienPage {
         cy.log("Entered Lien Amount")
     }
 
-    setSurrenderDate(data){
-        cy.wait(2000)
+    setSurrenderDate(){
+
         cy.get(this.surrenderDate).click()
-        cy.wait(2000)
-        const element = 'button:contains("'+data+'")'
-        cy.get(element).click()
+        const todaysDate = dayjs().format("D");
+        cy.log(todaysDate);
+        const element = 'td > button:contains('+todaysDate+')'
+        cy.get(element).should('be.visible').first().click()
+        cy.get(this.clickOkButton).click()
         cy.log("Surrender Date got selected")
+   
     }
 
     clickDateOkButton(){

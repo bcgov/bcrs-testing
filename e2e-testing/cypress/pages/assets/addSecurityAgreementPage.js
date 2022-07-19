@@ -4,7 +4,6 @@ export class AddSecurityAgreementPage {
 
     constructor() {
 
-        this.securityAgreementDropdown = 'button#registration-more-actions-btn'
         this.securityAgreement_SA = 'div#btn-security'
         this.repairersLein_RL = 'div#btn-reparers'
         this.marriageSeperationAgreement_FR = 'div#btn-marriage'
@@ -14,49 +13,67 @@ export class AddSecurityAgreementPage {
         this.forestryContractorLien_FL = 'div#btn-fcl'
         this.forestryContractorCharge_FA = 'div#btn-fcc'
         this.forestrySub_ContractorCharge_FS = 'div#btn-fsl'
+        this.scrollDropdown = '.v-menu__content'
 
     }
 
-    selectSecurityAgreementDropdown() {
-        cy.get(this.securityAgreementDropdown).click()
-        cy.log("Security Agreement dropdown got selected")
+    selectSecurityAgreementDropdown(type) {
+
+        cy.log(type)
+
+        if (type == 'bcsc') {
+            const element = '#registration-more-actions-btn'
+            cy.get(element).click()
+            cy.log("Non Govt dropdown got clicked")
+        }
+
+        if (type == 'gov') {
+            const element = '.actions > .container > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
+            cy.get(element).click()
+            cy.log("Govt dropdown got clicked")
+
+            const element1 = '#reg-type-drop-2'
+            cy.wait(2000)
+            cy.get(element1).click()
+            cy.get(element1).trigger('mousedown')
+            cy.log("Other Registrations dropdown got clicked")
+
+            const element2 = '#reg-type-drop-3'
+            cy.wait(2000)
+            cy.get(element2).click()
+            cy.wait(2000)
+            cy.get(element2).trigger('mousedown')
+            cy.log("Standard Registrations dropdown got clicked")
+        }
     }
-    clickSecurityAgreement() {
-        cy.get(this.securityAgreement_SA).click()
-        cy.log("Clicked on Security Agreement")
+
+    selectStandardRegistrations(type, data) {
+        if (type == 'bcsc') {
+            const element = 'div:contains("' + data + '")'
+            cy.get(element).click()
+        }
+        if (type == 'gov') {
+            const element = 'span:contains("' + data + '")'
+            cy.get(element).trigger('mousedown')
+            cy.get(element).click()
+        }
+
     }
-    clickRepairersLien() {
-        cy.get(this.repairersLein_RL).click()
-        cy.log("Clicked on Repairers Lien")
+
+    selectCrownChargeRegistrations(data) {
+
+        const element = 'span:contains("' + data + '")'
+        cy.get(element).click()
+
     }
-    clickMarriageorSeperationAgreement() {
-        cy.get(this.marriageSeperationAgreement_FR).click()
-        cy.log("Clicked on Marriage/Seperation Agreement")
+
+    selectOtherRegistration(data) {
+
+        const element = 'span:contains("' + data + '")'
+        cy.get(element).click()
+
     }
-    clickLandTaxDefermentLien() {
-        cy.get(this.landTaxDefermentLien_LT).click()
-        cy.log("Clicked on Land Tax Deferment Lien")
-    }
-    clickSaleOfGoodsAct() {
-        cy.get(this.saleOfGoodsAct_SG).click()
-        cy.log("Clicked on Sale of Goods Act")
-    }
-    clickManufacturedHomeAct() {
-        cy.get(this.manufacturedHomeAct_MH).click()
-        cy.log("Clicked on Manufactured Home Act")
-    }
-    clickForestryContractorLien() {
-        cy.get(this.forestryContractorLien_FL).click()
-        cy.log("Clicked on Forestry Contractor Lien")
-    }
-    clickForestryContractorCharge() {
-        cy.get(this.forestryContractorCharge_FA).click()
-        cy.log("Clicked on Forestry Contractor Charge")
-    }
-    clickForestrySub_ContactorCharge() {
-        cy.get(this.forestrySubContractorCharge_FS).click()
-        cy.log("Clicked on Forestry Sub_Contractor Charge")
-    }
+
 
 
 }

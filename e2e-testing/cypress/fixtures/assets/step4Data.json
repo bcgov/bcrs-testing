@@ -1,0 +1,12 @@
+{
+    "step4SubHeader": " Review and Confirm ",
+    "invalidMessage": " This step is unfinished. ",
+    "collateralInvalidMessage": "This step is unfinished. ",
+    "collateralLink": "Return to this step to complete it.",
+    "link": " Return to this step to complete it. ",
+    "registrationLength": " Not valid ",
+    "trustIndenture": " No ",
+    "step1SubHeader": " Registration Length and Trust Indenture ",
+    "step2SubHeader": " Add Secured Parties and Debtors ",
+    "step3SubHeader": " Add Collateral "
+}

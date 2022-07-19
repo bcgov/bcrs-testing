@@ -1,0 +1,141 @@
+{
+    "mhrNumber": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $7.00 ",
+        "hint": " 1 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$8.50"
+    },
+    "mhrNumberCombo": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $12.00 ",
+        "hint": " 1 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$13.50"
+    },
+    "mhrNumberComboSearch": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $12.00 ",
+        "hint": " 1 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$13.50"
+    },
+    "mhrNumberWithoutHomes": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " - ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "-"
+    },
+    "ownerName": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $42.00 ",
+        "hint": " 6 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$43.50"
+    },
+    "ownerNameCombo": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $72.00 ",
+        "hint": " 6 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$73.50"
+    },
+    "orgName": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $7.00 ",
+        "hint": " 1 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$8.50"
+    },
+    "orgNameCombo": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $12.00 ",
+        "hint": " 1 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$13.50"
+    },
+    "orgNameMultipleResults": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $70.00 ",
+        "hint": " 10 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$71.50"
+    },
+    "orgNameComboSearchResults": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $120.00 ",
+        "hint": " 10 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$121.50"
+    },
+    "serialNumber": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $7.00 ",
+        "hint": " 1 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$8.50"
+    },
+    "serialNumberCombo": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $12.00 ",
+        "hint": " 1 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$13.50"
+    },
+    "serialNumberMultipleResults": {
+        "title": " Manufactured Home search ",
+        "titleAmount": " $35.00 ",
+        "hint": " 5 @ $7.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$36.50"
+    },
+    "serialNumberComboSearch": {
+        "title": " Combined Home and Lien search ",
+        "titleAmount": " $12.00 ",
+        "hint": " 1 @ $12.00 each ",
+        "serviceFee": " Service Fee ",
+        "serviceFeeAmount": " $1.50 ",
+        "currency": "CAD",
+        "totalFees": "Total Fees",
+        "totalAmount": "$13.50"
+    }
+}
