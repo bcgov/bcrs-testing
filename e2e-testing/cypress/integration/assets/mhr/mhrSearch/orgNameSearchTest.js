@@ -148,11 +148,11 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.setFolioNumber(orgNameData.orgNameSearch)
 
-        mhrSearchPage.setOrgName(orgNameData.orgNameMultipleSearch)
+        mhrSearchPage.setOrgName(orgNameData.orgNameComboSearch)
 
         mhrSearchPage.verifySearchResultsHeader(orgNameData.orgNameSearch)
 
-        mhrSearchPage.verifyOrgNameSearchResultsTableBeforeSelection(orgNameData.orgNameMultipleSearch)
+        mhrSearchPage.verifyOrgNameSearchResultsTableBeforeSelection(orgNameData.orgNameComboSearch)
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
@@ -164,25 +164,25 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
-        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.orgNameMultipleResults)
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.orgName)
 
         mhrSearchPage.clickBackButton()
 
         mhrSearchPage.clickSelectAllLienCheckbox()
 
-        mhrSearchPage.verifyOrgNameComboResultsTableAfterSelection(orgNameData.orgNameMultipleSearch)
+        mhrSearchPage.verifyOrgNameComboResultsTableAfterSelection(orgNameData.orgNameComboSearch)
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
         feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.orgNameComboSearchResults)
 
-        mhrSearchPage.verifyOrgNameReviewSearchResultScreen(orgNameData.orgNameMultipleSearch)
+        mhrSearchPage.verifyOrgNameReviewSearchResultScreen(orgNameData.orgNameComboSearch)
 
         mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
 
         mhrSearchPage.clickPayAndDownloadResultButton()
 
-        mhrSearchPage.verifyOrgNameSearchHistoryTable(orgNameData.orgNameMultipleSearch)
+        mhrSearchPage.verifyOrgNameSearchHistoryTable(orgNameData.orgNameComboSearch)
 
 
     })

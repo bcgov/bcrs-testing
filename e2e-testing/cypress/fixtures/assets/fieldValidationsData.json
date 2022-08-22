@@ -1,16 +1,17 @@
 {
     "securedParty": {
-        "firstName": "This is a veryyyyy longg secured party's first name",
-        "middleName": "This is a veryyyy longg secured party's middle name",
-        "lastName": "This is a veryyyyyy longg secured party's last name",
-        "emailAddress": "something_someplace@someone.com",
-        "country": "Australia",
-        "addressLine1": "31 Campbell St",
-        "addressLine2": "Australian Capital Territory",
-        "city": "Ainslie",
+        "partyFirstName": "This is a veryyyyy longg secured party's first name",
+        "partyMiddleName": "This is a veryyyy longg secured party's middle name",
+        "partyLastName": "This is a veryyyyyy longg secured party's last name",
+        "partyEmailAddress": "something_someplace@someone.com",
+        "partyCountry": "Australia",
+        "partyAddressLine1": "31 Campbell St Australian Capital Territory, Ainslie",
+        "addressTitle": "31 Campbell St Australian Capital Territory, Ainslie",
+        "partyAddressLine2": "31 Campbell St Australian Capital Territory, Ainslie",
+        "city": "St Australian Capital Territory, Ainslie.",
         "region": "ACT",
-        "postalCode": "2602",
-        "deliveryInstructions": "This is a veryyyyy longg secured party's delivery instructions which is optional.",
+        "postalCode": "2602 V8B 0Y2 H2S",
+        "partyDeliveryInstructions": "This is a veryyyyy longg secured party's delivery instructions which is optional.",
         "businessName": "Granville savings and mortgage corporation. granville savings and mortgage corporation granville savings and mortgage corporation granville savings and"
     },
     "debtor": {
@@ -43,5 +44,13 @@
         "postalCode": "35031",
         "deliveryInstructions": "This is a veryyy long registering party's individual person delivery instructions",
         "businessName": "Royal bank of canada, non-negotiable securities centre. Royal bank of canada, non-negotiable securities centre. Royal bank of canada, non-negotiable se"
+    },
+    "validations": {
+        "nameValidation": "Maximum 50 characters",
+        "addressLineValidation": "Maximum length is 50",
+        "cityValidation": "Maximum length is 40",
+        "regionValidation": "Maximum length is 2",
+        "postalCodeValidation": "Maximum length is 15",
+        "deliveryInstructionsValidation": "Maximum length is 80"
     }
 }

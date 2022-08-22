@@ -162,7 +162,7 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
-        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.serialNumber)
+        //feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.serialNumber)
 
         mhrSearchPage.clickBackButton()
 

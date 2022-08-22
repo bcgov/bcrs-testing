@@ -20,14 +20,14 @@ export class MHRSearchPage {
 
         //Search Results
         this.searchResultsBreadcrumb = '.Breadcrumb_breadcrumb-text_2jfZ3'
-        this.searchResultsPageTitle = '.MHRSearch_search-title_3HmOy'
+        this.searchResultsPageTitle = '.MHRSearch_search-title_2xLk5'
         this.searchResultsInfo = '#results-info'
         this.searchSubTitle = '.search-sub-title'
         this.folioNumberField = '.v-text-field__slot'
         this.reviewAndConfirmButton = '#review-confirm-btn'
-        this.reviewSearchResultTitle = 'h1:contains("Review Search Result")'
+        this.reviewSearchResultTitle = 'h1:contains("Review Selection(s)")'
         this.reviewSearchResultInfo = ':nth-child(2) > .ma-0'
-        this.reviewSubTitle = 'label:contains("Search Results Summary")'
+        this.reviewSubTitle = 'label:contains("Selection Summary")'
         this.hintMessage = '.v-messages__message'
         this.confirmFolioNumber = '#txt-folio'
         this.homeResultsCount = '#home-results-count'
@@ -108,7 +108,7 @@ export class MHRSearchPage {
 
     setOwnerName(data) {
         cy.get(this.firstName).type(data.firstName)
-        //cy.get(this.middleName).type(data.middleName)
+        cy.get(this.middleName).type(data.middleName)
         cy.get(this.lastName).type(data.lastName)
         cy.tab().click()
         cy.log("Entered Owner Name")

@@ -1,12 +1,12 @@
 {
     "mhrNumberSearch": {
         "mhrHintMessage": "Manufactured home registration numbers normally contain up to 6 digits",
-        "searchResultsPageTitle": "Search Results",
-        "searchResultsInfo": " Select the manufactured home to download the full details of the home. Selecting the home will debit your search fee from your BC Online account. The downloaded report will contain the full record of the registration for the home and will be automatically saved to your dashboard. ",
+        "searchResultsPageTitle": "Selection List",
+        "searchResultsInfo": " Select the manufactured home to download the full details of the home. Selecting the home will debit your search fee. The downloaded report will contain the full record of the registration for the home and will be automatically saved to your dashboard for up to 14 days. ",
         "searchSubTitle": "Manufactured Home Registration Number - ",
-        "reviewSearchResultTitle": "Review Search Result",
+        "reviewSearchResultTitle": "Review Selection(s)",
         "reviewSearchResultInfo": " Review the details of the manufactured home before paying. Your search result will be available in your Searches list. ",
-        "searchResultsSummaryTitle": "Search Results Summary",
+        "searchResultsSummaryTitle": "Selection Summary",
         "folioNumber": "823748234S23",
         "mhrNumber": "022000",
         "searchType": " Manufactured Home Registration Number ",
@@ -26,7 +26,7 @@
         "folioNumberTitle": "1. Folio or Reference Number",
         "folioInfo": " Add an optional number for this transaction for your own tracking purposes. This information is not used by the Manufactured Home Registry. ",
         "searchHeader": " Manufactured Home and Personal Property Registry Search",
-        "searchResultsBreadcrumb": "Search Results"
+        "searchResultsBreadcrumb": "Selection List"
     },
     "mhrNumberValidation": {
         "mhrHintMessage": "Manufactured home registration numbers normally contain up to 6 digits",
@@ -38,8 +38,8 @@
     },
     "mhrNumberNILSearch": {
         "mhrNumber": "124234",
-        "noSearchResultInfo": " No Registrations were found. A printable PDF search result report and a general record of your search will be saved to your Personal Property Registry dashboard. ",
-        "searchResultsPageTitle": "Search Results",
+        "noSearchResultInfo": " No Registrations were found. ",
+        "searchResultsPageTitle": "Selection List",
         "searchSubTitle": "Manufactured Home Registration Number - ",
         "homeResultsNumber": "0",
         "homeResultsText": " homes found",
@@ -71,10 +71,10 @@
         "registry": "Manufactured Homes",
         "searchType": " Manufactured Home Registration Number ",
         "searchHeader": " Manufactured Home and Personal Property Registry Search",
-        "reviewSearchResultTitle": "Review Search Result",
+        "reviewSearchResultTitle": "Review Selection(s)",
         "reviewSearchResultInfo": " Review the details of the manufactured home before paying. Your search result will be available in your Searches list. ",
         "folioNumber": "823748234S23",
-        "searchResultsSummaryTitle": "Search Results Summary"
+        "searchResultsSummaryTitle": "Selection Summary"
     },
     "feeSummary": {
         "mhrNumber": {

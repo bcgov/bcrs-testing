@@ -3,7 +3,7 @@
 const log = require("log");
 const tab = require('cypress-plugin-tab')
 
-export class FieldValidationsPage {
+export class PPRFieldValidationsPage {
 
     constructor() {
         //Add Secured Parties and Debtors
@@ -24,11 +24,25 @@ export class FieldValidationsPage {
         this.partyAddressCountryDropdown = '.v-select__slot'
         this.partyAddressCountry = '[role = "listbox"]'
         this.partyAddressLine1Text = 'input[id^="street-address"]'
-        this.partyAddressCityText = 'input#input-3932'
-        this.partyAddressRegionText = 'input#input-3935'
-        this.partyAddressPostalCodeText = 'input#input-3938'
+        this.partyAddressLine2Text = '.v-form > :nth-child(3) > .v-input > .v-input__control > .v-input__slot'
+        this.partyAddressCityText = '.address-city > .v-input__control > .v-input__slot'
+        this.partyAddressRegionText = '.address-region > .v-input__control > .v-input__slot'
+        this.partyAddressPostalCodeText = '.postal-code > .v-input__control > .v-input__slot'
         this.partyDeliveryInstructions = ':nth-child(5) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot'
         this.partyDoneButton = '#done-btn-party'
+
+        //Secured Party field validations
+
+        this.partyFirstNameValidation = ':nth-child(2) > :nth-child(1) > .v-input > .v-input__control > .v-text-field__details'
+        this.partyMiddleNameValidation = ':nth-child(2) > :nth-child(2) > .v-input > .v-input__control > .v-text-field__details'
+        this.partyLastNameValidation = ':nth-child(2) > :nth-child(3) > .v-input > .v-input__control > .v-text-field__details'
+        this.partyEmailAddressValidation = ':nth-child(4) > .col > .v-input > .v-input__control > .v-text-field__details'
+        this.partyAddressLine1TextValidation = '.v-form > :nth-child(2) > .v-input > .v-input__control > .v-text-field__details'
+        this.partyAddressLine2TextValidation = '.v-form > :nth-child(3) > .v-input > .v-input__control > .v-text-field__details'
+        this.partyAddressCityTextValidation = '.address-city > .v-input__control > .v-text-field__details'
+        this.partyAddressRegionTextValidation = '.address-region > .v-input__control > .v-text-field__details'
+        this.partyAddressPostalCodeTextValidation = '.postal-code > .v-input__control > .v-text-field__details'
+        this.partyDeliveryInstructionsValidation = ':nth-child(5) > .v-input > .v-input__control > .v-text-field__details'
 
         //Party Business
 
@@ -110,6 +124,12 @@ export class FieldValidationsPage {
         cy.log("Secured Party Link got clicked")
     }
 
+    clickPartyDoneButton() {
+        cy.wait(2000)
+        cy.get(this.partyDoneButton).click()
+        cy.log("Clicked on Party Done Button")
+    }
+
     setPartyIndividual(data) {
         cy.get(this.partyIndividualPersonRadioButton).check({ force: true })
         cy.get(this.partyFirstName).type(data.partyFirstName)
@@ -120,12 +140,30 @@ export class FieldValidationsPage {
         cy.get(this.partyAddressCountry).click()
         cy.get(this.partyAddressLine1Text).type(data.partyAddressLine1)
         cy.wait(2000)
-        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.partyAddressLine2Text).type(data.partyAddressLine2)
+        cy.get(this.partyAddressCityText).type(data.city)
+        cy.get(this.partyAddressRegionText).type(data.region)
+        cy.get(this.partyAddressPostalCodeText).type(data.postalCode)
+        //cy.get('[title = "' + data.addressTitle + '"]').click()
         cy.get(this.partyDeliveryInstructions).type(data.partyDeliveryInstructions)
         this.clickPartyDoneButton()
         cy.log("Entered Party Individual Details")
     }
 
+    verifyPartyIndividualFieldValidations(data) {
+
+        cy.get(this.partyFirstNameValidation).should('have.text', data.nameValidation)
+        cy.get(this.partyMiddleNameValidation).should('have.text', data.nameValidation)
+        cy.get(this.partyLastNameValidation).should('have.text', data.nameValidation)
+        cy.get(this.partyAddressLine1TextValidation).should('have.text', data.addressLineValidation)
+        cy.get(this.partyAddressLine2TextValidation).should('have.text', data.addressLineValidation)
+        cy.get(this.partyAddressCityTextValidation).should('have.text', data.cityValidation)
+        cy.get(this.partyAddressRegionTextValidation).should('have.text', data.regionValidation)
+        cy.get(this.partyAddressPostalCodeTextValidation).should('have.text', data.postalCodeValidation)
+        cy.get(this.partyDeliveryInstructionsValidation).should('have.text', data.deliveryInstructionsValidation)
+        cy.log("Verified Party Individual Field Validations")
+    }
+
 
 }
-export const fieldValidationsPage = new FieldValidationsPage()
+export const pprFieldValidationsPage = new PPRFieldValidationsPage()

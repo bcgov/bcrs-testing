@@ -1,0 +1,38 @@
+name: MHR TEST Environment
+on:
+  workflow_dispatch:
+jobs:
+  Regression:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: e2e-testing
+    steps:
+      - uses: actions/checkout@v2
+        with:
+         ref: assets
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          env: true
+          node-version: "12.x"
+      - run: npm install
+
+      - run: npm run serialNumberSearchTest
+        if: ${{ always() }}
+        env:
+          CYPRESS_PPR_DOMAIN: ${{ secrets.PPR_DOMAIN }}
+          CYPRESS_BCSC_USERNAME: ${{secrets.BCSC_USERNAME}}
+          CYPRESS_BCSC_PASSWORD: ${{secrets.BCSC_PASSWORD}}
+          CYPRESS_TYPE: ${{secrets.TYPE}} 
+
+      - name: Rocket.Chat Notification
+        uses: RocketChat/Rocket.Chat.GitHub.Action.Notification@1.1.1
+        if: success()
+        with:
+          type: ${{ job.status }}
+          job_name: "Regression Test - TEST --->"
+          icon_emoji: ":bell:"
+          channel: "Automation-Testing-Notifications"
+          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}   

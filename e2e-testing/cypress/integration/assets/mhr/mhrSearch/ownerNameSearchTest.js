@@ -8,7 +8,8 @@ import mhrNumberData from '../../../../fixtures/assets/mhr/mhrNumberData.json'
 
 describe('MHR Search Test Suite ', function () {
 
-    it('MHR Search Test Case', function () {
+
+    it('Owner Name Single Search Test Case', function () {
 
         landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
 
@@ -18,19 +19,15 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.selectSearchCategoryDropdown()
 
-        //mhrSearchPage.searchOwnerName(ownerNameData.ownerNameSearch)
-
         mhrSearchPage.selectOwnerName()
 
-        //mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSingleSearch)
 
-        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
+        mhrSearchPage.setOwnerName(ownerNameData.ownerNameSingleSearch)
 
-        mhrSearchPage.setOwnerName(ownerNameData.ownerNameSearch)
+        mhrSearchPage.verifySearchResultsHeader(ownerNameData.ownerNameSingleSearch)
 
-        mhrSearchPage.verifySearchResultsHeader(ownerNameData.ownerNameSearch)
-
-        mhrSearchPage.verifyOwnerNameSearchResultsTableBeforeSelection(ownerNameData.ownerNameSearch)
+        mhrSearchPage.verifyOwnerNameSearchResultsTableBeforeSelection(ownerNameData.ownerNameSingleSearch)
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
@@ -48,21 +45,75 @@ describe('MHR Search Test Suite ', function () {
 
         mhrSearchPage.clickSelectAllLienCheckbox()
 
-        mhrSearchPage.verifyOWnerNameSearchResultsTableAfterSelection(ownerNameData.ownerNameSearch)
+        mhrSearchPage.verifyOWnerNameSearchResultsTableAfterSelection(ownerNameData.ownerNameSingleSearch)
 
         mhrSearchPage.clickReviewAndConfirmButton()
 
-        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.ownerNameCombo)
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.mhrNumberCombo)
 
-        mhrSearchPage.verifyOwnerNameReviewSearchResultScreen(ownerNameData.ownerNameSearch)
+        mhrSearchPage.verifyOwnerNameReviewSearchResultScreen(ownerNameData.ownerNameSingleSearch)
 
         mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
 
         mhrSearchPage.clickPayAndDownloadResultButton()
 
-        mhrSearchPage.verifyOwnerNameSearchHistoryTable(ownerNameData.ownerNameSearch)
+        mhrSearchPage.verifyOwnerNameSearchHistoryTable(ownerNameData.ownerNameSingleSearch)
+    })
 
-        //NIL Search
+
+    it('Owner Name Multiple Search Test Case', function () {
+
+        mhrSearchPage.selectSearchCategoryDropdown()
+
+        //mhrSearchPage.searchOwnerName(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.selectOwnerName()
+
+        //mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
+
+        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.setOwnerName(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.verifySearchResultsHeader(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.verifyOwnerNameSearchResultsTableBeforeSelection(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModalWithoutHomes(feeSummaryData.mhrNumberWithoutHomes)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllCheckbox()
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.ownerNameMultipleResults)
+
+        mhrSearchPage.clickBackButton()
+
+        mhrSearchPage.clickSelectAllLienCheckbox()
+
+        mhrSearchPage.verifyOWnerNameSearchResultsTableAfterSelection(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.clickReviewAndConfirmButton()
+
+        feeSummaryPage.verifyFeeSummaryModal(feeSummaryData.ownerNameCombo)
+
+        mhrSearchPage.verifyOwnerNameReviewSearchResultScreen(ownerNameData.ownerNameMultipleResults)
+
+        mhrSearchPage.verifyFolioNumber(mhrNumberData.mhrNumberSearch)
+
+        mhrSearchPage.clickPayAndDownloadResultButton()
+
+        mhrSearchPage.verifyOwnerNameSearchHistoryTable(ownerNameData.ownerNameMultipleResults)
+
+    })
+
+    //NIL Search
+
+    it('Owner Name NIL Search Test Case', function () {
 
         mhrSearchPage.selectSearchCategoryDropdown()
 
@@ -70,7 +121,7 @@ describe('MHR Search Test Suite ', function () {
 
         //mhrSearchPage.verifyOwnerNameHint(ownerNameData.ownerNameSearch)
 
-        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameSearch)
+        mhrSearchPage.setFolioNumber(ownerNameData.ownerNameMultipleResults)
 
         mhrSearchPage.setOwnerName(ownerNameData.ownerNameNILSearch)
 
