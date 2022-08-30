@@ -13,6 +13,7 @@ export class LandingPage {
         this.passcode = '#passcode'
         this.continue = '#btnSubmit'
         this.loginDropdown = '#loginBtn'
+        this.staffAssetRegistriesButton = '.product-info'
 
     }
 
@@ -71,7 +72,7 @@ export class LandingPage {
         cy.log("Clicked on submit button")
     }
 
-    bcscLogin(username,password){
+    bcscLogin(username, password) {
         cy.wait(2000)
         cy.get(this.cardSerialNumber).type(username)
         cy.get(this.continueNext).click()
@@ -79,6 +80,11 @@ export class LandingPage {
         cy.get(this.continue).click()
         cy.log("BCSC login is successful")
 
+    }
+
+    clickStaffAssetRegistriesButton() {
+        cy.get(this.staffAssetRegistriesButton).click()
+        cy.log("Clicked on the Staff Asset Registries button")
     }
 
 

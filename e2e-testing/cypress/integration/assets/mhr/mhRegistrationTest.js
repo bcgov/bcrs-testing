@@ -1,17 +1,29 @@
 /// <reference types="Cypress" />
 
-import { bcolStaffPage } from "../../../../pages/assets/bcolStaffPage";
+import { landingPage } from '../../../pages/assets/landingPage'
+import { mhrRegistrationPage } from '../../../pages/assets/mhr/mhrRegistrationPage'
+import step1Data from '../../../fixtures/assets/mhr/step1Data.json'
 
 
 describe('Staff Flow Test Suite ', function () {
 
-    it('BCOL Staff Test Case', function () {
+    it('BC Registry Staff MH Registration Test Case', function () {
 
-        bcolStaffPage.visit(Cypress.env('PPR_STAFF'))
+        landingPage.visit(Cypress.env('PPR_DEV_URL'))
 
-        bcolStaffPage.idirLogin()
+        landingPage.clickLoginDropdown()
 
-        bcolStaffPage.bcolStaffLogin(Cypress.env('BCOL_USERNAME'), Cypress.env('BCOL_PASSWORD'))
+        landingPage.bcscLogin(Cypress.env('BCSC_WITH_IDIR_ROLE_USERNAME'), Cypress.env('BCSC_WITH_IDIR_ROLE_PASSWORD'))
+
+        landingPage.clickStaffAssetRegistriesButton()
+
+        mhrRegistrationPage.selectMHRTab()
+
+        mhrRegistrationPage.clickRegisterMHButton()
+
+        mhrRegistrationPage.setManufacturerMakeAndModel(step1Data['manufacurer,make,model'])
+
+        mhrRegistrationPage.setHomeSections(step1Data.homeSections)
 
 
 

@@ -1,0 +1,19 @@
+{
+    "manufacurer,make,model": {
+        "mhrMakeModelHeader": "Manufacturer, Make, and Model",
+        "mhrMakeModelTitle": " Enter the Year of Manufacture (not the model year), Make, and Model of the home. ",
+        "manufacturerName": "Skyline",
+        "manufacturerYear": "2020",
+        "manufacturerMake": "Moduline Industries",
+        "manufacturerModel": "Atlantis"
+    },
+    "homeSections": {
+        "mhrHomeSectionsHeader": "Home Sections",
+        "homeSectionsTitle": "Add the Serial Number and dimensions for each section of the home. You can include up to four sections in a home.",
+        "serialNumber": "BC1234512",
+        "lengthFeet": "56",
+        "lengthInches": "6",
+        "widthFeet": "82",
+        "widthInches": "9"
+    }
+}
