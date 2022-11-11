@@ -38,10 +38,12 @@ export class MHRRegistrationPage {
         //Home Certification
         this.homeCertificationHeader = 'h2:contains("Home Certification")'
         this.homeCertificationTitle = '#mhr-describe-your-home > :nth-child(3) > .mt-2'
-        this.csaNumberOption = '#csa-option'
+        this.csaNumberOption = '.csa-radio'
         this.csaNumber = '#csa-number'
-        this.csaStandard = '#csa-standard'
-        this.engineerInspectionOption = '#engineer-option'
+        this.csaStandard = '#csa-form > .v-select > .v-input__control > .v-input__slot'
+        this.csaStandardOption1 = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)'
+        this.csaStandardOption2 = 'html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)'
+        this.engineerInspectionOption = '.engineer-radio'
         this.engineerName = '#engineer-name'
         this.engineerDate = '#date-text-field'
 
@@ -62,7 +64,7 @@ export class MHRRegistrationPage {
         this.submittingPartyHeader = 'h2:contains("Submitting Party")'
         this.submittingPartyTitle = '#mhr-add-submitting-party > .mt-2'
         this.submittingPartyCode = '#txt-code'
-        this.individualPersonOption = '#person-option'
+        this.individualPersonOption = '.person-radio'
         this.individualPersonFirstName = '#first-name'
         this.individualPersonMiddleName = '#middle-name'
         this.individualPersonLastName = '#last-name'
@@ -70,10 +72,15 @@ export class MHRRegistrationPage {
         this.submittingPartyPhone = '#submitting-party-phone'
         this.submittingPartyPhoneExtention = '#submitting-party-phone-ext'
         this.mailingAddressTitle = '.py-1'
-        this.country = '.v-form > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
-        this.addressLine1 = '#street-address-1'
-        this.businessOption = '#business-option'
+        // this.country = '.v-form > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
+        this.submittingPartyAddressLine1 = '#street-address-1'
+        this.businessOption = '.business-radio'
         this.businessName = '#business-name'
+        this.submittingPartyDropdownList = ''
+        this.deliveryInstructions = ':nth-child(5) > .v-input > .v-input__control > .v-input__slot'
+        this.countryDropdown = '.v-form > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-select__slot'
+        this.country = '.v-list-item__mask'
+        this.partyAddressLine1Text = 'input[id^="street-address"]'
 
         //Document ID
         this.documentIDHeader = 'h2:contains("Document ID")'
@@ -147,6 +154,11 @@ export class MHRRegistrationPage {
         cy.log("Clicked on MH Registration Button")
     }
 
+    clickRegistrationNextButton() {
+        cy.get(this.regNextButton).click()
+        cy.log("Clicked on the registration next button")
+    }
+
     setManufacturerMakeAndModel(data) {
         cy.get(this.mhrMakeModelHeader).should('have.text', data.mhrMakeModelHeader)
         cy.get(this.mhrMakeModelTitle).should('have.text', data.mhrMakeModelTitle)
@@ -169,7 +181,97 @@ export class MHRRegistrationPage {
         cy.get(this.widthInches).type(data.widthInches)
         cy.get(this.doneButton).click()
         cy.log("Home Section details got Entered")
-        
+
+    }
+
+    setHomeCertification(data) {
+        cy.get(this.homeCertificationHeader).should('have.text', data.homeCertificationHeader)
+        cy.get(this.homeCertificationTitle).should('have.text', data.homeCertificationTitle)
+        cy.get(this.csaNumberOption).click()
+        cy.get(this.csaNumber).type(data.csaNumber)
+        cy.get(this.csaStandard).click()
+        cy.get(this.csaStandardOption1).click()
+        cy.log("Home Certification details got entered")
+    }
+
+    setRebuiltStatus(data) {
+        cy.get(this.rebuitStatusHeader).should('have.text', data.rebuitStatusHeader)
+        cy.get(this.rebuitStatusTitle).should('have.text', data.rebuitStatusTitle)
+        cy.get(this.rebuiltDescription).type(data.rebuiltDescription)
+        cy.log("Rebuilt Status description got entered")
+    }
+
+    setOtherInformation(data) {
+        cy.get(this.otherInfoHeader).should('have.text', data.otherInfoHeader)
+        cy.get(this.otherInfoTitle).should('have.text', data.otherInfoTitle)
+        cy.get(this.otherDetails).type(data.otherDetails)
+        cy.log("Other Info details got entered")
+    }
+
+    setSubmittingPartyCodeLookup(data) {
+        cy.get(this.submittingPartyHeader).should('have.text', data.submittingPartyHeader)
+        cy.get(this.submittingPartyTitle).should('have.text', data.submittingPartyTitle)
+        cy.get(this.submittingPartyCode).type(data.partyCode)
+        cy.wait(2000)
+        const element = 'span:contains("' + data.partyCodeResult + '")'
+        cy.get(element).click()
+        cy.get(this.submittingPartyEmail).type(data.submittingPartyEmail)
+        cy.log("Submitting Party Code got entered")
+    }
+
+    setSubmittingPartyNameLookup(data) {
+        cy.get(this.submittingPartyHeader).should('have.text', data.submittingPartyHeader)
+        cy.get(this.submittingPartyTitle).should('have.text', data.submittingPartyTitle)
+        cy.get(this.submittingPartyCode).type(data.partyName)
+        cy.wait(2000)
+        const element = 'span:contains("' + data.partyCodeResult + '")'
+        cy.get(element).click()
+        cy.log("Submitting Party Name got entered")
+        cy.get(this.submittingPartyEmail).type(data.submittingPartyEmail)
+    }
+
+    addSubmittingPartyIndividualPerson(data) {
+        cy.get(this.submittingPartyHeader).should('have.text', data.submittingPartyHeader)
+        cy.get(this.submittingPartyTitle).should('have.text', data.submittingPartyTitle)
+        cy.get(this.personFirstName).type(data.personFirstName)
+        cy.get(this.personMiddleName).type(data.personMiddleName)
+        cy.get(this.personLastName).type(data.personLastName)
+        cy.get(this.submittingPartyEmail).type(data.submittingPartyEmail)
+        cy.get(this.submittingPartyPhone).type(data.phoneNumber)
+        cy.get(this.submittingPartyPhoneExtention).type(data.phoneExtension)
+        cy.get(this.mailingAddressTitle).should('have.text', data.mailingAddressTitle)
+        // cy.wait(2000)
+        // cy.get(this.country).type(data)
+        // cy.wait(2000)
+        cy.get(this.countryDropdown).type(data.country)
+        cy.get(this.country).click()
+        cy.wait(2000)
+        cy.get(this.submittingPartyAddressLine1).type(data.partyAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        // const element = 'span:contains("' + data + '")'
+        // cy.get(element).click()
+        cy.get(this.deliveryInstructions).type(data.deliveryInstructions)
+        cy.log("Submitting Party Individual Person details got entered")
+    }
+
+    addSubmittingPartyBusiness(data) {
+        cy.get(this.submittingPartyHeader).should('have.text', data.submittingPartyHeader)
+        cy.get(this.submittingPartyTitle).should('have.text', data.submittingPartyTitle)
+        cy.get(this.businessOption).click()
+        cy.get(this.businessName).type(data.businessName)
+        cy.get(this.submittingPartyEmail).type(data.submittingPartyEmail)
+        cy.get(this.submittingPartyPhone).type(data.phoneNumber)
+        cy.get(this.submittingPartyPhoneExtention).type(data.phoneExtension)
+        cy.get(this.mailingAddressTitle).should('have.text', data.mailingAddressTitle)
+        cy.get(this.countryDropdown).type(data.country)
+        cy.get(this.country).click()
+        cy.wait(2000)
+        cy.get(this.submittingPartyAddressLine1).type(data.partyAddressLine1)
+        cy.wait(2000)
+        cy.get('[title = "' + data.addressTitle + '"]').click()
+        cy.get(this.deliveryInstructions).type(data.deliveryInstructions)
+        cy.log("Submitting Party Business details got entered")
     }
 
 }

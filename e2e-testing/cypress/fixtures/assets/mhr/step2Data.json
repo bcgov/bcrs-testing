@@ -1,0 +1,44 @@
+{
+    "submittingPartyIndividual": {
+        "submittingPartyHeader": "Submitting Party",
+        "submittingPartyTitle": " Provide the name and contact information for the person or business submitting this registration. You can add the submitting party information manually, or, if the submitting party has a Personal Property Registry party code, you can look up the party code or name. ",
+        "personFirstName": "Regina",
+        "personMiddleName": "P",
+        "personLastName": "Conner",
+        "submittingPartyEmail": "email@test.ca",
+        "phoneNumber": "3253434242",
+        "phoneExtension": "12345",
+        "mailingAddressTitle": "Verification of Service registration document and decals will be mailed to this address.",
+        "country": "Canada",
+        "partyAddressLine1": "799 McCallum Rd Victoria, BC, V9B 6A2",
+        "addressTitle": "799 McCallum Rd",
+        "deliveryInstructions": "Submitting Party Delivery Instructions"
+    },
+    "submittingPartyBusiness": {
+        "businessName": "ABC Company Ltd.",
+        "submittingPartyHeader": "Submitting Party",
+        "submittingPartyTitle": " Provide the name and contact information for the person or business submitting this registration. You can add the submitting party information manually, or, if the submitting party has a Personal Property Registry party code, you can look up the party code or name. ",
+        "submittingPartyEmail": "email@test.com",
+        "phoneNumber": "2509838399",
+        "phoneExtension": "45321",
+        "mailingAddressTitle": "Verification of Service registration document and decals will be mailed to this address.",
+        "country": "Canada",
+        "partyAddressLine1": "B-6437 Cambie St Vancouver, BC, V5Z 3B2",
+        "addressTitle": "B-6437 Cambie St",
+        "deliveryInstructions": "Submitting Party Business Delivery Instructions"
+    },
+    "submittingPartyCode": {
+        "submittingPartyHeader": "Submitting Party",
+        "submittingPartyTitle": " Provide the name and contact information for the person or business submitting this registration. You can add the submitting party information manually, or, if the submitting party has a Personal Property Registry party code, you can look up the party code or name. ",
+        "partyCode": "21121",
+        "partyCodeResult": "THE BANK OF NOVA SCOTIA",
+        "submittingPartyEmail": "email@test.com"
+    },
+    "submittingPartyName": {
+        "submittingPartyHeader": "Submitting Party",
+        "submittingPartyTitle": " Provide the name and contact information for the person or business submitting this registration. You can add the submitting party information manually, or, if the submitting party has a Personal Property Registry party code, you can look up the party code or name. ",
+        "partyName": "ABC TRANSMISSIONS LTD.",
+        "partyCodeResult": "ABC TRANSMISSIONS LTD.",
+        "submittingPartyEmail": "partyemail@test.com"
+    }
+}

@@ -15,5 +15,20 @@
         "lengthInches": "6",
         "widthFeet": "82",
         "widthInches": "9"
+    },
+    "homeCertification": {
+        "homeCertificationHeader": "Home Certification",
+        "homeCertificationTitle": " Enter either the Canadian Standards Association (CSA) number OR the Engineer's inspection information. ",
+        "csaNumber": "1112001"
+    },
+    "rebuiltStatus": {
+        "rebuitStatusHeader": "Rebuilt Status",
+        "rebuitStatusTitle": " If the home was rebuilt, include the description of the changes to the home (normally accompanied by a statutory declaration). ",
+        "rebuiltDescription": "Description of the rebuilt status of the home."
+    },
+    "otherInfo": {
+        "otherInfoHeader": "Other Information",
+        "otherInfoTitle": " Include an other relevant information about the home. ",
+        "otherDetails": "Other details about the home."
     }
 }
