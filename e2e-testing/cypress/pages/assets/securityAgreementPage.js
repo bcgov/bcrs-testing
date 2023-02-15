@@ -73,7 +73,7 @@ export class SecurityAgreementPage {
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
-        this.debtorBusinessText = ':nth-child(1) > .v-list-item__content > .v-list-item__subtitle'
+        this.debtorBusinessText = ':nth-child(2) > .v-list-item__content > .v-list-item__subtitle'
 
         //Add Collateral Next Button
 

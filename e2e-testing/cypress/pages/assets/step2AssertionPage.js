@@ -84,7 +84,7 @@ export class Step2AssertionPage {
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
-        this.debtorBusinessText = '.v-item-group > :nth-child(1)'
+        this.debtorBusinessText = '.v-item-group > :nth-child(2)'
 
         //Secured Parties verification
 
@@ -322,6 +322,7 @@ export class Step2AssertionPage {
         cy.get(this.individualBusinessAddress).should('have.text', data.individualBusinessAddress)
         cy.get(this.individualBusinessEmail).should('have.text', data.individualBusinessEmail)
         cy.get(this.partyBusinessEditButton).click()
+        cy.wait (3000)
         cy.get(this.partyIndividualPersonRadioButton).click({ force: true })
         cy.get(this.partyDoneButton).click()
         cy.get(this.verifyPartyFirstNameValidation).should('have.text', data.veriFirstNameValidation)

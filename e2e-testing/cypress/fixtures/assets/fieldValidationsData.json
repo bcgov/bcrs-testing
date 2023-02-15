@@ -47,10 +47,10 @@
     },
     "validations": {
         "nameValidation": "Maximum 50 characters",
-        "addressLineValidation": "Maximum length is 50",
-        "cityValidation": "Maximum length is 40",
-        "regionValidation": "Maximum length is 2",
-        "postalCodeValidation": "Maximum length is 15",
-        "deliveryInstructionsValidation": "Maximum length is 80"
+        "addressLineValidation": "Maximum 50 characters",
+        "cityValidation": "Maximum 40 characters",
+        "regionValidation": "Maximum 2 characters",
+        "postalCodeValidation": "Maximum 15 characters",
+        "deliveryInstructionsValidation": "Maximum 80 characters"
     }
 }

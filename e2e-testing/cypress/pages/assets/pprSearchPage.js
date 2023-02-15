@@ -4,7 +4,7 @@ export class PPRSearchPage {
 
     constructor() {
 
-        this.selectSearchCategory = '.ml-n6 > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections'
+        this.selectSearchCategory = '#search-select'
         this.serialNumber = '#list-serial-number'
         this.individualDebtorName = '#list-individual-debtor'
         this.businessDebtorName = '#list-business-debtor'
@@ -15,7 +15,7 @@ export class PPRSearchPage {
         this.firstName = '#first-name-field'
         this.middleName = '#second-name-field'
         this.lastName = '#last-name-field'
-        this.searchButton = '#SearchBar_search-btn_1WRSN'
+        this.searchButton = '#search-btn'
         this.acceptButton = '#accept-btn'
         this.cancelButton = '#cancel-btn'
         this.searchDoneButton = '#Search_done-btn_2xQsY'
@@ -25,8 +25,8 @@ export class PPRSearchPage {
     }
 
     selectSearchCategoryDropdown(){
-
-        cy.get(this.selectSearchCategory).click()
+        cy.wait(3000)
+        cy.get(this.selectSearchCategory).click({force: true})
         cy.log("Clicked Search Category dropdown")
         cy.wait(2000)
 
