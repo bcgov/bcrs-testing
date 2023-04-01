@@ -21,6 +21,12 @@ export class PPRSearchPage {
         this.searchDoneButton = '#Search_done-btn_2xQsY'
         this.generateSearchResultReportButton = '#btn-generate-result'
         this.searchHeader = '#search-header'
+        this.pprSearchDropdown = '#srch-type-drop-1'
+        this.mhrSearchDropdown = '#srch-type-drop-2'
+        this.pprSearchInfoText = 'span[data-test-id=ppr-search-info]'
+        this.searchButtonInfo = '#search-btn-info'
+        this.pprSearchHintText = '.v-messages__message'
+        this.businessDebtorNameField = '#txt-name-debtor'
 
     }
 
@@ -34,7 +40,12 @@ export class PPRSearchPage {
 
     searchSerialNumber(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.serialNumber).click()
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
+        cy.get(this.pprSearchHintText).should('have.text', data.pprSerialNumberHint)
         cy.get(this.searchBarField).type(data.serialNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
@@ -47,7 +58,11 @@ export class PPRSearchPage {
     
     searchIndividualDebtorName(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.individualDebtorName).click()
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
         cy.get(this.firstName).type(data.individualDebtorName.firstName)
         cy.get(this.middleName).type(data.individualDebtorName.middleName)
         cy.get(this.lastName).type(data.individualDebtorName.lastName)
@@ -62,8 +77,13 @@ export class PPRSearchPage {
     
     searchBusinessDebtorName(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.businessDebtorName).click()
-        cy.get(this.searchBarField).type(data.businessDebtorName)
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
+        cy.get(this.pprSearchHintText).should('have.text', data.pprBusinessDebtorHint)
+        cy.get(this.businessDebtorNameField).type(data.businessDebtorName)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
         cy.get(this.generateSearchResultReportButton).click()
@@ -76,7 +96,12 @@ export class PPRSearchPage {
 
     searchManufacturedHomeRegistrationNumber(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.manufacturedHomeRegistrationNumber).click()
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
+        cy.get(this.pprSearchHintText).should('have.text', data.pprMHRNumberHint)
         cy.get(this.searchBarField).type(data.mhrNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
@@ -88,7 +113,12 @@ export class PPRSearchPage {
 
     searchAircraftNumber(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.aircraftNumber).click()
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
+        cy.get(this.pprSearchHintText).should('have.text', data.pprAircraftNumberHint)
         cy.get(this.searchBarField).type(data.aircraftNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
@@ -100,7 +130,12 @@ export class PPRSearchPage {
     
     searchRegistrationNumber(data){
 
+        cy.get(this.pprSearchDropdown).click()
+        cy.wait(2000)
         cy.get(this.registrationNumber).click()
+        cy.get(this.pprSearchInfoText).should('have.text', data.pprSearchInfoText)
+        cy.get(this.searchButtonInfo).should('have.text', data.searchButtonInfo)
+        cy.get(this.pprSearchHintText).should('have.text', data.pprRegistrationNumberHint)
         cy.get(this.searchBarField).type(data.registrationNumber)
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()

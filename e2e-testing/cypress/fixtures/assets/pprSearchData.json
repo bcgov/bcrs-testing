@@ -10,6 +10,13 @@
         "mhrNumber": "048667",
         "aircraftNumber": "800775D",
         "registrationNumber": "3853668",
-        "searchHeader": " Manufactured Home and Personal Property Registries Search"
+        "searchHeader": " Manufactured Home and Personal Property Registries Search",
+        "pprSearchInfoText": " Each Personal Property Registry search will incur a fee of $8.50, including searches that return no results. ",
+        "searchButtonInfo": " $8.50 fee ",
+        "pprSerialNumberHint": "Serial numbers normally contain letters and numbers only",
+        "pprBusinessDebtorHint": "Business names must contain between 2 and 150 characters",
+        "pprMHRNumberHint": "Manufactured home registration numbers normally contain up to 6 digits",
+        "pprAircraftNumberHint": "Up to 25 characters",
+        "pprRegistrationNumberHint": "Registration numbers contain 7 characters"
     }
 }
