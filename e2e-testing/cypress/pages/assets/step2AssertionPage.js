@@ -84,7 +84,7 @@ export class Step2AssertionPage {
 
         this.addBusinessDebtor = 'button#btn-add-business'
         this.debtorBusinessLegalName = 'input#txt-name-debtor'
-        this.debtorBusinessText = '.v-item-group > :nth-child(2)'
+        this.debtorBusinessText = ':nth-child(1) > .auto-complete-item'
 
         //Secured Parties verification
 

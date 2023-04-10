@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+const dayjs = require('dayjs')
+
 export class EndToEndRLPage {
 
     constructor() {
@@ -117,7 +119,9 @@ export class EndToEndRLPage {
         cy.get(this.step1Title).should('have.text', data.step1RLAmendmnetTitle)
         cy.get(this.registrationLength).should('have.text', data.registrationLength)
         cy.get(this.amountofLien).should('have.text', data.amountofLien)
-        const todaysDate = Cypress.moment().format('MMMM D, YYYY')
+        const todaysDate = dayjs().format('MMMM D, YYYY')
+        cy.log("todays date**********************************************************" + todaysDate)
+        //const todaysDate = Cypress.moment().format('MMMM D, YYYY')
         cy.get(this.surrenderDate).should('contain', todaysDate)
         cy.log("Verified Amount and Surrender Date")
     }

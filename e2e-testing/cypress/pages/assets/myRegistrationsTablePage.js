@@ -37,15 +37,15 @@ export class MyRegistrationsTablePage {
         this.selectDebtorName2 = 'div:contains("PARTY FAVOUR PARTY SERVICE")'
         this.dischargePageCancelButton = '#btn-stacked-cancel'
         this.submitButton = '#btn-stacked-submit'
-        this.dischargeCheckbox1 = ':nth-child(2) > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple'
-        this.dischargeCheckbox2 = ':nth-child(3) > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple'
-        this.dischargeCheckBox3 = ':nth-child(4) > .v-input__control > .v-input__slot > .v-input--selection-controls__input > .v-input--selection-controls__ripple'
+        this.dischargeCheckbox1 = '.mt-6 > .row > .col-9 > :nth-child(2)'
+        this.dischargeCheckbox2 = '.mt-6 > .row > .col-9 > :nth-child(3)'
+        this.dischargeCheckBox3 = '.mt-6 > .row > .col-9 > :nth-child(4)'
         this.confirmPageBackbutton = '#btn-stacked-back'
         this.cautionBox = '.caution-box > .ma-0'
 
         // Header
 
-        this.breadcrumbTitle = ':nth-child(5) > .v-breadcrumbs__item > .Breadcrumb_breadcrumb-text_2jfZ3'
+        this.breadcrumbTitle = '.v-breadcrumbs > :nth-child(5)'
         this.tombstoneHeader = '.tombstone-header'
         this.tombstoneSubHeader = '.tombstone-sub-header > :nth-child(1)'
         this.tombstoneRegDateandTimeTitle = 'span:contains("Base Registration Date and Time: ")'
@@ -144,7 +144,7 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
 
     }
@@ -270,7 +270,7 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
 
     }
@@ -315,7 +315,7 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
     }
 
@@ -336,7 +336,7 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
 
     }
@@ -358,7 +358,7 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
 
     }

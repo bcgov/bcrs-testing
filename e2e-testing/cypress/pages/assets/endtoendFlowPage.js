@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+const dayjs = require('dayjs')
+
 export class EndToEndFlowPage {
 
     constructor() {
@@ -261,7 +263,9 @@ export class EndToEndFlowPage {
         cy.get(this.certifyAccountName).should('have.text', data.certifyAccountName)
         cy.get(this.certifyAddress).should('have.text', data.certifyAddress)
         cy.get(this.confirmAuthorizationInfo).should('have.text', data.confirmAuthorizationInfo)
-        const todaysDate = Cypress.moment().format('MMMM D, YYYY')
+        const todaysDate = dayjs().format('MMMM D, YYYY')
+        cy.log("todays date**********************************************************" + todaysDate)
+        //const todaysDate = Cypress.moment().format('MMMM D, YYYY')
         cy.get(this.confirmCertifyDate).should('contain', todaysDate)
         cy.get(this.confirmCheckbox).click({ multiple: true })
         cy.log("Clicked on Confirm Checkbox")

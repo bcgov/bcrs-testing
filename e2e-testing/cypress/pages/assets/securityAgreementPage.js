@@ -3,6 +3,7 @@
 
 const log = require("log");
 const tab = require('cypress-plugin-tab')
+const dayjs = require('dayjs')
 
 export class SecurityAgreementPage {
 
@@ -44,7 +45,7 @@ export class SecurityAgreementPage {
 
         this.partyBusinessRadioButton = 'input#party-business'
         this.partyBusinessLegalName = 'input#txt-name-party'
-        this.partyBusiness = '.v-item-group > :nth-child(1)'
+        this.partyBusiness = ':nth-child(1) > .auto-complete-item'
 
         //Debtor Individual
         this.addIndividualDebtor = 'button#btn-add-individual'
@@ -653,7 +654,9 @@ export class SecurityAgreementPage {
         cy.get(this.certifyAccountName).should('have.text', data.certifyAccountName)
         cy.get(this.certifyAddress).should('have.text',data.certifyAddress)
         cy.get(this.confirmAuthorizationInfo).should('have.text', data.confirmAuthorizationInfo)
-        const todaysDate = Cypress.moment().format('MMMM D, YYYY')
+        const todaysDate = dayjs().format('MMMM D, YYYY')
+        cy.log("todays date**********************************************************" + todaysDate)
+        //const todaysDate = Cypress.clock().format('MMMM D, YYYY')
         cy.get(this.confirmCertifyDate).should('contain', todaysDate)
         cy.get(this.confirmCheckbox).click({ multiple: true })
         cy.log("Clicked on Confirm Checkbox")

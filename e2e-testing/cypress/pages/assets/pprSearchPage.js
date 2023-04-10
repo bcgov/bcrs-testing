@@ -30,6 +30,10 @@ export class PPRSearchPage {
 
     }
 
+    cypressReload(){
+        cy.reload()
+    }
+
     selectSearchCategoryDropdown(){
         cy.wait(3000)
         cy.get(this.selectSearchCategory).click({force: true})

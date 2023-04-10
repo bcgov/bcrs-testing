@@ -10,7 +10,7 @@ export class AmendPage {
 
         //Summary Page Header
 
-        this.breadcrumbTitle = ':nth-child(5) > .v-breadcrumbs__item > .Breadcrumb_breadcrumb-text_2jfZ3'
+        this.breadcrumbTitle = '.v-breadcrumbs > :nth-child(5)'
         this.tombstoneHeader = '.tombstone-header'
         this.tombstoneSubHeader = '.tombstone-sub-header > :nth-child(1)'
         this.tombstoneRegDateandTimeTitle = 'span:contains("Base Registration Date and Time: ")'
