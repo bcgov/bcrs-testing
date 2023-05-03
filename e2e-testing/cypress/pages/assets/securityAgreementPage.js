@@ -142,7 +142,7 @@ export class SecurityAgreementPage {
         this.certifyAccountName = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
         this.certifyAddress = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(3)'
         this.confirmAuthorizationInfo = 'label[for^="checkbox-certified"]'
-        this.confirmCertifyDate = '.pl-8 > .summary-text'
+        this.confirmCertifyDate = '.pl-10 > .summary-text'
         this.confirmCheckbox = '.v-input--selection-controls__ripple'
 
     }

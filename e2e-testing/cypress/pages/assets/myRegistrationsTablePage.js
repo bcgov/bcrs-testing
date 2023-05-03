@@ -348,12 +348,12 @@ export class MyRegistrationsTablePage {
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
         cy.get(this.debtorTextbox).type('{enter}')
-        cy.get(this.continueButton).click()
+        cy.get(this.continueButton).click({force: true})
         cy.log("Entered into Review Page")
     }
 
     selectRLDischargeButton(data) {
-        cy.get(this.actionDropdown).click()
+        cy.get(this.actionDropdown).click({ multiple: true })
         cy.get(this.RLTotalDischarge).click()
         cy.get(this.debtorTextbox).type(data.debtorName)
         cy.wait(2000)
