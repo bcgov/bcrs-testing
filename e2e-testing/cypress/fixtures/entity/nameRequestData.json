@@ -206,21 +206,32 @@
       ]
     }
   },
-  "submissionDetailsForm": [
-    "BCREG2 Tenisha",
-    "TWENTYSEVEN",
-    "123 abc st.",
-    "Victoria",
-    "British Columbia",
-    "v8w3e8"
-  ],
-  "submissionDetailsReviewAndConfirmForm": [
-    "abc@abc.com",
-    "+91 9888765324",
-    "Eatery"
-  ],
-  "paymentDetails": [
-    "4030000010001234",
-    "123"
-  ]
+  "submissionDetailsForm": {
+    "firstName": "BCREG2 Tenisha",
+    "lastName": "TWENTYSEVEN",
+    "streetAddress": "123 abc st.",
+    "city": "Victoria",
+    "province": "British Columbia",
+    "postalCode": "v8w3e8"
+  },
+  "submissionDetailsReviewAndConfirmForm": {
+    "email": "abc@abc.com",
+    "phone":"+91 9888765324",
+    "NOB":"Eatery",
+    "contactName": "Leo",
+    "fName": "Test",
+    "lName": "Tester",
+    "addInfo": "information",
+    "tradeMark": "Always A1",
+    "folioNumber": "123456789",
+    "faxNumber": "987654321"
+  },
+  "paymentDetails": {
+    "cardNumber":"4030000010001234",
+    "cvv":"123"
+  },
+  "assertSelectedBusinessType": [
+   " You are searching for a name for a British Columbia Sole Proprietorship "
+]
+
 }
