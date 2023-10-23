@@ -1,0 +1,15 @@
+{
+  "businessName": "0870850",
+  "address_change": {
+    "mailing_address": {
+      "street": "8655 Av Samuel-Morse",
+      "city": "Montréal",
+      "postal_code": "H1E 5T7"
+    },
+    "delivery_address": {
+      "street": "5673 Remington Cres",
+      "city": "Chilliwack",
+      "postal_code": "V2R 3W9"
+    }
+  }
+}

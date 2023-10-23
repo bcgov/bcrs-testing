@@ -1,0 +1,236 @@
+{
+  "newRequestDetailsForm": {
+    "scenarios": {
+      "scenario1": [
+        "Register or Incorporate a",
+        "British Columbia",
+        "Limited company",
+        "CORP.",
+        " NORTH PVT"
+      ],
+      "scenario2": [
+        "Register or Incorporate a",
+        "Extraprovincial (Canada based)",
+        "Limited partnership",
+        "Alberta",
+        " NORTH PVT"
+      ],
+      "scenario3": [
+        "Register or Incorporate a",
+        "British Columbia",
+        "Sole proprietorship",
+        "CORP.",
+        " NORTH PVT"
+      ],
+      "scenario4": [
+        "Register or Incorporate a",
+        "Extraprovincial (Canada based)",
+        "Cooperative association",
+        "Manitoba",
+        " NORTH PVT"
+      ],
+      "scenario5": [
+        "Register or Incorporate a",
+        "Extraprovincial (Internationally based)",
+        "Limited liability partnership",
+        "Aland Islands",
+        " NORTH PVT"
+      ],
+      "scenario6": [
+        "Relocate into",
+        "British Columbia",
+        "Limited company",
+        "CORP.",
+        " NORTH PVT"
+      ],
+      "scenario7": [
+        "Relocate into",
+        "British Columbia",
+        "Community contribution company",
+        "CORP.",
+        " NORTH PVT CCC"
+      ],
+      "scenario8": [
+        "Restore or Reinstate a",
+        "British Columbia",
+        "Unlimited liability company",
+        "ULC",
+        " NORTH PVT"
+      ],
+      "scenario9": [
+        "Restore or Reinstate a",
+        "Extraprovincial (Canada based)",
+        "Cooperative association",
+        "New Brunswick",
+        " NORTH PVT LTD."
+      ],
+      "scenario10": [
+        "Restore or Reinstate a",
+        "Extraprovincial (Canada based)",
+        "Limited company",
+        "Nova Scotia",
+        " NORTH PVT LTD."
+      ],
+      "scenario11": [
+        "Restore or Reinstate a",
+        "Extraprovincial (Internationally based)",
+        "Limited liability company",
+        "Albania",
+        " NORTH PVT LTD."
+      ],
+      "scenario12": [
+        "Amalgamate two or more",
+        "British Columbia",
+        "Unlimited liability company",
+        "UNLIMITED LIABILITY COMPANY",
+        " NORTH PVT"
+      ],
+      "scenario13": [
+        "Amalgamate two or more",
+        "Extraprovincial (Canada based)",
+        "Cooperative association",
+        "New Brunswick",
+        " NORTH PVT LTD."
+      ],
+      "scenario14": [
+        "Amalgamate two or more",
+        "Extraprovincial (Canada based)",
+        "Limited company",
+        "Nova Scotia",
+        " NORTH PVT LTD."
+      ],
+      "scenario15": [
+        "Amalgamate two or more",
+        "Extraprovincial (Internationally based)",
+        "Cooperative association",
+        "Albania",
+        " NORTH PVT LTD."
+      ],
+      "scenario16": [
+        "Change the name of an existing",
+        "British Columbia",
+        "General partnership",
+        "",
+        " NORTH PVT"
+      ],
+      "scenario17": [
+        "Change the name of an existing",
+        "Extraprovincial (Canada based)",
+        "Cooperative association",
+        "Northwest Territories",
+        " NORTH PVT LTD."
+      ],
+      "scenario18": [
+        "Change the name of an existing",
+        "Extraprovincial (Canada based)",
+        "Limited company",
+        "Nova Scotia",
+        " NORTH PVT LTD."
+      ],
+      "scenario19": [
+        "Change the name of an existing",
+        "Extraprovincial (Internationally based)",
+        "Limited liability partnership",
+        "Albania",
+        " NORTH PVT LTD."
+      ],
+      "scenario20": [
+        "Change (alter) the business type of a",
+        "British Columbia",
+        "Limited company to a community contribution company",
+        "CORP.",
+        " NORTH PVT CCC"
+      ],
+      "scenario21": [
+        "Change (alter) the business type of a",
+        "British Columbia",
+        "Limited company to an unlimited liability company",
+        "UNLIMITED LIABILITY COMPANY",
+        " NORTH PVT"
+      ],
+      "scenario22": [
+        "Change (alter) the business type of a",
+        "British Columbia",
+        "Limited company to a benefit company",
+        "CORPORATION",
+        " NORTH PVT LTD."
+      ],
+      "scenario23": [
+        "Change (alter) the business type of a",
+        "British Columbia",
+        "Benefit company to a limited company",
+        "INC.",
+        " NORTH PVT"
+      ],
+      "scenario24": [
+        "Register or Incorporate a",
+        "British Columbia",
+        "Limited company",
+        "INCORPORATED",
+        " NORTH PVT"
+      ],
+      "scenario25*": [
+        "Relocate into",
+        "British Columbia",
+        "Limited company",
+        "LTD.",
+        " NORTH PVT"
+      ],
+      "scenario26*": [
+        "Restore or Reinstate a",
+        "British Columbia",
+        "Limited company",
+        "INCORPOREE",
+        " NORTH PVT"
+      ],
+      "scenario27*": [
+        "Amalgamate two or more",
+        "British Columbia",
+        "Limited company",
+        "LIMITEE",
+        " NORTH PVT"
+      ],
+      "scenario28*": [
+        "Change the name of an existing",
+        "British Columbia",
+        "Limited company",
+        "LTEE",
+        " NORTH PVT"
+      ],
+      "scenario29*": [
+        "Change (alter) the business type of a",
+        "British Columbia",
+        "Benefit company to a limited company",
+        "LIMITED",
+        " NORTH PVT"
+      ]
+    }
+  },
+  "submissionDetailsForm": {
+    "firstName": "BCREG2 Tenisha",
+    "lastName": "TWENTYSEVEN",
+    "streetAddress": "123 abc st.",
+    "city" : "Victoria",
+    "province": "British Columbia",
+    "postalCode": "v8w3e8"
+  },
+  "submissionDetailsReviewAndConfirmForm": {
+    "email": "abc@abc.com",
+    "phone":"+91 9888765324",
+    "NOB":"Eatery",
+    "contactName": "Leo",
+    "fName": "Test",
+    "lName": "Tester",
+    "addInfo": "information",
+    "tradeMark": "Always A1",
+    "folioNumber": "123456789",
+    "faxNumber": "987654321"
+  },
+  "paymentDetails": {
+    "cardNumber":"4030000010001234",
+    "cvv":"123"
+  },
+  "assertSelectedBusinessType": [
+   " You are searching for a name for a British Columbia Sole Proprietorship "
+]
+}

@@ -1,0 +1,38 @@
+{
+    "standard": {
+        "sa": "Security Agreement (SA)",
+        "rl": "Repairers Lien (RL)",
+        "fr": "Marriage / Separation Agreement affecting Manufactured Home under Family Law Act (FR)",
+        "sg": "Possession under S.30 of the Sale of Goods Act (SG)",
+        "lt": "Land Tax Deferment Lien on a Manufactured Home (LT)",
+        "mh": "Tax Lien under S.27/28 of the Manufactured Home Act (MH)",
+        "fl": "Forestry - Contractor Lien (FL)",
+        "fa": "Forestry - Contractor Charge (FA)",
+        "fs": "Forestry - Sub-contractor Charge (FS)"
+    },
+    "crownCharge": {
+        "ct": "Carbon Tax Act",
+        "et": "Excise Tax Act",
+        "fo": "Forest Act",
+        "it": "Income Tax Act",
+        "ip": "Insurance Premium Tax Act",
+        "lo": "Logging Tax Act",
+        "md": "Mineral Land Tax Act",
+        "ft": "Motor Fuel Tax Act",
+        "pg": "Petroleum and Natural Gas Act",
+        "pt": "Property Transfer Tax Act",
+        "ps": "Provincial Sales Tax Act",
+        "ra": "Rural Property Tax Act",
+        "sc": "School Act",
+        "to": "Tobacco Tax Act",
+        "sv": "Speculation and Vacancy Tax Act",
+        "ot": "Other..."
+    },
+    "other": {
+        "wl": "Lien for Unpaid Wages",
+        "hn": "Heritage Conservation Notice",
+        "mn": "Manufactured Home Notice",
+        "ml": "Maintenance Lien",
+        "pn": "Proceeds of Crime Notice"
+    }
+}

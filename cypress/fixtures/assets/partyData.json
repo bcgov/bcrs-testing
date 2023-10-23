@@ -1,0 +1,33 @@
+{
+    "partyIndividual": {
+        "partyFirstName": "James",
+        "partyMiddleName": "Automation",
+        "partyLastName": "Test",
+        "partyEmailAddress": "email@email.com",
+        "partyCountry": "Canada",
+        "partyAddressLine1": "799 McCallum Rd Victoria, BC, V9B 6A2",
+        "addressTitle": "799 McCallum Rd",
+        "partyCity": "Victoria",
+        "partyRegion": "British Columbia",
+        "partyPostalCode": "V9B 6A2",
+        "partyDeliveryInstructions": "Party Delivery Instructions"
+    },
+    "partyBusiness": {
+        "partyBusinessName": "HYUNDAI MOTOR FINANCE",
+        "partyEmailAddress": "email@test.com",
+        "partyCountry": "Canada",
+        "partyAddressLine1": "B-6437 Cambie St Vancouver, BC, V5Z 3B2",
+        "addressTitle": "B-6437 Cambie St",
+        "partyDeliveryInstructions": "Business Delivery Instructions"
+    },
+    "lengthOfRegistration": {
+        "registrationLength": " Infinite "
+    },
+    "securedPartyCode": {
+        "partyCode": "21121",
+        "partyCodeResult": "THE BANK OF NOVA SCOTIA"
+    },
+    "securedPartyDropdown": {
+        "partyCode": "6205"
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "collateralDescription": {
+        "ct": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "et": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "fo": {
+            "description": "General Collateral Automation Test."
+        },
+        "it": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "ip": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "lo": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "md": {
+            "description": "General Collateral Automation Test."
+        },
+        "ft": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "pg": {
+            "description": "General Collateral Automation Test."
+        },
+        "pt": {
+            "description": "General Collateral Automation Test."
+        },
+        "ps": {
+            "description": "All the debtor’s present and after acquired personal property, including but not restricted to machinery, equipment, furniture, fixtures and receivables."
+        },
+        "ra": {
+            "description": "General Collateral Automation Test."
+        },
+        "sc": {
+            "description": "General Collateral Automation Test."
+        },
+        "ot": {
+            "description": "General Collateral Automation Test."
+        },
+        "wl": {
+            "description": "All the personal property of the debtor, including money due or accruing due"
+        },
+        "hn": {
+            "description": "General Collateral Automation Test."
+        },
+        "ml": {
+            "description": "General Collateral Automation Test."
+        },
+        "pn": {
+            "description": "General Collateral Automation Test."
+        },
+        "sa": {
+            "description": "General Collateral Automation Test."
+        },
+        "sg": {
+            "description": "General Collateral Automation Test."
+        },
+        "fl": {
+            "description": "General Collateral Automation Test."
+        },
+        "fa": {
+            "description": "General Collateral Automation Test."
+        },
+        "fs": {
+            "description": "General Collateral Automation Test."
+        }
+    }
+}

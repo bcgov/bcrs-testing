@@ -1,0 +1,54 @@
+{
+  "fillDefineYourCompanyForm": {
+    "name_translation": " Translated name",
+    "registered_office_address": {
+      "mailing": {
+        "street": "43-5740 Garrison Rd",
+        "city": "Richmond",
+        "postal_code": "V7C 5E7"
+      },
+      "delivery": {
+        "street": "9876 158A St",
+        "city": "Surrey",
+        "postal_code": "V4N 2A3"
+      }
+    },
+    "registered_office_contact": {
+      "email": "office1@abc.com",
+      "phone": "(343) 434-4343"
+    }
+  },
+  "addPeopleAndRolesForm": {
+    "party_address_director": {
+      "mailing": {
+        "street": "Bc-3315 Tecumseh Rd E",
+        "city": "Windsor",
+        "postal_code": "N8W 1H4"
+      },
+      "delivery": {
+        "street": "6754 Rue De Honfleur",
+        "city": "Trois-Rivières",
+        "postal_code": "G9C 1L4"
+      }
+    },
+    "party_address_completing_party": {
+      "mailing": {
+        "street": "5741 Kathleen Dr",
+        "city": "Chilliwack",
+        "postal_code": "V2R 3Y8"
+      }
+    },
+    "corporation_and_firm": {
+      "mailing": {
+        "street": "3-2285 Rue Papineau",
+        "city": "Saint-Hyacinthe",
+        "postal_code": "J2S 2B6"
+      }
+    }
+  },
+  "shareClass": {
+    "max_share": "220",
+    "par_share": "12",
+    "currency": "USD"
+  }
+}
