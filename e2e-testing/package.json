@@ -19,7 +19,8 @@
     "orgNameSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/orgNameSearchTest.js --headed",
     "mhrNumberSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrNumberSearchTest.js --headed",
     "ownerNameSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/ownerNameSearchTest.js --headed",
-    "serialNumberSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/serialNumberSearchTest.js --headed"
+    "serialNumberSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/serialNumberSearchTest.js --headed",
+    "nameRequest": "./node_modules/.bin/cypress run --spec cypress/integration/entity/nameRequest.spec.js --headed"
   },
   "author": "",
   "license": "ISC",
