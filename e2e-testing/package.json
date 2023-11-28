@@ -5,29 +5,32 @@
   "main": "index.js",
   "scripts": {
     "info": "cypress info",
-    "assetsRepairersLienTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/rlTest.js --headed",
-    "assetsStandardRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed",
-    "otherRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/otherRegistrations/*.js --headed",
-    "assertions": "./node_modules/.bin/cypress run --spec cypress/integration/assets/assertions/*.js --headed",
-    "crownChargeRegistrations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed",
-    "financingChange": "./node_modules/.bin/cypress run --spec cypress/integration/assets/financingChange/*.js --headed",
-    "registrationFlows": "./node_modules/.bin/cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed",
-    "pprSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed",
-    "mhrSearch": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/*.js --headed",
-    "mhrSearchValidations": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchValidationsTest.js --headed",
-    "mhrSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchTest.js --headed",
-    "orgNameSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/orgNameSearchTest.js --headed",
-    "mhrNumberSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrNumberSearchTest.js --headed",
-    "ownerNameSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/ownerNameSearchTest.js --headed",
-    "serialNumberSearchTest": "./node_modules/.bin/cypress run --spec cypress/integration/assets/mhr/mhrSearch/serialNumberSearchTest.js --headed"
+    "assetsRepairersLienTest": "cypress run --spec cypress/integration/assets/standardRegistrations/rlTest.js --headed",
+    "assetsStandardRegistrations": "cypress run --spec cypress/integration/assets/standardRegistrations/*.js --headed",
+    "otherRegistrations": "cypress run --spec cypress/integration/assets/otherRegistrations/*.js --headed",
+    "assertions": "cypress run --spec cypress/integration/assets/assertions/*.js --headed",
+    "crownChargeRegistrations": "cypress run --spec cypress/integration/assets/crownChargeRegistrations/*.js --headed",
+    "financingChange": "cypress run --spec cypress/integration/assets/financingChange/*.js --headed",
+    "registrationFlows": "cypress run --spec cypress/integration/assets/registrationFlows/*.js --headed",
+    "pprSearch": "cypress run --spec cypress/integration/assets/pprSearch/pprSearchTest.js --headed",
+    "mhrSearch": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/*.js --headed",
+    "mhrSearchValidations": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchValidationsTest.js --headed",
+    "mhrSearchTest": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrSearchTest.js --headed",
+    "orgNameSearchTest": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/orgNameSearchTest.js --headed",
+    "mhrNumberSearchTest": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/mhrNumberSearchTest.js --headed",
+    "ownerNameSearchTest": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/ownerNameSearchTest.js --headed",
+    "serialNumberSearchTest": "cypress run --spec cypress/integration/assets/mhr/mhrSearch/serialNumberSearchTest.js --headed",
+    "dashboard": "cypress run --spec cypress/integration/entity/dashboard.spec.js --headed",
+    "nameRequest": "cypress run --spec cypress/integration/entity/nameRequest.spec.js --headed"
   },
   "author": "",
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "cypress": "^5.6.0",
+    "cypress": "^13.6.0",
     "cypress-log-to-output": "^1.1.2",
     "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^2.0.1",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-cypress": "^2.11.2",
@@ -54,5 +57,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcgov/bcrs-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bcgov/bcrs-testing/issues"
+  },
+  "homepage": "https://github.com/bcgov/bcrs-testing#readme"
 }
