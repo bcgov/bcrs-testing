@@ -90,7 +90,7 @@ export class SecurityAgreementPage {
         this.makeText = 'input#txt-make'
         this.modelText = 'input#txt-model'
         this.collateralDoneButton = 'button#done-btn-collateral'
-        this.generalCollateralText = '.ProseMirror'
+        this.generalCollateralText = '.editor-block > .ProseMirror'
         this.generalCollateralDescription = '.general-collateral-summary > .ma-0'
 
         //Review and Confirm Next Button
@@ -138,7 +138,7 @@ export class SecurityAgreementPage {
 
         this.cerifyTitle = 'h2:contains("2. Authorization")'
         this.certifyInfo = '#certify-summary > .pb-6 > .col'
-        this.certifyName = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title > .row > .col-9 > div'
+        this.certifyName = '.mb-5 > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > .list-item__title'
         this.certifyAccountName = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(2)'
         this.certifyAddress = '.mb-5 > :nth-child(1) > .v-data-table > .v-data-table__wrapper > table > tbody > .party-row > :nth-child(3)'
         this.confirmAuthorizationInfo = 'label[for^="checkbox-certified"]'
@@ -652,7 +652,9 @@ export class SecurityAgreementPage {
         cy.get(this.certifyInfo).should('have.text', data.certifyInfo)
         cy.get(this.certifyName).should('have.text', data.certifyName)
         cy.get(this.certifyAccountName).should('have.text', data.certifyAccountName)
-        cy.get(this.certifyAddress).should('have.text',data.certifyAddress)
+        //cy.get(this.certifyAddress).contains(data.certifyAddress)
+        cy.get(this.certifyAddress).contains(data.certifyAddress1)
+        cy.get(this.certifyAddress).contains(data.certifyAddress2)
         cy.get(this.confirmAuthorizationInfo).should('have.text', data.confirmAuthorizationInfo)
         const todaysDate = dayjs().format('MMMM D, YYYY')
         cy.log("todays date**********************************************************" + todaysDate)
@@ -663,6 +665,13 @@ export class SecurityAgreementPage {
         //cy.get(this.confirmCertifyDate).invoke('text').then(date)
         //log.info("Printing text" + date)
     }
+
+    printAddress() {
+        cy.get(this.certifyAddress).invoke('text').then((text) => {
+            cy.log(text)
+        }
+    
+    )}
 
 }
 

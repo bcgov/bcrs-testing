@@ -22,6 +22,8 @@ describe(' Registrations Change Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
+        landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
+
         myRegistrationsTablePage.clickRenewButton(registrationNumbers.regRenew)
 
         renewPage.verifyRenewalHeader(renewalData.regRenew)

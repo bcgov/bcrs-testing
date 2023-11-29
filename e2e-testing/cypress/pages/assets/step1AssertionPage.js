@@ -17,14 +17,14 @@ export class Step1AssertionPage {
         this.lengthInYearsText = 'input#life-years-field'
         this.lengthInfiniteRadioButton = '#length-infinite'
         this.trustIndentureCheckbox = '#trust-indenture-checkbox'
-        this.title = '.pt-5 > .FeeSummary_fee-list__item-name_2kw-n'
-        this.titleAmount = '.pt-5 > .FeeSummary_fee-list__item-value_1l2Y6'
+        this.title = '.pt-5 > .FeeSummary_fee-list__item-name_eKvUv'
+        this.titleAmount = '.pt-5 > .FeeSummary_fee-list__item-value_Od9jd'
         this.hint = '.fee-list__hint'
-        this.serviceFee = '.py-4 > .FeeSummary_fee-list__item-name_2kw-n'
-        this.serviceFeeAmount = '.py-4 > .FeeSummary_fee-list__item-value_1l2Y6'
-        this.totalFees = '.FeeSummary_fee-total__name_2oa5u'
-        this.currency = '.FeeSummary_fee-total__currency_v1YAJ'
-        this.totalAmount = '.FeeSummary_fee-total__value_2fczQ'
+        this.serviceFee = '.py-4 > .FeeSummary_fee-list__item-name_eKvUv'
+        this.serviceFeeAmount = '.py-4 > .FeeSummary_fee-list__item-value_Od9jd'
+        this.totalFees = '.FeeSummary_fee-total__name_aL9Kh'
+        this.currency = '.FeeSummary_fee-total__currency_j7EuW'
+        this.totalAmount = '.float-right > b'
 
     }
 

@@ -1,12 +1,12 @@
 {
     "securedPartiesTitle": "Secured Parties",
     "individualPersonName": " James Automation Test ",
-    "individualPartyAddress": "799 McCallum RdVictoria BC  V9B 6A2CanadaParty Delivery Instructions ",
+    "individualPartyAddress": "799 McCallum RdLangford BC  V9B 6A2CanadaParty Delivery Instructions ",
     "individualPartyEmail": "email@email.com",
     "verifyPartyEmail": "email@email.com",
     "verifySecuredPartyCountry": "Canada",
     "verifySecuredPartyAddressLine": "799 McCallum Rd",
-    "verifySecuredPartyCity": "Victoria",
+    "verifySecuredPartyCity": "Langford",
     "verifySecuredPartyProvince": "British Columbia",
     "verifySecuredPartyPostalcode": "V9B 6A2",
     "verifySecuredPartyDeliveryInstructions": "Party Delivery Instructions",
@@ -29,11 +29,11 @@
     "verifyNoMatchesText": " No matches found. Check your name or number, or add a Secured Party that doesn't have a code. ",
     "debtorTitle": "Debtors",
     "individualDebtorName": " John Automation Test ",
-    "individualDebtorAddress": "3320 Jacombs RdRichmond BC  V6V 1Z6CanadaDebtor Delivery Instructions ",
+    "individualDebtorAddress": "3320 Jacombs RdRichmond BC V6V 1Z6CanadaDebtor Delivery Instructions ",
     "individualDebtorEmail": "email@email.com",
     "individualDebtorBirthdate": "April 12, 1965",
     "businessDebtorName": " NILE INVESTMENTS LTD. ",
-    "businessDebtorAddress": "Bc-435 North RdCoquitlam BC  V3K 3V9CanadaDebtor Business Delivery Instructions ",
+    "businessDebtorAddress": "Bc-435 North RdCoquitlam BC V3K 3V9CanadaDebtor Business Delivery Instructions ",
     "businessDebtorEmail": "email@test.com",
     "birthdateMonthValidation": "Please enter a valid month",
     "bithdateDayValidation": "Please enter a valid day",
@@ -56,5 +56,5 @@
     "addressTitle2": "1818 S 300 W",
     "editedRegisteringPartyName": " Jack Automation Test ",
     "editedRegisteringPartyAddress": "1818 S 300 WSalt Lake City UT  84115-1805United States of AmericaRegistering Party Delivery Instructions ",
-    "verifyRegisteringPartyAddress": "605 Expo BlvdVancouver BC  V6B 1V4CanadaRegistering Party Delivery Instructions "
+    "verifyRegisteringPartyAddress": "605 Expo BlvdVancouver BC V6B 1V4CanadaRegistering Party Delivery Instructions "
 }

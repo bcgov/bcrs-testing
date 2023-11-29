@@ -31,6 +31,8 @@ describe('Standard Registrations Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
+        landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
+
         addSecurityAgreementPage.selectSecurityAgreementDropdown(Cypress.env('TYPE'))
 
         addSecurityAgreementPage.selectStandardRegistrations(Cypress.env('TYPE'), registrationType.standard.sa)
@@ -84,6 +86,8 @@ describe('Standard Registrations Test Suite ', function () {
         securityAgreementPage.setFolioNumberText(collateralData.folioNumber)
 
         securityAgreementPage.verifyConfirmAuthorization(authorizationData)
+
+        //securityAgreementPage.printAddress()
 
         securityAgreementPage.clickRegisterAndPayButton()
 

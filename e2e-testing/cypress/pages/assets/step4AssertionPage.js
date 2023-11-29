@@ -12,7 +12,7 @@ export class Step4AssertionPage {
         this.linkLengthTrust = '#router-link-length-trust'
         this.registrationLength = '#registration-length'
         this.trustIndenture = '#trust-indenture-summary'
-        this.securedPartiesInvalidMessage = ':nth-child(4) > :nth-child(1) > .party-summary > .container > .row > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .v-data-table__empty-wrapper > td > .invalid-message'
+        this.securedPartiesInvalidMessage = ':nth-child(4) > :nth-child(1) > .party-summary > .container > .row > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .text-center > .border-error-left > .invalid-message'
         this.securedPartyLink = ':nth-child(4) > :nth-child(1) > .party-summary > .container > .row > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .v-data-table__empty-wrapper > td > .invalid-link'
         this.debtorsInvalidMessage = ':nth-child(6) > :nth-child(1) > .party-summary > .container > .row > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .v-data-table__empty-wrapper > td > .invalid-message'
         this.debtorsLink = ':nth-child(6) > :nth-child(1) > .party-summary > .container > .row > .col > .v-data-table > .v-data-table__wrapper > table > tbody > .v-data-table__empty-wrapper > td > .invalid-link'

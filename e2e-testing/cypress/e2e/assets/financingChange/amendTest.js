@@ -21,6 +21,8 @@ describe(' Registrations Change Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
+        landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
+
         myRegistrationsTablePage.clickAmendButton(registrationNumbers.amend)
 
         amendPage.verifyHeader(amendData)

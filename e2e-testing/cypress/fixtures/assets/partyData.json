@@ -5,9 +5,9 @@
         "partyLastName": "Test",
         "partyEmailAddress": "email@email.com",
         "partyCountry": "Canada",
-        "partyAddressLine1": "799 McCallum Rd Victoria, BC, V9B 6A2",
+        "partyAddressLine1": "799 McCallum Rd Langford, BC, V9B 6A2",
         "addressTitle": "799 McCallum Rd",
-        "partyCity": "Victoria",
+        "partyCity": "Langford",
         "partyRegion": "British Columbia",
         "partyPostalCode": "V9B 6A2",
         "partyDeliveryInstructions": "Party Delivery Instructions"

@@ -7,11 +7,11 @@ export class LandingPage {
         this.pprLink = 'a[href = "/ppr-marketing"]'
         this.accountDropdown = 'span:contains("Log in to my BC Registries Account")'
         this.bcServicesCardMenuItem = 'div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)'
-        this.virtualCardTesting = '#tile_btn_virtual_device_div_id'
-        this.cardSerialNumber = '#csn'
+        this.virtualCardTesting = '#tile_test_with_username_password_device_div_id'
+        this.cardSerialNumber = '#username'
         this.continueNext = '#continue'
-        this.passcode = '#passcode'
-        this.continue = '#btnSubmit'
+        this.passcode = '#password'
+        this.continue = '#submit-btn'
         this.loginDropdown = '#loginBtn'
         this.staffAssetRegistriesButton = '.product-info'
 
@@ -75,7 +75,7 @@ export class LandingPage {
     bcscLogin(username, password) {
         cy.wait(2000)
         cy.get(this.cardSerialNumber).type(username)
-        cy.get(this.continueNext).click()
+        //cy.get(this.continueNext).click()
         cy.get(this.passcode).type(password)
         cy.get(this.continue).click()
         cy.log("BCSC login is successful")

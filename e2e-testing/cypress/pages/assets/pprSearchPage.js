@@ -73,7 +73,7 @@ export class PPRSearchPage {
         cy.get(this.searchButton).click()
         cy.get(this.acceptButton).click()
         cy.get(this.generateSearchResultReportButton).click()
-        //cy.get(this.acceptButton).click()
+        cy.get(this.acceptButton).click()
         cy.get(this.searchHeader).should('have.text', data.searchHeader)
         cy.log("Individual Debtor Search Report got Generated")
 

@@ -16,6 +16,8 @@ describe('Staff Flow Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('BCSC_WITH_IDIR_ROLE_USERNAME'), Cypress.env('BCSC_WITH_IDIR_ROLE_PASSWORD'))
 
+        landingPage.visit(Cypress.env('PPR_DEV_URL'))
+
         landingPage.clickStaffAssetRegistriesButton()
 
         mhrRegistrationPage.selectMHRTab()

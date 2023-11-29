@@ -14,6 +14,8 @@ describe('PPR Search Test Suite ', function () {
 
         landingPage.bcscLogin(Cypress.env('BCSC_USERNAME'), Cypress.env('BCSC_PASSWORD'))
 
+        landingPage.visit(Cypress.env('PPR_DOMAIN') + '/dashboard')
+
         pprSearchPage.selectSearchCategoryDropdown()
 
         pprSearchPage.searchRegistrationNumber(pprSearchData.searchCategory)
