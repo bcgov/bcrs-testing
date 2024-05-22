@@ -1,0 +1,29 @@
+{
+    "firmRegDetails": {
+    "regType" : "BC Cooperative Association",
+    "status" : "Approved",
+    "businessStatus" : "Active",
+    "directorInfo1" :{
+        "FName": "Boss",
+        "MName": "N",
+        "LName": "Bosses",
+        "streetaddress": "649 Bay St",
+        "deliveryStreetAddress": "21 Bardin St"
+      },
+     "directorInfo2":{
+        "FName": "test",
+        "MName": "testing",
+        "LName": "tester",
+        "streetaddress": "55 Bay St",
+        "deliveryStreetAddress": "1243 Bay St"
+      },
+      "directorInfo3":{
+        "FName": "BC",
+        "MName": "Registry",
+        "LName": "Service",
+        "streetaddress": "4113 Hatfield Rd",
+        "deliveryStreetAddress": "109-2925 Qu'Appele St"
+      }
+      
+}
+}

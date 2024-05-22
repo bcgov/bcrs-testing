@@ -1,0 +1,68 @@
+{
+    "firmRegDetails":{
+    "regType" : "BC Benefit Company Incorporation Application",
+    "mailingaddress":{
+        "streetaddress": "4113 Hatfield Rd"
+    },
+    "mailingaddressRecords":{
+        "streetaddress": "1-2925 Qu'Appele St"
+    },
+    "email": "riyazsd707@gmail.com",
+    "confirmEmail": "riyazsd707@gmail.com",
+    "phoneNum": "6475553465",
+    "phoneNumExt": "1234",
+    "folioNum": "987654321",
+    "completingPartyFName": "BCREGTEST DARNELL",
+    "completingPartyLName": "FIVE",
+    "directorInfo":{
+        "FName": "test",
+        "MName": "testing",
+        "LName": "tester",
+        "streetaddress": "23 Bispan pl",
+        "deliveryStreetAddress":"21 Bardin St"
+    },
+    "Incorporation":{
+        "legalName":"One Piece Ltd",
+        "streetaddress": "632 Brookside Rd"
+    },
+    "seriesName":"S Series",
+    "noOfShares":"9999",
+    "priceOfShare": "10",
+    "priceOfShareSeries":"9",
+    "courtOrder":"987654321",
+    "changeRegApp":"BC Benefit Company Incorporation Application",
+    "businessType":"BC Benefit Company",
+    "businessStatus":"Active",
+    "businessTypesListed":{
+        "firstType":"BC Benefit Company",
+        "secondType":"BC Limited Company",
+        "thirdType":"BC Community Contribution Company"
+    },
+    "alteredShares":"10000",
+    "changeRegAppAlter":"Alteration",
+    "NewDirector":{
+        "firstName":"Boss",
+        "middleName":"And",
+        "lastName":"Baby",
+        "mailingStreetaddress":"632 Brookside Rd",
+        "deliveryStreetAddress":"745 Cecil Blogg Dr"
+    },
+    "addressChange":{
+        "mailingStreet":"745 Cecil Blogg Dr",
+        "deliveryStreet":"822 Dalewood Lane"
+    },
+    "LegalNameChange":{
+        "fName":"Free",
+        "mName":"Name",
+        "lName":"change"
+    },
+    "certifyName":"Automated",
+    "dirChange":"Director Change",
+    "stanAloneAddChange":{
+        "dialogHeader":"Address Change Effective 12:01 am",
+        "addHeader":"Any address update will be effective tomorrow.",
+        "streetaddressMailing":"144 Durrance Rd",
+        "recordsCity":"toronto"
+    }
+    }
+}

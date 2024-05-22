@@ -1,0 +1,13 @@
+{
+    "firmRegDetails": {
+    "regType" : "BC General Partnership",
+    "status" : "Approved",
+    "businessStatus" : "Active",
+    "dirAdd" :{
+        "firstName": "Boss",
+        "middleName" : "And",
+        "lastName": "Baby"
+    },
+    "alterBusiness": "3302 Radiant Way"
+    }
+}

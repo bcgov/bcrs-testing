@@ -1,0 +1,19 @@
+{
+    "firmRegDetails":{
+        "dissolve":"Dissolve this Business",
+        "cco":"Consent to Continue Out",
+        "agmExtension":"Request AGM Extension",
+        "agmLocation":"Request AGM Location Change",
+        "amal":"Amalgamate",
+        "dialogTitle":"Voluntary Dissolution",
+        "firstName":"Let's",
+        "middleName":"Start",
+        "lastName":"Dissolving",
+        "email":"riyazsd707@gmail.com",
+        "custodianMailingAddress":"1010 Liberty Dr",
+        "custodianDeliveryAddress":"4924 Old West Saanich Rd",
+        "step2Header":"1. Resolution",
+        "step3Header":"1. Affidavit",
+        "regChange":"Dissolution"
+    }
+}

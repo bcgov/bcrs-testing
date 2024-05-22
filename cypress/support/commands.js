@@ -1,4 +1,5 @@
 require('cypress-downloadfile/lib/downloadFileCommand')
+import 'cypress-file-upload'
 
 Cypress.Commands.add('bcscLogin', (url, username, password) => {
   cy.task('bcscLogin', { url: url, username: username, password: password }, { timeout: 60000 }).then(sessionItems => {
@@ -44,3 +45,23 @@ Cypress.Commands.add('resetData', (url, identifier) => {
     console.log(JSON.stringify(response))
   })
 })
+
+Cypress.Commands.add('clickNthElement', (selector, index) => {
+  cy.get(selector)
+    .eq(index)
+    .click();
+})
+
+Cypress.Commands.add('clickAndUploadFile', (fileName, selector) => {
+  cy.fixture('entity/upload-rules-card.pdf').then((fileContent) => {
+    cy.log('File Content:', fileContent)
+    cy.log('File Name:', fileName)
+    cy.get(selector).click().attachFile({
+      fileContent,
+      fileName,
+      mimeType: 'application/pdf',
+    });
+  });
+});
+
+

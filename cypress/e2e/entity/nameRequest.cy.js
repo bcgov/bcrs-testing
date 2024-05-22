@@ -18,7 +18,7 @@ describe('Name Request ', function () {
             decideBusiness.submitANameForReview()
             decideBusiness.submissionDetailsForm(testData.submissionDetailsForm)
             decideBusiness.submissionDetailsReviewAndConfirmForm(testData.submissionDetailsReviewAndConfirmForm)
-            decideBusiness.continueToPayment()
+            decideBusiness.clickOnFileAndPayAndCompletePayment ()
             decideBusiness.goToPaymentAndReturnToForm(testData.paymentDetails)
   })
 })

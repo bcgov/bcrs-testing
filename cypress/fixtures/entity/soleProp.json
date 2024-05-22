@@ -1,0 +1,59 @@
+{
+    "firmRegDetails":{
+    "regType" : "BC Sole Proprietorship",
+    "status" : "Approved",
+    "nacis" : "Trades",
+    "BusinessNumber": "123456789",
+    "mailingAddress":{
+        "streetAddress" : "4113 Hatfield Rd",
+        "addStreetAddress" : "its an apt",
+        "city" : "Victoria",
+        "postalCode" : "V9A 1V3",
+        "provience" : "BC",
+        "country" : "canada",
+        "deliveryInst" : "lets get it delivered"
+    },
+    "deliveryAddress":{
+        "streetAddress" : "2925 Quadra st",
+        "addStreetAddress" : "its an apt",
+        "city" : "Victoria",
+        "postalCode" : "V9A 1V4",
+        "provience" : "BC",
+        "country" : "canada",
+        "deliveryInst" : "lets get it delivered"
+    },
+    "email": "riyazsd707@gmail.com",
+    "confirmEmail": "riyazsd707@gmail.com",
+    "phoneNumber" : "6666666666",
+    "extension" : "123",
+    "peopleInfo":{
+        "firstName" : "test",
+        "middleName" : "tester",
+        "lastName" : "testing",
+        "emailAdd" : "riyazsd707@gmail.com"
+    },
+    "corpNum" : "BC0",
+    "businessType" : "BC Sole Proprietorship",
+    "businessStatus" : "Active",
+    "businessHeader" : "Business Information",
+    "nobText" : "sports",
+    "mailingAddressAlteration" :"4118 Hatfield Rd",
+    "emailEdit": "sdriyaz64@gmail.com",
+    "confirmemailEdit": "sdriyaz64@gmail.com",
+    "firstName": "alterFirstName",
+    "lastName" : "alterLastName",
+    "corrected": "Changed",
+    "directorChange": "NAME CHANGED ",
+    "changeRegApp": "Change of Registration Application",
+    "middleNameDirector" : "middleName",
+    "directorAddChange" : "ADDRESS CHANGED",
+    "alterDirAddChng" : "4113 Hatfiled Rd",
+    "dirChangeOnDashboard" : "ALTERFIRSTNAME MIDDLENAME ALTERLASTNAME",
+    "alterAddChange" : "4117 Hatfield Rd",
+    "dissolution":{
+        "dialogHeader":"Dissolution",
+        "filingsHeader":"Statement of Dissolution",
+        "companyStatus":"Active"
+    }
+}
+}

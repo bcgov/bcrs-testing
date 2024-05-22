@@ -1,0 +1,24 @@
+{
+    "firmRegDetails":{
+        "regNotation":"Add Registrar's Notation",
+        "regOrder":"Add Registrar's Order",
+        "courtOrder":"Add Court Order",
+        "restore":"Restore Company",
+        "ltdRestoration":"Extend Limited Restoration",
+        "fullRestore":"Convert to Full Restoration",
+        "restoreHeader":"Restoration Application",
+        "namesTranslation":"lets translate",
+        "courtOrderNo":"987654321",
+        "firstName":"test",
+        "middleName":"testing",
+        "lastName":"tester",
+        "email":"riyazsd707@gmail.com",
+        "streetAddressMailing":"649 Bay St",
+        "regMailingAdd":"5639 Victoria",
+        "recMailingAdd":"890 Academy Close",
+        "certifyName":"test",
+        "regApp":"Limited Restoration Application",
+        "incorpNum":"BC0",
+        "incorpStreetAdd":"466 Bay St"
+    }
+}

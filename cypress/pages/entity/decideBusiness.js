@@ -172,9 +172,29 @@ export class DecideBusiness {
         //cy.get(this.cancelAndRefundButton).click({force: true});
         //cy.get(this.cancelNameRequestConfirmButton).click({force: true});
         //cy.get(this.cancelRefundOkButton).click();
-        cy.get(this.downloadReceiptButton).should('be.visible');
-        cy.get(this.backToNameRequestFormButton).click({force: true});
-        cy.get(this.selectAnActionDropdown).should('be.visible');
+        //cy.get(this.downloadReceiptButton).should('be.visible');
+        //cy.get(this.backToNameRequestFormButton).click({force: true});
+        //cy.get(this.selectAnActionDropdown).should('be.visible');
     }
+
+    clickOnFileAndPayAndCompletePayment (){
+        cy.get(this.fileAndPay).click({force: true})
+         cy.wait(5000)
+        cy.get(this.creditCardCheckBox).click({force: true})
+        cy.get('button.v-btn--contained.primary > span.v-btn__content')
+          .contains('Pay Now')
+          .parent('button.v-btn--contained.primary').click({force: true})
+        cy.wait(10000)
+        cy.origin('https://www.beanstream.com/',() => {
+            this.cardNumber = '#trnCardNumber',
+            this.cvvNumber = '#trnCardCvd',
+            this.submitPaymentDetails = 'input[type="button"][name="submitButton"][value="Submit Payment"]'
+           cy.log('i am here')
+           cy.get(this.cardNumber).should('be.visible')
+           cy.get(this.cardNumber).type('4030000010001234');
+           cy.get(this.cvvNumber).type('123');
+           cy.get(this.submitPaymentDetails).click({force: true});
+     })
+     }
 }
 export const decideBusiness = new DecideBusiness()
