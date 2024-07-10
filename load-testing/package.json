@@ -17,13 +17,15 @@
     "load": "yarn build && k6 run dist/loadTest.bundle.js",
     "spike": "yarn build && k6 run dist/spikeTest.bundle.js",
     "soak": "yarn build && k6 run dist/soakTest.bundle.js",
+    "queue": "yarn build && k6 run dist/queueTest.bundle.js",
     "smoke-cloud": "yarn build && k6 cloud dist/smokeTest.bundle.js",
     "load-cloud": "yarn build && k6 cloud dist/loadTest.bundle.js",
+    "queue-cloud": "yarn build && k6 cloud dist/queueTest.bundle.js",
     "go:docker": "yarn build && yarn test"
   },
   "dependencies": {
     "@types/k6": "^0.25.1",
-    "@types/node": "^13.13.27"
+    "@types/node": "^20.12.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -40,8 +42,9 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.5",
-    "webpack": "^4.41.6",
+    "random-word-slugs": "^0.1.7",
+    "typescript": "4.5.5",
+    "webpack": "5.78",
     "webpack-cli": "^3.3.11"
   }
 }

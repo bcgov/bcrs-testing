@@ -7,6 +7,7 @@ import { setSleep } from '../helpers/sleep'
 import * as authApiAction from '../actions/auth-api.action'
 import * as payApiAction from '../actions/pay-api.action'
 import * as legalApiAction from '../actions/legal-api.action'
+import * as namexApiAction from '../actions/namex-api.action'
 
 
 export let options: Partial<Options> = {
@@ -30,6 +31,7 @@ export default () => {
         authApiAction.healthCheck(httpParams)
         payApiAction.healthCheck(httpParams)
         legalApiAction.healthCheck(httpParams)
+        namexApiAction.healthCheck(httpParams)
     })
 
     setSleep()

@@ -11,6 +11,7 @@ module.exports = {
         loadTest: './src/tests/load.test.ts',
         spikeTest: './src/tests/spike.test.ts',
         soakTest: './src/tests/soak.test.ts',
+        queueTest: './src/tests/queue.test.ts',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
